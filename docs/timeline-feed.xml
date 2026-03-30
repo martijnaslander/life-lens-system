@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+    <title>Life Lens System — Discovery Timeline</title>
+    <description>New discoveries, insights and components as they emerge. One line per breakthrough.</description>
+    <link>https://martijnaslander.github.io/life-lens-system/</link>
+    <atom:link href="https://martijnaslander.github.io/life-lens-system/timeline-feed.xml" rel="self" type="application/rss+xml"/>
+    <language>en</language>
+    <lastBuildDate>Mon, 30 Mar 2026 14:00:00 +0200</lastBuildDate>
+    <item>
+        <title>Choroid Plexus: the enveloping immune system of the network</title>
+        <description>Joy Otten named the missing piece during a live demo for law enforcement at Troi, Noordwijk. Not a sixth layer stacked on top — the membrane wrapped around everything. Filtration, nightly cleansing, immune patrol, homeostasis. Later that day: the Obsidian vault (35,000 files, 12,680 hand-validated entities) turned out to already BE the choroid plexus.</description>
+        <pubDate>Mon, 30 Mar 2026 12:00:00 +0200</pubDate>
+        <guid>https://martijnaslander.github.io/life-lens-system/#choroid-plexus</guid>
+    </item>
+    <item>
+        <title>Double Helix: evidence and meaning as two strands through every synapse</title>
+        <description>Every synapse carries two strands: how strong is the proof (evidence) and what does it mean (fact, belief, or hypothesis). Layer 10 — human confirmation — is the helicase that opens and reseals them. Emerged from cross-pollination with Mark Vletter's Klai system.</description>
+        <pubDate>Sat, 29 Mar 2026 12:00:00 +0200</pubDate>
+        <guid>https://martijnaslander.github.io/life-lens-system/#double-helix</guid>
+    </item>
+    <item>
+        <title>Action Potential: the network stores everything but can't fire</title>
+        <description>Demo with Joe and Mika Ros revealed the gap: three layers describe how synapses are stored, strengthened and enriched. None describes how they're retrieved. Six sub-mechanisms: threshold, saltatory conduction, payload, excitation/inhibition, summation, refractory period.</description>
+        <pubDate>Sat, 28 Mar 2026 20:00:00 +0200</pubDate>
+        <guid>https://martijnaslander.github.io/life-lens-system/#action-potential</guid>
+    </item>
+    <item>
+        <title>Diamond Layer: eight dimensions per synapse</title>
+        <description>Temporality, directionality, valence, weight, social graph, context, decay, hub value. Not just connected — multidimensional. Emerged at 07:10 after the third night of building.</description>
+        <pubDate>Sat, 28 Mar 2026 07:10:00 +0200</pubDate>
+        <guid>https://martijnaslander.github.io/life-lens-system/#diamond-layer</guid>
+    </item>
+    <item>
+        <title>Theta-Myelin: completeness as insulation</title>
+        <description>A thin synapse (name only) fires slowly. A thick synapse (name + date + location + context + photo) fires instantly. Myelin grows through more layers, more frequency, and more completeness per mention.</description>
+        <pubDate>Sat, 28 Mar 2026 04:00:00 +0200</pubDate>
+        <guid>https://martijnaslander.github.io/life-lens-system/#theta-myelin</guid>
+    </item>
+    <item>
+        <title>Synaptic Stratification: ten levels of evidence</title>
+        <description>Not every connection is equally certain. Ten layers from intentional contact (100% certain) to pattern recognition (50-70%). 170,000+ measured synapses. The trust model for connections.</description>
+        <pubDate>Fri, 27 Mar 2026 23:00:00 +0200</pubDate>
+        <guid>https://martijnaslander.github.io/life-lens-system/#synaptic-stratification</guid>
+    </item>
+    <item>
+        <title>Tom is born: a personal AI guide on top of ThetaOS</title>
+        <description>Not a chatbot. A coach, advisor, strategist, biographer and archivist with access to an entire life. First external user: Kees Verhoeven (March 14).</description>
+        <pubDate>Thu, 19 Feb 2026 12:00:00 +0200</pubDate>
+        <guid>https://martijnaslander.github.io/life-lens-system/#tom</guid>
+    </item>
+    <item>
+        <title>ThetaOS gets a name — and becomes a Life Lens System</title>
+        <description>The system that had been growing for months finally got its name. And almost immediately revealed itself as something more than a tool: a way of looking at an entire life through structured, connected data.</description>
+        <pubDate>Mon, 15 Dec 2025 12:00:00 +0200</pubDate>
+        <guid>https://martijnaslander.github.io/life-lens-system/#lls-born</guid>
+    </item>
+    <item>
+        <title>Gmail archive parsed: 96,000 emails reveal a hidden system</title>
+        <description>14GB of email, converted with Python scripts written with AI. The data was always there. The connections were waiting to be made.</description>
+        <pubDate>Sun, 01 Jun 2025 12:00:00 +0200</pubDate>
+        <guid>https://martijnaslander.github.io/life-lens-system/#gmail</guid>
+    </item>
+    <item>
+        <title>First book written with AI: Starten met Obsidian</title>
+        <description>After the stroke, during the first public demo of Obsidian, someone asked a question that sparked the idea. Six weeks later the book was in stores. First solo book, AI as writing partner.</description>
+        <pubDate>Sat, 01 Mar 2025 12:00:00 +0200</pubDate>
+        <guid>https://martijnaslander.github.io/life-lens-system/#obsidian-book</guid>
+    </item>
+    <item>
+        <title>Personal ontology written down — then a stroke</title>
+        <description>January 2025. For the first time, the complete structure of how I organise information was made explicit. Then the enforced slowness of recovery turned out to be a gift.</description>
+        <pubDate>Wed, 15 Jan 2025 12:00:00 +0200</pubDate>
+        <guid>https://martijnaslander.github.io/life-lens-system/#ontology-stroke</guid>
+    </item>
+</channel>
+</rss>
