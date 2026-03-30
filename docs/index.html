@@ -481,111 +481,132 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
         <p style="color: #b0b0b0; margin-bottom: 16px;">Which brain mechanisms are already emulated in the system, which are under exploration, and which are still open.</p>
 
         <div style="overflow-x: auto;">
-        <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 20px;">
+        <table style="width: 100%; max-width: 1100px; border-collapse: collapse; font-size: 13px; margin-bottom: 20px; line-height: 1.6;">
             <tr style="border-bottom: 2px solid #5a6269; text-align: left;">
-                <th style="padding: 10px 12px; color: #7ab; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Brain mechanism</th>
-                <th style="padding: 10px 12px; color: #7ab; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">What it does</th>
-                <th style="padding: 10px 12px; color: #7ab; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap;">Status</th>
+                <th style="padding: 10px 10px; color: #7ab; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; width: 14%;">What is it</th>
+                <th style="padding: 10px 10px; color: #7ab; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; width: 28%;">What it does in the brain</th>
+                <th style="padding: 10px 10px; color: #7ab; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; width: 35%;">What it does in ThetaOS</th>
+                <th style="padding: 10px 10px; color: #7ab; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; width: 8%; white-space: nowrap;">Built?</th>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Synapses</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">Connections between neurons. Strength varies.</td>
-                <td style="padding: 10px 12px; color: #5a9;">Built &mdash; Layer 1</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Synapses</td>
+                <td style="padding: 10px; color: #c0c0c0;">Connections between neurons. Strength varies by use.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Every link between two entities (person, place, organisation) is a synapse with ten evidence levels. A phone call is layer 1 (100% certain). A name found in a text is layer 6 (90%). A pattern detected by AI is layer 9 (50-70%). 170,000+ measured.</td>
+                <td style="padding: 10px; color: #5a9;">Built</td>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Myelin sheath</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">Insulation that makes signals fast and reliable.</td>
-                <td style="padding: 10px 12px; color: #5a9;">Built &mdash; Layer 2</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Myelin sheath</td>
+                <td style="padding: 10px; color: #c0c0c0;">Fatty insulation around nerve fibers. Thicker = faster signals.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Completeness score per connection. A name alone is thin myelin. A name + date + location + photo + context + transaction is thick myelin. Ask about a thick synapse and you get a rich dossier in seconds. Ask about a thin one and you get: "he's in the database."</td>
+                <td style="padding: 10px; color: #5a9;">Built</td>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Long-term potentiation</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">Repetition strengthens connections.</td>
-                <td style="padding: 10px 12px; color: #5a9;">Built &mdash; Layer 2</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Long-term potentiation</td>
+                <td style="padding: 10px; color: #c0c0c0;">Repetition makes connections stronger.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Every new data point that confirms an existing connection thickens its myelin. Peter Ros appears in 153 photo-days, 92 text mentions, 41 transactions, 10 meetings. Each one makes his synapse stronger and faster to retrieve.</td>
+                <td style="padding: 10px; color: #5a9;">Built</td>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Hebbian learning</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">Neurons that fire together wire together.</td>
-                <td style="padding: 10px 12px; color: #5a9;">Built &mdash; Layers 7+9</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Hebbian learning</td>
+                <td style="padding: 10px; color: #c0c0c0;">Neurons that fire together wire together.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Two people who appear at the same location on the same day (layer 7: date-coincidence) get linked automatically. If it happens repeatedly (layer 9: pattern), the system flags it. Peter and Mark always appear together at the same venue &mdash; that's a detected triangle.</td>
+                <td style="padding: 10px; color: #5a9;">Built</td>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Multidimensional encoding</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">Each connection carries direction, emotion, time, context.</td>
-                <td style="padding: 10px 12px; color: #5a9;">Built &mdash; Layer 3</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Multidimensional encoding</td>
+                <td style="padding: 10px; color: #c0c0c0;">Each connection carries direction, emotion, time, context.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Eight dimensions per synapse. Who initiated contact (direction)? Was it positive or negative (valence)? How recent (temporal decay)? In what context &mdash; business, personal, creative? How central is this node to the network (hub value)?</td>
+                <td style="padding: 10px; color: #5a9;">Built</td>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Action potential</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">All-or-nothing firing. Threshold, summation, inhibition.</td>
-                <td style="padding: 10px 12px; color: #5a9;">Built &mdash; Layer 4</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Action potential</td>
+                <td style="padding: 10px; color: #c0c0c0;">All-or-nothing firing. Below threshold: silence. Above: full pulse.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Ring 1 people (thick myelin) fire instantly when mentioned &mdash; low threshold. Ring 4 people need more context to activate. The system decides what to retrieve based on myelin thickness, like the brain decides what to fire based on signal strength.</td>
+                <td style="padding: 10px; color: #5a9;">Built</td>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Saltatory conduction</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">Signals skip along thick paths, bypassing weak ones.</td>
-                <td style="padding: 10px 12px; color: #5a9;">Built &mdash; Layer 4</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Saltatory conduction</td>
+                <td style="padding: 10px; color: #c0c0c0;">Signals skip along thick paths, bypassing weak ones.</td>
+                <td style="padding: 10px; color: #e0e0e0;">When you ask about a person, the system jumps to the strongest connections first: their organisation, their key project, their last meeting. It doesn't enumerate every data point &mdash; it skips along the thickest paths.</td>
+                <td style="padding: 10px; color: #5a9;">Built</td>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Epistemological tagging</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">Distinguishing facts from beliefs from hypotheses.</td>
-                <td style="padding: 10px 12px; color: #5a9;">Built &mdash; Layer 5</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Epistemological tagging</td>
+                <td style="padding: 10px; color: #c0c0c0;">The brain knows the difference between seeing and imagining.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Every synapse carries two strands (the Double Helix): evidence strength and epistemological type. A bank transaction is a fact. "They had a great conversation" is a belief. "They probably know each other" is a hypothesis. The system never presents a hypothesis as a fact.</td>
+                <td style="padding: 10px; color: #5a9;">Built</td>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Blood-brain barrier</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">Filters what enters the brain at the gate.</td>
-                <td style="padding: 10px 12px; color: #5a9;">Built &mdash; Layer 6</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Blood-brain barrier</td>
+                <td style="padding: 10px; color: #c0c0c0;">Selects molecule by molecule what enters the brain.</td>
+                <td style="padding: 10px; color: #e0e0e0;">New data is validated before it builds myelin. A name found in text is checked against 12,680 hand-validated entities in the Obsidian vault. Match = high confidence. No match = flagged for review. Bad data doesn't get to build thick connections.</td>
+                <td style="padding: 10px; color: #5a9;">Built</td>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Cerebrospinal fluid</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">Washes waste away. Maintains the medium.</td>
-                <td style="padding: 10px 12px; color: #5a9;">Built &mdash; Layer 6</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Cerebrospinal fluid</td>
+                <td style="padding: 10px; color: #c0c0c0;">Washes waste products away. Maintains the medium.</td>
+                <td style="padding: 10px; color: #e0e0e0;">The database schema itself &mdash; 309 tables, standardised naming, consistent emoji-typing. If the medium is polluted (duplicates, broken links, inconsistent names), every signal travels through murky water.</td>
+                <td style="padding: 10px; color: #5a9;">Built</td>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Immune patrol</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">Selected cells patrol for inconsistencies.</td>
-                <td style="padding: 10px 12px; color: #db8;">Designed &mdash; Layer 6</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Immune patrol</td>
+                <td style="padding: 10px; color: #c0c0c0;">Selected cells patrol for threats and inconsistencies.</td>
+                <td style="padding: 10px; color: #e0e0e0;">The Magische 13 reasoning framework: thirteen perspectives (Holmes, Marple, Occam, Arendt...) that attack every thesis from different angles. Currently runs on demand. Designed to run continuously in the background.</td>
+                <td style="padding: 10px; color: #db8;">Designed</td>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Homeostasis</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">Chemical balance. Ratios that signal health or disease.</td>
-                <td style="padding: 10px 12px; color: #db8;">First measurement taken</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Homeostasis</td>
+                <td style="padding: 10px; color: #c0c0c0;">Chemical balance. Too much or too little signals disease.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Five ratios that measure system health: evidence vs hypothesis, positive vs negative, old vs new, broad vs deep, certain vs uncertain. First baseline measurement taken March 30, 2026.</td>
+                <td style="padding: 10px; color: #db8;">First measurement</td>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Neuroplasticity</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">The brain rewires itself after damage or new learning.</td>
-                <td style="padding: 10px 12px; color: #db8;">Exploring</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Neuroplasticity</td>
+                <td style="padding: 10px; color: #c0c0c0;">The brain rewires itself after damage or new learning.</td>
+                <td style="padding: 10px; color: #e0e0e0;">When new data sources are imported (Obsidian, Gmail), the entire network restructures. Connections that didn't exist suddenly light up. The system gets smarter without adding logic &mdash; just data.</td>
+                <td style="padding: 10px; color: #db8;">Exploring</td>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Synaptic pruning</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">Unused connections weaken and disappear.</td>
-                <td style="padding: 10px 12px; color: #db8;">Designed &mdash; dimming, not deleting</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Synaptic pruning</td>
+                <td style="padding: 10px; color: #c0c0c0;">Unused connections weaken and disappear.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Connections dim over time but never delete. A synapse from 2013 that was never confirmed again is still there &mdash; but quiet. Recent synapses glow hot. The system remembers everything but foregrounds what matters now.</td>
+                <td style="padding: 10px; color: #db8;">Designed</td>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Sleep consolidation</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">Memories move from working to long-term during sleep.</td>
-                <td style="padding: 10px 12px; color: #db8;">Designed &mdash; nightly cronjob</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Sleep consolidation</td>
+                <td style="padding: 10px; color: #c0c0c0;">During sleep, memories move from short-term to long-term.</td>
+                <td style="padding: 10px; color: #e0e0e0;">A nightly cronjob that enriches data, detects duplicates, recalculates patterns, and reports what changed. The system literally cleans itself while I sleep.</td>
+                <td style="padding: 10px; color: #db8;">Designed</td>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Working memory vs long-term</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">Small active buffer vs vast permanent store.</td>
-                <td style="padding: 10px 12px; color: #db8;">Exploring</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Working memory</td>
+                <td style="padding: 10px; color: #c0c0c0;">Small active buffer (4-7 items) vs vast long-term store.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Tom's active session is the working memory. The 560,000 records are long-term. During a conversation, recently mentioned people and topics stay activated &mdash; follow-up questions don't restart from scratch.</td>
+                <td style="padding: 10px; color: #db8;">Exploring</td>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Default mode network</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">Free association and serendipity when the brain idles.</td>
-                <td style="padding: 10px 12px; color: #999;">Open</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Default mode network</td>
+                <td style="padding: 10px; color: #c0c0c0;">Free association when the brain idles. Daydreaming. Serendipity.</td>
+                <td style="padding: 10px; color: #e0e0e0;">A mode where the system surfaces unexpected connections without being asked. "You haven't spoken to X in 6 months, but she just published something about your topic." Not yet built.</td>
+                <td style="padding: 10px; color: #999;">Open</td>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Neurotransmitters</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">Chemical messengers: dopamine, serotonin, acetylcholine.</td>
-                <td style="padding: 10px 12px; color: #999;">Open</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Neurotransmitters</td>
+                <td style="padding: 10px; color: #c0c0c0;">Chemical messengers that modulate mood, focus, motivation.</td>
+                <td style="padding: 10px; color: #e0e0e0;">MCP tools that trigger fast actions &mdash; logging a moment, saving an idea, firing a query. They are the quick chemical signals that make the system responsive. The analogy is emerging.</td>
+                <td style="padding: 10px; color: #999;">Open</td>
             </tr>
             <tr style="border-bottom: 1px solid #555;">
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Mirror neurons</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">Learning by observing others. Empathy as mechanism.</td>
-                <td style="padding: 10px 12px; color: #999;">Open</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Mirror neurons</td>
+                <td style="padding: 10px; color: #c0c0c0;">Learning by observing others. Empathy as mechanism.</td>
+                <td style="padding: 10px; color: #e0e0e0;">When others talk to Tom (Kees, C&eacute;line, Aria, police professionals), the system learns from their questions. Each external conversation reveals capabilities and gaps that internal use doesn't surface.</td>
+                <td style="padding: 10px; color: #999;">Open</td>
             </tr>
             <tr>
-                <td style="padding: 10px 12px; color: #fff; font-weight: 600;">Prefrontal cortex</td>
-                <td style="padding: 10px 12px; color: #c0c0c0;">Planning, reasoning, decision-making. Expensive in glucose.</td>
-                <td style="padding: 10px 12px; color: #999;">Open &mdash; this is what Tom offloads</td>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Prefrontal cortex</td>
+                <td style="padding: 10px; color: #c0c0c0;">Planning, reasoning, decision-making. Most expensive brain region.</td>
+                <td style="padding: 10px; color: #e0e0e0;">This is what Tom offloads. The prefrontal cortex costs the most glucose. By externalising planning and reasoning to a structured system, the biological brain is freed for what it does best: intuition, pattern recognition, creative leaps.</td>
+                <td style="padding: 10px; color: #999;">Open</td>
             </tr>
         </table>
         </div>
