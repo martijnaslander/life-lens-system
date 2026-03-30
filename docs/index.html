@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Life Lens System — Martijn Aslander</title>
+<meta name="description" content="A six-layer synaptic architecture for personal knowledge. Twenty years of data, one system, zero hallucinations.">
+<meta property="og:title" content="The Life Lens System">
+<meta property="og:description" content="A six-layer synaptic architecture for personal knowledge. 560,000 records. 170,000 synapses. One human life, fully mapped.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://martijnaslander.github.io/life-lens-system/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Life Lens System">
+<link rel="alternate" type="application/rss+xml" title="Life Lens System" href="blog/feed.xml">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #0a0a0f;
+    color: #d0d0d0;
+    line-height: 1.8;
+}
+a { color: #6cf; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+/* Hero */
+header {
+    padding: 100px 0 70px;
+    text-align: center;
+    border-bottom: 1px solid #1a1a2e;
+}
+header h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+header .subtitle {
+    font-size: 22px;
+    color: #888;
+    max-width: 720px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+}
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 44px;
+    flex-wrap: wrap;
+}
+.hero-stats .stat .num {
+    font-size: 42px;
+    font-weight: 700;
+    color: #6cf;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.hero-stats .stat .label {
+    font-size: 14px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.author-line {
+    font-size: 16px;
+    color: #555;
+}
+.author-line a { color: #888; }
+
+/* Model Section */
+.model-section {
+    padding: 80px 0;
+    border-bottom: 1px solid #1a1a2e;
+}
+.model-section h2 {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+}
+.model-section .lead {
+    font-size: 20px;
+    color: #888;
+    margin-bottom: 50px;
+    max-width: 720px;
+}
+
+/* Architecture diagram */
+.architecture {
+    background: #0f0f1a;
+    border: 1px solid #1a1a2e;
+    border-radius: 12px;
+    padding: 48px;
+    margin-bottom: 50px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.arch-outer {
+    border: 2px solid #4a9;
+    border-radius: 10px;
+    padding: 28px;
+    position: relative;
+}
+.arch-outer-label {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: #0f0f1a;
+    padding: 0 10px;
+    color: #4a9;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.arch-stack {
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.arch-layer {
+    padding: 14px 20px;
+    border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.arch-layer:last-child { border-bottom: none; }
+.arch-layer .num {
+    color: #555;
+    font-size: 13px;
+    width: 24px;
+}
+.arch-layer .name {
+    color: #fff;
+    font-size: 15px;
+    flex-grow: 1;
+}
+.arch-layer .function {
+    color: #666;
+    font-size: 12px;
+    text-align: right;
+}
+.layer-4 { background: #1a1220; }
+.layer-3 { background: #151520; }
+.layer-2 { background: #121518; }
+.layer-1 { background: #101215; }
+.arch-helix {
+    text-align: center;
+    padding: 12px;
+    color: #c6a;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px dashed #c6a;
+    border-radius: 6px;
+}
+
+/* Layer cards */
+.layers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+.layer-card {
+    background: #0f0f1a;
+    border: 1px solid #1a1a2e;
+    border-radius: 10px;
+    padding: 28px;
+}
+.layer-card .layer-num {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 12px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+.layer-card h3 {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.layer-card p {
+    font-size: 16px;
+    color: #999;
+    line-height: 1.7;
+}
+.layer-card .analogy {
+    font-style: italic;
+    color: #6cf;
+    margin-top: 12px;
+    font-size: 15px;
+}
+.card-wide {
+    grid-column: 1 / -1;
+}
+
+/* Blog section */
+.blog-section {
+    padding: 80px 0;
+    border-bottom: 1px solid #1a1a2e;
+}
+.blog-section h2 {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+}
+.blog-list { list-style: none; }
+.blog-list li {
+    padding: 20px 0;
+    border-bottom: 1px solid #1a1a2e;
+}
+.blog-list li:last-child { border-bottom: none; }
+.blog-list .date {
+    font-size: 14px;
+    color: #555;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.blog-list .title {
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    margin-top: 4px;
+}
+.blog-list .excerpt {
+    font-size: 16px;
+    color: #888;
+    margin-top: 6px;
+}
+
+/* Papers section */
+.papers-section {
+    padding: 80px 0;
+    border-bottom: 1px solid #1a1a2e;
+}
+.papers-section h2 {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+}
+.papers-section .lead {
+    font-size: 20px;
+    color: #888;
+    margin-bottom: 40px;
+    max-width: 720px;
+}
+.paper-card {
+    background: #0f0f1a;
+    border: 1px solid #1a1a2e;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 16px;
+}
+.paper-card h3 {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 6px;
+}
+.paper-card .doi {
+    font-family: 'SF Mono', monospace;
+    font-size: 14px;
+    color: #6cf;
+}
+.paper-card .meta {
+    font-size: 14px;
+    color: #666;
+    margin-top: 6px;
+}
+
+/* Principles */
+.principles-section {
+    padding: 80px 0;
+    border-bottom: 1px solid #1a1a2e;
+}
+.principles-section h2 {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+}
+.principle {
+    margin-bottom: 36px;
+    padding-left: 24px;
+    border-left: 3px solid #333;
+}
+.principle h3 {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 8px;
+}
+.principle p {
+    color: #999;
+    font-size: 17px;
+}
+
+/* Footer */
+footer {
+    padding: 60px 0;
+    text-align: center;
+    color: #444;
+    font-size: 15px;
+}
+footer a { color: #666; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 { font-size: 36px; }
+    .hero-stats { gap: 30px; }
+    .hero-stats .stat .num { font-size: 32px; }
+    .layers-grid { grid-template-columns: 1fr; }
+    .architecture { padding: 24px; }
+    .model-section h2, .blog-section h2, .papers-section h2, .principles-section h2 { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>The Life Lens System</h1>
+        <p class="subtitle">A six-layer synaptic architecture for personal knowledge. Twenty years of data. One system. Zero hallucinations.</p>
+        <div class="hero-stats">
+            <div class="stat"><div class="num">6</div><div class="label">Layers</div></div>
+            <div class="stat"><div class="num">560K</div><div class="label">Records</div></div>
+            <div class="stat"><div class="num">170K+</div><div class="label">Synapses</div></div>
+            <div class="stat"><div class="num">153K</div><div class="label">Cross-references</div></div>
+            <div class="stat"><div class="num">20</div><div class="label">Years of data</div></div>
+        </div>
+        <p class="author-line">by <a href="https://orcid.org/0009-0004-2344-0620">Martijn Aslander</a> &middot; Fellow KNVI &middot; Founder <a href="https://pkmsummit.com">PKM Summit</a></p>
+    </div>
+</header>
+
+<section class="model-section">
+    <div class="container">
+        <h2>The Model</h2>
+        <p class="lead">Four stacked layers. One helix running through. One membrane wrapped around. Built in four days, grounded in twenty years of data.</p>
+
+        <div class="architecture">
+            <div class="arch-outer">
+                <span class="arch-outer-label">6 &middot; Choroid Plexus</span>
+                <div class="arch-stack">
+                    <div class="arch-layer layer-4">
+                        <span class="num">4</span>
+                        <span class="name">Action Potential</span>
+                        <span class="function">retrieval</span>
+                    </div>
+                    <div class="arch-layer layer-3">
+                        <span class="num">3</span>
+                        <span class="name">Diamond Layer</span>
+                        <span class="function">enrichment</span>
+                    </div>
+                    <div class="arch-layer layer-2">
+                        <span class="num">2</span>
+                        <span class="name">Theta-Myelin</span>
+                        <span class="function">consolidation</span>
+                    </div>
+                    <div class="arch-layer layer-1">
+                        <span class="num">1</span>
+                        <span class="name">Synaptic Stratification</span>
+                        <span class="function">encoding</span>
+                    </div>
+                </div>
+                <div class="arch-helix">5 &middot; Double Helix &mdash; epistemology across all layers</div>
+            </div>
+        </div>
+
+        <div class="layers-grid">
+            <div class="layer-card">
+                <div class="layer-num">Layer 1 &middot; Stacked</div>
+                <h3>Synaptic Stratification</h3>
+                <p>Ten levels of evidence, from intentional contact (a phone call) to pattern recognition (AI-detected co-occurrence). Every connection carries its proof.</p>
+                <p class="analogy">Brain analogy: how synapses form</p>
+            </div>
+
+            <div class="layer-card">
+                <div class="layer-num">Layer 2 &middot; Stacked</div>
+                <h3>Theta-Myelin</h3>
+                <p>Completeness as insulation. A thin synapse (name only) fires slowly. A thick synapse (name + date + location + context + photo) fires instantly.</p>
+                <p class="analogy">Brain analogy: the myelin sheath around nerve fibers</p>
+            </div>
+
+            <div class="layer-card">
+                <div class="layer-num">Layer 3 &middot; Stacked</div>
+                <h3>Diamond Layer</h3>
+                <p>Eight dimensions per synapse: temporality, directionality, valence, weight, social graph, context, decay, and hub value. Not just connected &mdash; multidimensional.</p>
+                <p class="analogy">Brain analogy: the diamond-hard coating that makes synapses indestructible</p>
+            </div>
+
+            <div class="layer-card">
+                <div class="layer-num">Layer 4 &middot; Stacked</div>
+                <h3>Action Potential</h3>
+                <p>How the network fires. Threshold, saltatory conduction, payload, excitation vs. inhibition, summation, refractory period. Six sub-mechanisms that turn a dead archive into a thinking network.</p>
+                <p class="analogy">Brain analogy: the electrical pulse that makes neurons fire</p>
+            </div>
+
+            <div class="layer-card">
+                <div class="layer-num">Layer 5 &middot; Transversal</div>
+                <h3>Double Helix</h3>
+                <p>Every synapse carries two strands: evidence (how strong is the proof?) and meaning (is this a fact, a belief, or a hypothesis?). Like DNA, they spiral through every layer. Layer 10 &mdash; human confirmation &mdash; is the helicase that opens and reseals them.</p>
+                <p class="analogy">DNA analogy: two strands encoding different information, bound at base pairs</p>
+            </div>
+
+            <div class="layer-card">
+                <div class="layer-num">Layer 6 &middot; Enveloping</div>
+                <h3>Choroid Plexus</h3>
+                <p>The immune system of the network. Filtration at the gate, nightly cleansing, immune patrol, homeostasis. Not stacked on top &mdash; wrapped around. The environment in which all other layers function.</p>
+                <p class="analogy">Brain analogy: the membrane that produces cerebrospinal fluid and guards the blood-brain barrier</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="principles-section">
+    <div class="container">
+        <h2>Core Principles</h2>
+
+        <div class="principle">
+            <h3>98% data, 2% AI</h3>
+            <p>The AI is the translator. The data is the story. Replace the AI tomorrow &mdash; the system keeps running. The value is in the structure, not the intelligence layer.</p>
+        </div>
+
+        <div class="principle">
+            <h3>Zero hallucinations by design</h3>
+            <p>The system retrieves, never generates. Every answer comes from a database query, not from pattern completion. Every connection carries its evidence layer and its source.</p>
+        </div>
+
+        <div class="principle">
+            <h3>The more formal your ontology, the less intelligent your AI needs to be</h3>
+            <p>Well-structured data makes AI almost redundant. A simple SQL query on a clean schema outperforms a genius model on messy data. Invest in structure, not in models.</p>
+        </div>
+
+        <div class="principle">
+            <h3>Grows in intelligence without growing in size</h3>
+            <p>A new wikilink is a few bytes. The value it unlocks is unbounded. The system gets smarter by connecting existing data, not by adding more.</p>
+        </div>
+
+        <div class="principle">
+            <h3>Human in the loop, always</h3>
+            <p>Layer 10 is human confirmation. The system proposes, the human confirms. No automated decisions about meaning. The double helix cannot be read without a human helicase.</p>
+        </div>
+    </div>
+</section>
+
+<section class="blog-section">
+    <div class="container">
+        <h2>Writing</h2>
+        <ul class="blog-list">
+            <li>
+                <span class="date">March 2026</span>
+                <a class="title" href="https://world.hey.com/martijnaslander/i-think-i-ve-built-a-mythical-machine-cac6597f">I Think I've Built a Mythical Machine</a>
+                <p class="excerpt">Eighty years after Vannevar Bush described the Memex, someone accidentally built it.</p>
+            </li>
+            <li>
+                <span class="date">March 2026</span>
+                <a class="title" href="https://world.hey.com/martijnaslander/the-synaptic-architecture-of-a-life-00e84079">The Synaptic Architecture of a Life</a>
+                <p class="excerpt">How 560,000 records and 170,000 synapses map a human life.</p>
+            </li>
+            <li>
+                <span class="date">March 2026</span>
+                <a class="title" href="https://world.hey.com/martijnaslander/onze-intelligentie-zit-in-synapsen-niet-in-neuronen-c2ce2ccf">Our Intelligence Lives in Synapses, Not in Neurons</a>
+                <p class="excerpt">Why the connections between data matter more than the data itself.</p>
+            </li>
+            <li>
+                <span class="date">March 2026</span>
+                <a class="title" href="https://world.hey.com/martijnaslander/politieos-een-gedachtenexperiment-2196567b">PolitieOS &mdash; A Thought Experiment</a>
+                <p class="excerpt">What happens when you apply synaptic architecture to law enforcement.</p>
+            </li>
+            <li>
+                <span class="date">February 2026</span>
+                <a class="title" href="https://world.hey.com/martijnaslander/hoe-weet-je-of-wat-ai-vindt-ook-klopt-als-je-in-een-oud-archief-zoekt-af1491c9">How Do You Know If What AI Finds Is True?</a>
+                <p class="excerpt">On evidence layers, trust, and the difference between retrieval and hallucination.</p>
+            </li>
+            <li>
+                <span class="date">February 2026</span>
+                <a class="title" href="https://world.hey.com/martijnaslander/binnen-zonder-kloppen-omdat-ik-geen-deur-zag-a72daaac">Entering Without Knocking Because I Didn't See a Door</a>
+                <p class="excerpt">A generalist in the archive. Finding connections that specialists missed.</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="papers-section">
+    <div class="container">
+        <h2>Papers</h2>
+        <p class="lead">Published on Zenodo (CERN's open-access platform). Not peer-reviewed. Preprints, open to critique.</p>
+
+        <div class="paper-card">
+            <h3>Benzaldehyde as the Active Compound: A Brief Synthesis</h3>
+            <a class="doi" href="https://doi.org/10.5281/zenodo.18729890">doi:10.5281/zenodo.18729890</a>
+            <p class="meta">A generalist found a connection in cancer research that four scientific domains missed for fifty years.</p>
+        </div>
+
+        <div class="paper-card">
+            <h3>The Benzaldehyde Hypothesis: Full Literature Review</h3>
+            <a class="doi" href="https://doi.org/10.5281/zenodo.18728835">doi:10.5281/zenodo.18728835</a>
+            <p class="meta">English &middot; Complete research connecting Saito (2025), Kochi (1980), and the amygdalin debate.</p>
+        </div>
+
+        <div class="paper-card">
+            <h3>De Benzaldehyde-Hypothese: Volledig Literatuuronderzoek</h3>
+            <a class="doi" href="https://doi.org/10.5281/zenodo.18728986">doi:10.5281/zenodo.18728986</a>
+            <p class="meta">Dutch &middot; Same research, in the language it was originally written in.</p>
+        </div>
+    </div>
+</section>
+
+<section class="model-section">
+    <div class="container">
+        <h2>Origin</h2>
+        <p class="lead">The six-layer model emerged in four days, grounded in twenty years of accumulated data.</p>
+
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 40px;">
+            <tr style="border-bottom: 1px solid #1a1a2e;">
+                <td style="padding: 12px 0; color: #555; width: 60px;">Day 1</td>
+                <td style="padding: 12px 0; color: #fff;">Synaptic Stratification</td>
+                <td style="padding: 12px 0; color: #666; text-align: right;">Night session with Tom</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1a1a2e;">
+                <td style="padding: 12px 0; color: #555;">Day 2</td>
+                <td style="padding: 12px 0; color: #fff;">Theta-Myelin + Diamond Layer + Action Potential</td>
+                <td style="padding: 12px 0; color: #666; text-align: right;">Three concepts in one night. Demo with visitors revealed the fourth.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1a1a2e;">
+                <td style="padding: 12px 0; color: #555;">Day 3</td>
+                <td style="padding: 12px 0; color: #fff;">Double Helix</td>
+                <td style="padding: 12px 0; color: #666; text-align: right;">Cross-pollination with Klai (team knowledge systems)</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px 0; color: #555;">Day 4</td>
+                <td style="padding: 12px 0; color: #fff;">Choroid Plexus</td>
+                <td style="padding: 12px 0; color: #666; text-align: right;">Joy Otten, during a live demo for law enforcement</td>
+            </tr>
+        </table>
+
+        <p style="color: #888; font-size: 18px; max-width: 720px;">The model wasn't designed. It was discovered. Each layer revealed itself when the previous ones failed to explain what was happening. The data was always there. The architecture emerged from the data.</p>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>Martijn Aslander &middot; <a href="https://orcid.org/0009-0004-2344-0620">ORCID</a> &middot; <a href="https://pkmsummit.com">PKM Summit</a> &middot; <a href="https://martijnaslander.github.io/luhmann-zettelkasten/">Luhmann Project</a> &middot; <a href="https://yogiaria.substack.com/p/as-we-may-think-has-become-real">As We May Think Has Become Real</a></p>
+        <p style="margin-top: 12px; color: #333;">The Life Lens System is a living project. This site grows as the thinking grows.</p>
+    </div>
+</footer>
+
+</body>
+</html>
