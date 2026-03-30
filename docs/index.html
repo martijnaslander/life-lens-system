@@ -34,9 +34,9 @@ header .container { text-align: left; }
 header img { display: block; margin: 0 auto; }
 header .author-line { text-align: center; }
 .lang-toggle { position: fixed; top: 20px; right: 20px; z-index: 100; }
-.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; cursor: pointer; background: #4a525a; }
-.lang-toggle a:hover { color: #fff; border-color: #7ab; background: #4a525a; }
-.lang-toggle a.active { color: #fff; border-color: #7ab; }
+.lang-toggle a { display: inline-block; padding: 6px 12px; font-size: 18px; border: 2px solid transparent; border-radius: 6px; margin-left: 4px; cursor: pointer; background: rgba(74,82,90,0.9); line-height: 1; }
+.lang-toggle a:hover { border-color: #7ab; background: rgba(74,82,90,0.9); border-bottom: 2px solid #7ab; }
+.lang-toggle a.active { border-color: #fff; background: rgba(74,82,90,0.9); }
 header h1 {
     font-size: 38px;
     font-weight: 700;
@@ -252,8 +252,8 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 <body>
 
 <div class="lang-toggle">
-    <a class="active">EN</a>
-    <a href="index-nl.html">NL</a>
+    <a class="active" title="English">&#127468;&#127463;</a>
+    <a href="index-nl.html" title="Nederlands">&#127475;&#127473;</a>
 </div>
 
 <header>
