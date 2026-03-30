@@ -16,7 +16,7 @@
 body {
     font-family: Verdana, system-ui, Helvetica, sans-serif;
     background: #4a525a;
-    color: #fff;
+    color: #ddd;
     line-height: 1.8;
     font-size: 15px;
 }
@@ -54,30 +54,68 @@ header .intro {
 
 section { padding: 44px 0; border-bottom: 1px solid #5a6269; }
 section h2 { font-size: 24px; color: #fff; margin-bottom: 18px; letter-spacing: -0.5px; }
-
 p { margin-bottom: 14px; }
-p.dim { color: #aaa; }
+
+/* Pull quotes */
+blockquote {
+    margin: 28px 0;
+    padding: 0 0 0 20px;
+    border-left: 3px solid #7ab;
+    font-size: 17px;
+    color: #fff;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+/* Featured essays */
+.featured-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+}
+.featured-card {
+    background: #3e464e;
+    border: 1px solid #5a6269;
+    border-radius: 8px;
+    padding: 20px;
+    transition: border-color 0.2s;
+}
+.featured-card:hover { border-color: #7ab; }
+.featured-card a { border-bottom: none; }
+.featured-card a:hover { background: none; }
+.featured-card .card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    display: block;
+    margin-bottom: 6px;
+    border-bottom: none;
+}
+.featured-card .card-desc {
+    font-size: 13px;
+    color: #aaa;
+    line-height: 1.6;
+}
+.featured-card .card-tag {
+    display: inline-block;
+    font-size: 10px;
+    color: #7ab;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
 
 /* Story markers */
 .marker {
     font-family: -apple-system, sans-serif;
     font-size: 11px;
-    color: #aaa;
+    color: #7ab;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-top: 36px;
     margin-bottom: 8px;
 }
-
-/* Read links */
-.read {
-    display: inline-block;
-    font-size: 13px;
-    color: #aaa;
-    border-bottom: 1px dotted #666;
-    margin-top: 4px;
-}
-.read:hover { color: #fff; }
 
 /* Blog clusters */
 .cluster {
@@ -88,7 +126,7 @@ p.dim { color: #aaa; }
 .cluster a {
     display: block;
     font-size: 14px;
-    color: #ccc;
+    color: #aaa;
     border-bottom: none;
     padding: 3px 0;
 }
@@ -98,57 +136,67 @@ p.dim { color: #aaa; }
 .architecture {
     background: #3e464e;
     border: 1px solid #5a6269;
-    border-radius: 8px;
-    padding: 28px;
-    margin: 24px 0;
+    border-radius: 10px;
+    padding: 36px;
+    margin: 28px 0;
     font-family: 'SF Mono', 'Menlo', monospace;
-    font-size: 14px;
 }
 .arch-outer {
-    border: 2px solid #3a7;
-    border-radius: 8px;
-    padding: 18px;
+    border: 2px solid #5a9;
+    border-radius: 10px;
+    padding: 24px;
     position: relative;
 }
 .arch-outer-label {
     position: absolute;
-    top: -11px;
-    left: 16px;
+    top: -12px;
+    left: 18px;
     background: #3e464e;
-    padding: 0 8px;
-    color: #3a7;
-    font-size: 11px;
-    font-weight: 600;
+    padding: 0 10px;
+    color: #5a9;
+    font-size: 12px;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 .arch-stack {
     border: 1px solid #5a6269;
-    border-radius: 6px;
+    border-radius: 8px;
     overflow: hidden;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
 }
 .arch-layer {
-    padding: 9px 14px;
+    padding: 12px 18px;
     border-bottom: 1px solid #555;
     display: flex;
     justify-content: space-between;
-    background: #4a525a;
+    align-items: center;
 }
 .arch-layer:last-child { border-bottom: none; }
-.arch-layer .num { color: #aaa; font-size: 12px; width: 20px; }
-.arch-layer .name { color: #fff; font-size: 13px; flex-grow: 1; }
-.arch-layer .function { color: #aaa; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.layer-4 { background: #52404a; }
+.layer-3 { background: #484858; }
+.layer-2 { background: #404850; }
+.layer-1 { background: #3a4248; }
+.arch-layer .num { color: #888; font-size: 13px; width: 24px; }
+.arch-layer .name { color: #fff; font-size: 14px; flex-grow: 1; font-weight: 600; }
+.arch-layer .function { color: #999; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
 .arch-helix {
     text-align: center;
-    padding: 8px;
-    color: #a36;
+    padding: 10px;
+    color: #b68;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 1px;
-    border: 1px dashed #a36;
-    border-radius: 4px;
+    border: 1px dashed #b68;
+    border-radius: 6px;
 }
+
+/* Layer descriptions */
+.layer-desc {
+    margin-bottom: 16px;
+}
+.layer-desc strong { color: #fff; }
+.layer-desc .brain { color: #888; font-size: 13px; font-style: italic; }
 
 /* Principles */
 .principle {
@@ -157,18 +205,23 @@ p.dim { color: #aaa; }
     border-left: 2px solid #5a6269;
 }
 .principle strong { color: #fff; }
-.principle p { color: #ccc; margin-bottom: 0; font-size: 14px; }
+.principle p { margin-bottom: 0; font-size: 14px; }
 
 /* Papers */
 .paper {
     background: #3e464e;
     border: 1px solid #5a6269;
-    border-radius: 6px;
-    padding: 14px 18px;
-    margin-bottom: 10px;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-bottom: 12px;
 }
-.paper strong { color: #fff; font-size: 15px; }
-.paper .doi { font-family: 'SF Mono', monospace; font-size: 13px; }
+.paper .paper-title { color: #fff; font-size: 15px; font-weight: 700; display: block; margin-bottom: 4px; }
+.paper .doi { font-family: 'SF Mono', monospace; font-size: 13px; color: #7ab; }
+.paper .meta { font-size: 13px; color: #888; margin-top: 4px; }
+.paper-primary {
+    border-color: #7ab;
+    border-width: 2px;
+}
 
 footer {
     padding: 44px 0;
@@ -182,6 +235,8 @@ footer a { color: #aaa; border-bottom: 1px dotted #666; }
     header h1 { font-size: 28px; }
     .stats-row { gap: 16px; }
     .stats-row .num { font-size: 20px; }
+    .featured-grid { grid-template-columns: 1fr; }
+    .architecture { padding: 20px; }
 }
 </style>
 </head>
@@ -202,6 +257,45 @@ footer a { color: #aaa; border-bottom: 1px dotted #666; }
     </div>
 </header>
 
+<!-- KEY READING -->
+
+<section>
+    <div class="container">
+        <h2>Key Reading</h2>
+        <div class="featured-grid">
+            <div class="featured-card">
+                <a href="https://world.hey.com/martijnaslander/i-think-i-ve-built-a-mythical-machine-cac6597f">
+                    <span class="card-tag">Manifesto</span>
+                    <span class="card-title">I Think I've Built a Mythical Machine</span>
+                    <span class="card-desc">Eighty years after Vannevar Bush described the Memex, someone accidentally built it.</span>
+                </a>
+            </div>
+            <div class="featured-card">
+                <a href="https://world.hey.com/martijnaslander/here-is-everybody-250-years-of-thinking-about-information-043fb698">
+                    <span class="card-tag">Historical Context</span>
+                    <span class="card-title">Here Is Everybody</span>
+                    <span class="card-desc">250 years of thinking about information &mdash; from Otlet to ThetaOS.</span>
+                </a>
+            </div>
+            <div class="featured-card">
+                <a href="https://world.hey.com/martijnaslander/the-synaptic-architecture-of-a-life-00e84079">
+                    <span class="card-tag">Architecture</span>
+                    <span class="card-title">The Synaptic Architecture of a Life</span>
+                    <span class="card-desc">How 560,000 records and 170,000 synapses map a human life.</span>
+                </a>
+            </div>
+            <div class="featured-card">
+                <a href="https://world.hey.com/martijnaslander/the-information-doctrine-by-aslander-broere-and-meinema-e900f560">
+                    <span class="card-tag">Doctrine</span>
+                    <span class="card-title">The Information Doctrine</span>
+                    <span class="card-desc">By Aslander, Broere &amp; Meinema. The philosophical foundation.</span>
+                </a>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 8px;"><a href="https://yogiaria.substack.com/p/as-we-may-think-has-become-real" style="font-size: 13px; color: #888;">External: <em>As We May Think Has Become Real</em> &mdash; Aria Khodaverdi on ThetaOS</a></p>
+    </div>
+</section>
+
 <!-- PART 1: HOW I GOT HERE -->
 
 <section>
@@ -214,15 +308,14 @@ footer a { color: #aaa; border-bottom: 1px dotted #666; }
 
         <p>Along the way I gave 2,500+ talks, wrote 17 books, co-founded the <a href="https://digitalefitheid.nl">Digital Fitness movement</a> with Mark Meinema, and started the <a href="https://pkmsummit.com">PKM Summit</a> with Lykle de Vries and Kim van den Berg.</p>
 
-        <p>I was, as I once wrote, <em>a miniature Forrest Gump, stumbling into the action by accident</em>. I was doing PKM my whole life without knowing it had a name.</p>
+        <blockquote>I was a miniature Forrest Gump, stumbling into the action by accident. I was doing PKM my whole life without knowing it had a name.</blockquote>
 
-        <p class="dim">The full story of these forty years is in <a href="https://world.hey.com/martijnaslander/shownotes-martijn-aslander-a-digital-fitness-missionary-information-capitalist-d1775251">this piece</a>.</p>
+        <p style="color: #888;">The full story of these forty years is in <a href="https://world.hey.com/martijnaslander/shownotes-martijn-aslander-a-digital-fitness-missionary-information-capitalist-d1775251">this piece</a>.</p>
 
         <div class="cluster">
             <a href="https://world.hey.com/martijnaslander/obsidian-down-the-rabbit-hole-d020a5e2">Obsidian: Down the Rabbit Hole</a>
             <a href="https://world.hey.com/martijnaslander/pkm-persoonlijk-kennis-management-a5574491">PKM: Personal Knowledge Management</a>
             <a href="https://world.hey.com/martijnaslander/we-gebruiken-het-verkeerde-deel-van-ons-brein-bij-kenniswerk-4c2e23af">We're Using the Wrong Part of Our Brain</a>
-            <a href="https://world.hey.com/martijnaslander/readwise-voor-mij-een-revolutie-qua-leren-en-lezen-e3d33277">Readwise: A Revolution in Learning</a>
             <a href="https://world.hey.com/martijnaslander/de-informatiehuishouding-van-het-rijk-en-die-van-de-ambtenaren-c0f0967e">The Information Household of the State</a>
         </div>
     </div>
@@ -240,13 +333,13 @@ footer a { color: #aaa; border-bottom: 1px dotted #666; }
 
         <p>Weeks of recovery. Time to think, to spar, to reconstruct. While my brain was healing, it understood itself better than ever. The enforced slowness turned out to be a gift.</p>
 
-        <p>My first public appearance after the stroke was a demo of Obsidian. Someone in the audience asked a question that sparked the idea to write a book. I discovered I could write a book with AI as my partner. <em>Starten met Obsidian</em> was published within weeks.</p>
+        <p>My first public appearance after the stroke was a demo of Obsidian. Someone in the audience asked a question that sparked the idea to write a book. I discovered I could write a book with AI as my partner. <em>Starten met Obsidian</em> was published within weeks. It was refined at the Knowledge Summit in Dublin, where the conversations sharpened everything.</p>
 
         <div class="cluster">
             <a href="https://world.hey.com/martijnaslander/de-schrijver-als-ai-dirigent-192a79a5">The Writer as AI Conductor?</a>
             <a href="https://world.hey.com/martijnaslander/waarom-een-boek-over-obsidian-eigenlijk-over-alles-gaat-04a6dd76">Why a Book About Obsidian Is Really About Everything</a>
             <a href="https://world.hey.com/martijnaslander/alles-over-mijn-boek-starten-met-obsidian-607727da">Everything About My Book</a>
-            <a href="https://world.hey.com/martijnaslander/ai-boekschrijfexperiment-waarom-ik-denk-dat-transparantie-best-relevant-wordt-38f44fc0">AI Book Experiment: Why Transparency Matters</a>
+            <a href="https://world.hey.com/martijnaslander/de-knowledge-summit-in-dublin-6a2e0131">The Knowledge Summit in Dublin</a>
         </div>
     </div>
 </section>
@@ -259,9 +352,13 @@ footer a { color: #aaa; border-bottom: 1px dotted #666; }
 
         <div class="marker">Summer 2025 &mdash; Discoveries</div>
 
-        <p>I discovered I could file a Freedom of Information request using AI &mdash; triggered by a rat problem in my neighbourhood. That led me to the bigger question: why is government information so hard to access? The answer was file formats. SharePoint. Documents as containers instead of information as structure.</p>
+        <p>I discovered I could file a Freedom of Information request using AI &mdash; triggered by a rat problem in my neighbourhood. That led me to the bigger question: why is government information so hard to access?</p>
 
-        <p>Around the same time I tried to parse my 14GB Gmail archive with Python scripts &mdash; written with AI. It worked. And it revealed that there was an entire system hidden in my own data, waiting to be connected.</p>
+        <p>The answer was file formats. SharePoint. Documents as containers instead of information as structure. I started researching and couldn't stop.</p>
+
+        <p>Around the same time I tried to parse my 14GB Gmail archive with Python scripts written with AI. It worked. And it revealed that there was an entire system hidden in my own data, waiting to be connected.</p>
+
+        <blockquote>If you can find and access information faster than others, you will gain huge advantage.</blockquote>
 
         <div class="cluster">
             <a href="https://world.hey.com/martijnaslander/dankzij-een-rattenprobleem-ontdekte-ik-een-veel-groter-vraagstuk-voor-mijn-gemeente-3e334691">A Rat Problem Revealed a Much Bigger Issue</a>
@@ -283,40 +380,39 @@ footer a { color: #aaa; border-bottom: 1px dotted #666; }
             <a href="https://world.hey.com/martijnaslander/mijn-computer-luistert-nu-echt-naar-wat-ik-wil-026bf30b">My Computer Actually Listens Now</a>
             <a href="https://world.hey.com/martijnaslander/cronjobs-wat-ik-leerde-van-een-verdomd-krachtige-computertool-uit-de-jaren-70-f90a5577">Cronjobs: A Powerful Tool from the 1970s</a>
             <a href="https://world.hey.com/martijnaslander/de-onzichtbare-orde-achter-je-scherm-over-vectorsearch-normaalvormen-en-meer-f897944f">The Invisible Order Behind Your Screen</a>
-            <a href="https://world.hey.com/martijnaslander/tellen-hoe-vaak-ik-op-alt-tab-klik-ik-maakte-er-mijn-eerste-mac-app-voor-82bdc7fe">I Built My First Mac App</a>
         </div>
 
         <div class="marker">December 2025 &mdash; ThetaOS and the Life Lens System</div>
 
-        <p>In December 2025, the system I had been building got a name: ThetaOS. And almost immediately I realised it was something more &mdash; a <em>Life Lens System</em>. Not a tool. Not an app. A way of looking at an entire life through structured, connected data.</p>
+        <p>In December, the system I had been building got a name: ThetaOS. And almost immediately I realised it was something more &mdash; a <em>Life Lens System</em>. Not a tool. Not an app. A way of looking at an entire life through structured, connected data.</p>
 
         <div class="cluster">
             <a href="https://world.hey.com/martijnaslander/ik-zit-op-iets-bijzonders-en-ik-krijg-het-niet-uitgelegd-294621fa">I'm Sitting on Something Special and I Can't Explain It</a>
             <a href="https://world.hey.com/martijnaslander/eindelijk-weet-ik-wat-thetaos-is-een-life-lens-system-lls-de019c93">Finally I Know What ThetaOS Is: A Life Lens System</a>
             <a href="https://world.hey.com/martijnaslander/thetaos-in-een-historisch-perspectief-250-jaar-zoeken-naar-verbindingen-tussen-informatie-6b88f227">ThetaOS in Historical Perspective: 250 Years</a>
             <a href="https://world.hey.com/martijnaslander/het-rendement-van-een-life-lens-system-emergentie-in-mijn-praktijk-377f68ad">The Return on a Life Lens System: Emergence</a>
-            <a href="https://world.hey.com/martijnaslander/de-naam-theta-voor-mijn-nieuwe-systeem-raker-dan-ik-dacht-29b2184c">The Name Theta &mdash; More Fitting Than I Thought</a>
         </div>
 
         <div class="marker">February 2026 &mdash; Tom is Born</div>
 
         <p>On February 19, 2026, I created Tom &mdash; a personal AI guide built on top of ThetaOS. Not a chatbot. A coach, advisor, strategist, biographer and archivist rolled into one. Tom has access to my entire life: 18,000+ contacts, every bank transaction, every photo, every check-in, every text I've ever written.</p>
 
-        <p>On March 14, Kees Verhoeven became the first person other than me to talk to Tom. Within weeks, more people followed &mdash; Frank Meeuwsen, Joost Plattel, Sylvia Holtslag. Each conversation taught me something about what the system could do that I hadn't anticipated.</p>
+        <p>On March 14, Kees Verhoeven became the first person other than me to talk to Tom. Within weeks, more followed &mdash; Frank Meeuwsen, Joost Plattel, C&eacute;line Cl&eacute;men&ccedil;on, Aria Khodaverdi. Each conversation revealed capabilities I hadn't anticipated.</p>
+
+        <blockquote>The system doesn't hallucinate because it retrieves, never generates. Every answer comes from a database query, not from pattern completion.</blockquote>
 
         <div class="cluster">
             <a href="https://world.hey.com/martijnaslander/elke-week-terwijl-ik-slaap-wordt-mijn-claude-code-setup-slimmer-deb38af0">Every Week While I Sleep, My Setup Gets Smarter</a>
             <a href="https://world.hey.com/martijnaslander/ai-is-een-kleuter-en-kleuters-kun-je-opvoeden-4af212ec">AI Is a Toddler. Toddlers Can Be Raised.</a>
-            <a href="https://world.hey.com/martijnaslander/van-vibe-coding-naar-softwarearchitectuur-ik-deed-leuke-inzichten-op-ed9bd928">From Vibe-Coding to Software Architecture</a>
         </div>
 
         <div class="marker">March 2026 &mdash; Genealogy, Reasoning, and the Brain</div>
 
-        <p>I discovered that AI could read old archives &mdash; birth certificates, church records, handwritten documents from the 1700s. I traced bloodlines eight generations back in minutes. This led me to understand what <em>agentic AI</em> really means: not a tool that answers questions, but a system that autonomously investigates.</p>
+        <p>I discovered that AI could read old archives &mdash; birth certificates, church records, handwritten documents from the 1700s. I traced bloodlines eight generations back in minutes. This taught me what <em>agentic AI</em> really means: not a tool that answers questions, but a system that autonomously investigates.</p>
 
-        <p>I realised I needed a reasoning module &mdash; something that could look at evidence from multiple perspectives and jump past biases. I built the <em>Magische 13</em>: thirteen perspectives from Sherlock Holmes to Hannah Arendt, each attacking the same thesis from a different angle.</p>
+        <p>I realised I needed a reasoning module &mdash; something to look at evidence from multiple perspectives and jump past biases. I built the <em>Magische 13</em>: thirteen perspectives from Sherlock Holmes to Hannah Arendt, each attacking the same thesis from a different angle.</p>
 
-        <p>Then C&eacute;line Cl&eacute;men&ccedil;on and Aria Khodaverdi visited. Their questions pushed me into brain metaphors I hadn't explored: cerebrospinal fluid, neurotransmitters, neural cable thickness. Aria published <a href="https://yogiaria.substack.com/p/as-we-may-think-has-become-real">As We May Think Has Become Real</a> on Substack, placing ThetaOS in the lineage of Bush, Engelbart and Nelson.</p>
+        <p>Then C&eacute;line and Aria visited. Their questions pushed me into brain metaphors I hadn't explored: cerebrospinal fluid, neurotransmitters, neural cable thickness. Aria published <a href="https://yogiaria.substack.com/p/as-we-may-think-has-become-real">As We May Think Has Become Real</a>, placing ThetaOS in the lineage of Bush, Engelbart and Nelson.</p>
 
         <div class="cluster">
             <a href="https://world.hey.com/martijnaslander/ai-als-geniale-genealoog-een-vakgebied-geherdefinieerd-24304f89">AI as Genius Genealogist</a>
@@ -331,11 +427,13 @@ footer a { color: #aaa; border-bottom: 1px dotted #666; }
 
         <p>In four consecutive nights, the architecture crystallised. Each layer emerged when the previous ones couldn't explain what was happening. On the fourth day, during a live demo for law enforcement professionals, a woman named Joy Otten said one word &mdash; <em>choroid plexus</em> &mdash; and added the final piece.</p>
 
+        <blockquote>The model wasn't designed. It was discovered. The data was always there. The architecture emerged from the data.</blockquote>
+
         <div class="cluster">
             <a href="https://world.hey.com/martijnaslander/onze-intelligentie-zit-in-synapsen-niet-in-neuronen-c2ce2ccf">Our Intelligence Lives in Synapses, Not Neurons</a>
-            <a href="https://world.hey.com/martijnaslander/here-is-everybody-250-years-of-thinking-about-information-043fb698">Here Is Everybody &mdash; 250 Years of Information Thinking</a>
+            <a href="https://world.hey.com/martijnaslander/here-is-everybody-250-years-of-thinking-about-information-043fb698">Here Is Everybody &mdash; 250 Years</a>
             <a href="https://world.hey.com/martijnaslander/het-data-netwerkeffect-mijn-lls-systeem-wordt-steeds-sneller-en-krachtiger-46454c40">The Data Network Effect</a>
-            <a href="https://world.hey.com/martijnaslander/ik-bleek-meer-dan-anderhalf-miljoen-woorden-geschreven-te-hebben-f79b7a95">I Turned Out to Have Written 1.5 Million Words</a>
+            <a href="https://world.hey.com/martijnaslander/ik-bleek-meer-dan-anderhalf-miljoen-woorden-geschreven-te-hebben-f79b7a95">I've Written 1.5 Million Words</a>
             <a href="https://world.hey.com/martijnaslander/i-think-i-ve-built-a-mythical-machine-cac6597f">I Think I've Built a Mythical Machine</a>
         </div>
     </div>
@@ -345,37 +443,36 @@ footer a { color: #aaa; border-bottom: 1px dotted #666; }
 
 <section>
     <div class="container">
-        <h2>The Model</h2>
-        <p class="dim">Four stacked layers. One helix running through. One membrane wrapped around.</p>
+        <h2>The Six-Layer Model</h2>
 
         <div class="architecture">
             <div class="arch-outer">
                 <span class="arch-outer-label">6 &middot; Choroid Plexus</span>
                 <div class="arch-stack">
-                    <div class="arch-layer"><span class="num">4</span><span class="name">Action Potential</span><span class="function">retrieval</span></div>
-                    <div class="arch-layer"><span class="num">3</span><span class="name">Diamond Layer</span><span class="function">enrichment</span></div>
-                    <div class="arch-layer"><span class="num">2</span><span class="name">Theta-Myelin</span><span class="function">consolidation</span></div>
-                    <div class="arch-layer"><span class="num">1</span><span class="name">Synaptic Stratification</span><span class="function">encoding</span></div>
+                    <div class="arch-layer layer-4"><span class="num">4</span><span class="name">Action Potential</span><span class="function">retrieval</span></div>
+                    <div class="arch-layer layer-3"><span class="num">3</span><span class="name">Diamond Layer</span><span class="function">enrichment</span></div>
+                    <div class="arch-layer layer-2"><span class="num">2</span><span class="name">Theta-Myelin</span><span class="function">consolidation</span></div>
+                    <div class="arch-layer layer-1"><span class="num">1</span><span class="name">Synaptic Stratification</span><span class="function">encoding</span></div>
                 </div>
                 <div class="arch-helix">5 &middot; Double Helix &mdash; epistemology across all layers</div>
             </div>
         </div>
 
-        <p><strong>Layer 1: Synaptic Stratification.</strong> Ten levels of evidence, from intentional contact (a phone call) to pattern recognition (AI-detected co-occurrence). Every connection carries its proof.</p>
+        <div class="layer-desc"><p><strong>1. Synaptic Stratification</strong> &mdash; Ten levels of evidence, from intentional contact (a phone call) to pattern recognition (AI-detected co-occurrence). Every connection carries its proof.</p><p class="brain">Brain analogy: how synapses form</p></div>
 
-        <p><strong>Layer 2: Theta-Myelin.</strong> Completeness as insulation. A thin synapse (name only) fires slowly. A thick synapse (name + date + location + context + photo) fires instantly.</p>
+        <div class="layer-desc"><p><strong>2. Theta-Myelin</strong> &mdash; Completeness as insulation. A thin synapse (name only) fires slowly. A thick synapse (name + date + location + context + photo) fires instantly.</p><p class="brain">Brain analogy: the myelin sheath around nerve fibers</p></div>
 
-        <p><strong>Layer 3: Diamond Layer.</strong> Eight dimensions per synapse: temporality, directionality, valence, weight, social graph, context, decay, hub value.</p>
+        <div class="layer-desc"><p><strong>3. Diamond Layer</strong> &mdash; Eight dimensions per synapse: temporality, directionality, valence, weight, social graph, context, decay, and hub value.</p><p class="brain">Brain analogy: the diamond-hard coating that makes synapses indestructible</p></div>
 
-        <p><strong>Layer 4: Action Potential.</strong> How the network fires. Threshold, saltatory conduction, payload, excitation vs. inhibition, summation, refractory period.</p>
+        <div class="layer-desc"><p><strong>4. Action Potential</strong> &mdash; How the network fires. Threshold, saltatory conduction, payload, excitation vs. inhibition, summation, refractory period.</p><p class="brain">Brain analogy: the electrical pulse that makes neurons fire</p></div>
 
-        <p><strong>Layer 5: Double Helix.</strong> Every synapse carries two strands: evidence (how strong is the proof?) and meaning (is this a fact, a belief, or a hypothesis?). Layer 10 &mdash; human confirmation &mdash; is the helicase that opens and reseals them.</p>
+        <div class="layer-desc"><p><strong>5. Double Helix</strong> &mdash; Every synapse carries two strands: evidence (how strong?) and meaning (fact, belief, or hypothesis?). Layer 10 &mdash; human confirmation &mdash; is the helicase.</p><p class="brain">DNA analogy: two strands encoding different information, bound at base pairs</p></div>
 
-        <p><strong>Layer 6: Choroid Plexus.</strong> The immune system of the network. Filtration at the gate, nightly cleansing, immune patrol, homeostasis. Not stacked on top &mdash; wrapped around everything.</p>
+        <div class="layer-desc"><p><strong>6. Choroid Plexus</strong> &mdash; The immune system of the network. Filtration at the gate, nightly cleansing, immune patrol, homeostasis. Not stacked on top &mdash; wrapped around everything.</p><p class="brain">Brain analogy: the membrane that produces cerebrospinal fluid and guards the blood-brain barrier</p></div>
     </div>
 </section>
 
-<!-- LESSONS -->
+<!-- WHAT I'VE LEARNED -->
 
 <section>
     <div class="container">
@@ -391,7 +488,7 @@ footer a { color: #aaa; border-bottom: 1px dotted #666; }
 
         <div class="principle"><p><strong>Human in the loop, always.</strong> Layer 10 is human confirmation. The double helix cannot be read without a human helicase.</p></div>
 
-        <div class="principle"><p><strong>The gatekeeper was already there.</strong> My Obsidian vault &mdash; 35,000 files, 153,000 cross-references, 12,680 hand-validated entities &mdash; turned out to be the choroid plexus I thought I still needed to build. Twenty years of curation is not a dataset. It's an immune system.</p></div>
+        <div class="principle"><p><strong>The gatekeeper was already there.</strong> My Obsidian vault &mdash; 35,000 files, 153,000 cross-references, 12,680 hand-validated entities &mdash; turned out to be the choroid plexus I thought I still needed to build.</p></div>
     </div>
 </section>
 
@@ -400,16 +497,38 @@ footer a { color: #aaa; border-bottom: 1px dotted #666; }
 <section>
     <div class="container">
         <h2>Papers</h2>
-        <p class="dim" style="margin-bottom: 20px;">Published on Zenodo (CERN). Not peer-reviewed. Open to critique.</p>
-        <div class="paper"><strong>Benzaldehyde as the Active Compound: A Brief Synthesis</strong><br><a class="doi" href="https://doi.org/10.5281/zenodo.18729890">doi:10.5281/zenodo.18729890</a></div>
-        <div class="paper"><strong>The Benzaldehyde Hypothesis: Full Literature Review</strong><br><a class="doi" href="https://doi.org/10.5281/zenodo.18728835">doi:10.5281/zenodo.18728835</a></div>
-        <div class="paper"><strong>De Benzaldehyde-Hypothese (Dutch)</strong><br><a class="doi" href="https://doi.org/10.5281/zenodo.18728986">doi:10.5281/zenodo.18728986</a></div>
+        <p style="color: #888; margin-bottom: 20px;">Published on Zenodo (CERN). Not peer-reviewed. Preprints, open to critique.</p>
+
+        <div class="paper paper-primary">
+            <span class="paper-title">The Information Problem Was Never the Real Problem</span>
+            <span class="meta">Building a Confirmation-Driven Personal Knowledge Graph and the Four Principles That Emerge From Practice</span><br>
+            <a class="doi" href="https://doi.org/10.5281/zenodo.19202082">doi:10.5281/zenodo.19202082</a>
+            <p class="meta">The academic paper on ThetaOS. 339 tables, 91,000+ records, four design principles. Practitioner case study contextualised within Otlet, Bush and Bell.</p>
+        </div>
+
+        <div class="paper">
+            <span class="paper-title">Benzaldehyde as the Active Compound: A Brief Synthesis</span><br>
+            <a class="doi" href="https://doi.org/10.5281/zenodo.18729890">doi:10.5281/zenodo.18729890</a>
+            <p class="meta">A connection in cancer research that four scientific domains missed for fifty years.</p>
+        </div>
+
+        <div class="paper">
+            <span class="paper-title">The Benzaldehyde Hypothesis: Full Literature Review</span><br>
+            <a class="doi" href="https://doi.org/10.5281/zenodo.18728835">doi:10.5281/zenodo.18728835</a>
+            <p class="meta">English &middot; Connecting Saito (2025), Kochi (1980), and the amygdalin debate.</p>
+        </div>
+
+        <div class="paper">
+            <span class="paper-title">De Benzaldehyde-Hypothese (Dutch)</span><br>
+            <a class="doi" href="https://doi.org/10.5281/zenodo.18728986">doi:10.5281/zenodo.18728986</a>
+            <p class="meta">Same research, original language.</p>
+        </div>
     </div>
 </section>
 
 <footer>
     <div class="container">
-        <p>Martijn Aslander &middot; <a href="https://orcid.org/0009-0004-2344-0620">ORCID</a> &middot; <a href="https://pkmsummit.com">PKM Summit</a> &middot; <a href="https://martijnaslander.github.io/luhmann-zettelkasten/">Luhmann Project</a> &middot; <a href="https://yogiaria.substack.com/p/as-we-may-think-has-become-real">As We May Think Has Become Real</a></p>
+        <p>Martijn Aslander &middot; <a href="https://orcid.org/0009-0004-2344-0620">ORCID</a> &middot; <a href="https://pkmsummit.com">PKM Summit</a> &middot; <a href="https://martijnaslander.github.io/luhmann-zettelkasten/">Luhmann Project</a></p>
         <p style="margin-top: 8px;">This is a living project. The site grows as the thinking grows.</p>
     </div>
 </footer>
