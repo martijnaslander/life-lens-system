@@ -28,7 +28,15 @@ a:hover { color: #fff; background-color: #606870; border-color: #606870; }
 header {
     padding: 80px 0 50px;
     border-bottom: 1px solid #5a6269;
+    text-align: center;
 }
+header .container { text-align: left; }
+header img { display: block; margin: 0 auto; }
+header .author-line { text-align: center; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; z-index: 100; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; cursor: pointer; background: #4a525a; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: #4a525a; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
 header h1 {
     font-size: 38px;
     font-weight: 700;
@@ -243,13 +251,18 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 </head>
 <body>
 
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="index-nl.html">NL</a>
+</div>
+
 <header>
     <div class="container">
         <h1>The Life Lens System</h1>
         <p class="intro">What happens when a generalist who has been collecting information since age twelve stops explaining and starts building. This is the story of how forty years of curiosity turned into a six-layer synaptic architecture for personal knowledge &mdash; and what it revealed along the way.</p>
         <p class="author-line" style="margin-bottom: 36px;">by <a href="https://orcid.org/0009-0004-2344-0620">Martijn Aslander</a> &middot; Fellow KNVI &middot; Founder <a href="https://pkmsummit.com">PKM Summit</a></p>
-        <div style="margin-bottom: 28px;">
-            <img src="martijn.webp" alt="Martijn Aslander at the PKM Summit, shoes off, laptop open, building." style="width: 100%; max-width: 420px; border-radius: 10px; display: block;">
+        <div style="margin-bottom: 28px; text-align: center;">
+            <img src="martijn.webp" alt="Martijn Aslander at the PKM Summit, shoes off, laptop open, building." style="width: 100%; max-width: 420px; border-radius: 10px; display: inline-block;">
             <p style="font-size: 11px; color: #888; margin-top: 6px;">Photo: Ester Overmars</p>
         </div>
         <div class="stats-row">
@@ -807,5 +820,14 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
     </div>
 </footer>
 
+<script>
+// Auto-detect Dutch browser language and redirect to NL version
+// Only on first visit (don't override manual choice)
+if (!sessionStorage.getItem('lang-chosen') && navigator.language.startsWith('nl') && !window.location.pathname.includes('-nl')) {
+    // Show a subtle prompt instead of auto-redirect
+    // Uncomment the next line to auto-redirect:
+    // window.location.href = 'index-nl.html';
+}
+</script>
 </body>
 </html>
