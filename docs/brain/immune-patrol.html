@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Immune Patrol — Life Lens System</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+.status-designed { background: rgba(221,187,136,0.2); color: #db8; border: 1px solid #db8; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+.nav-btn.disabled { color: #555; border-color: #444; background: none; pointer-events: none; }
+.nav-count { font-size: 14px; color: #b0b0b0; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="immune-patrol-nl.html">NL</a>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 24px;">
+    <a class="nav-btn" href="cerebrospinal-fluid.html">&larr; CSF</a>
+    <a class="back" href="../#emulation-table" style="border: none;">&larr; Overview</a>
+    <a class="nav-btn" href="homeostasis.html">Homeostasis &rarr;</a>
+</div>
+
+<div class="content">
+    <div class="topic-label">Brain Mechanism 11 of 19</div>
+    <h1>Immune Patrol</h1>
+    <p class="subtitle">Selected cells patrol for inconsistencies.</p>
+
+    <h2>What is it</h2>
+    <p>The brain has its own immune system, separate from the body's. Microglia &mdash; small, mobile cells that make up about 10-15% of all cells in the brain &mdash; are its primary defenders. They constantly patrol the neural landscape, extending and retracting their branches to sample the local environment. When they find something wrong, they act: engulfing dead cells, pruning damaged synapses, releasing inflammatory signals to recruit help.</p>
+    <p>Microglia are not passive sentinels. They are active, roaming inspectors. In a healthy brain, each microglial cell surveys its entire territory every few hours, checking every synapse, every cell body, every stretch of neural fiber in its domain. They are remarkably thorough.</p>
+    <p>What makes them fascinating is their dual role. In their resting state, they maintain the brain by clearing debris and supporting healthy synapses. In their activated state, they fight infection and injury. The switch between these states is rapid and context-dependent. The same cell that was gently pruning a synapse five minutes ago can be aggressively attacking a pathogen now.</p>
+
+    <h2>What it does in the brain</h2>
+    <p>Microglial patrol is what keeps the brain internally consistent. Damaged neurons, failed synapses, misfolded proteins, bacterial intruders &mdash; microglia find them and deal with them before they cause widespread damage. It's quality control at the cellular level, running continuously in the background.</p>
+    <p>When microglia detect a problem, they don't just remove it. They signal to neighboring cells about what they found. This creates a local immune response that can isolate a problem area, recruit repair mechanisms, and prevent the damage from spreading. It's a distributed detection and response system with no central command.</p>
+    <p>Chronic microglial activation &mdash; from ongoing infection, repeated head injuries, or autoimmune conditions &mdash; is itself harmful. The inflammatory signals that help in the short term damage neural tissue in the long term. This is the paradox of immune patrol: too little and damage accumulates, too much and the patrol itself causes damage. The balance is everything.</p>
+
+    <h2>What it does in ThetaOS</h2>
+    <p>The Magische 13 &mdash; a panel of 13 specialised AI reviewers &mdash; are ThetaOS's microglial patrol. Each reviewer has a specific domain: one checks factual consistency, another reviews emotional tone, another evaluates logical structure, another spots contradictions with previously stored knowledge. They patrol every significant output of the system, checking for inconsistencies before they reach the user.</p>
+    <p>Like microglia, these reviewers operate in the background. When Tom prepares a dossier or an analysis, the relevant members of the Magische 13 examine it before it's presented. They flag contradictions, challenge unsupported claims, and verify that the output matches what the database actually contains.</p>
+
+    <div class="highlight">
+        <p>The design mirrors microglial behaviour: each of the 13 reviewers has a territory (a domain of expertise), patrols autonomously (no central orchestrator decides when they check), and can escalate (flag something for human review when the inconsistency is too complex to resolve automatically). The system doesn't need a single point of failure as quality control. Thirteen independent patrols, each covering their domain, create overlapping coverage &mdash; exactly like microglial territories in the brain overlap to ensure no synapse goes unchecked.</p>
+    </div>
+
+    <p>This mechanism is designed but not yet fully autonomous. Currently, the Magische 13 are invoked on demand for specific review tasks. The goal is continuous, background patrol &mdash; where every database write, every generated output, and every inferred connection is automatically checked by the relevant reviewers before being committed or presented.</p>
+
+    <span class="status-badge status-designed">Designed &mdash; Layer 6, Magische 13</span>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="cerebrospinal-fluid.html">&larr; CSF</a>
+    <span class="nav-count">11 / 19</span>
+    <a class="nav-btn" href="homeostasis.html">Homeostasis &rarr;</a>
+</div>
+
+</body>
+</html>

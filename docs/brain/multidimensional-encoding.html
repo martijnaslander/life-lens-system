@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multidimensional Encoding — Life Lens System</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+.status-built { background: rgba(85,170,153,0.2); color: #5a9; border: 1px solid #5a9; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+.nav-btn.disabled { color: #555; border-color: #444; background: none; pointer-events: none; }
+.nav-count { font-size: 14px; color: #b0b0b0; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="multidimensional-encoding-nl.html">NL</a>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 24px;">
+    <a class="nav-btn" href="hebbian-learning.html">&larr; Hebbian</a>
+    <a class="back" href="../#emulation-table" style="border: none;">&larr; Overview</a>
+    <a class="nav-btn" href="action-potential.html">Action Pot. &rarr;</a>
+</div>
+
+<div class="content">
+    <div class="topic-label">Brain Mechanism 5 of 19</div>
+    <h1>Multidimensional Encoding</h1>
+    <p class="subtitle">Direction, emotion, time, context per connection.</p>
+
+    <h2>What is it</h2>
+    <p>A memory in your brain is never a single data point. It's encoded across multiple dimensions simultaneously: what happened, when it happened, where you were, how you felt, who was there, what you could smell, what you were thinking about. Each dimension is stored in a different brain region, yet they activate together as one unified experience.</p>
+    <p>This is radically different from how databases normally work. A traditional database stores a fact in one row with one timestamp. Your brain stores the same fact as a constellation of activations across dozens of neural networks, each contributing a different dimension of meaning.</p>
+    <p>The richness of recall depends on how many dimensions were encoded. A boring Tuesday has few dimensions. Your wedding day has dozens. That's why you remember one and not the other &mdash; not because of importance, but because of encoding depth.</p>
+
+    <h2>What it does in the brain</h2>
+    <p>When you remember a holiday, you don't retrieve a file. You reconstruct the experience from its dimensions: the hippocampus provides spatial context, the amygdala provides emotional tone, the temporal cortex provides the narrative sequence, the sensory cortices provide sights and sounds. Each dimension is stored separately, but they are cross-linked so that activating one can trigger the rest.</p>
+    <p>This is why a smell can unlock an entire memory. The olfactory dimension connects to all the other dimensions of that experience. Pull one thread and the whole tapestry follows. The more dimensions were encoded, the more threads there are to pull.</p>
+    <p>It's also why eyewitness testimony is unreliable. When you recall a multidimensional memory, you're reconstructing it from fragments. If one dimension is weak or missing, the brain fills in the gap with plausible fiction. The reconstruction feels complete, but it's partially invented.</p>
+
+    <h2>What it does in ThetaOS</h2>
+    <p>Layer 3 and the Diamond Layer implement multidimensional encoding. Every connection in the system carries not just a link, but a full set of dimensions: direction (who initiated), temporal context (when, how often, what period), emotional valence (from text analysis), evidence type (photo, text, transaction, call), and confidence level.</p>
+    <p>A single connection between two people might carry: 14 co-occurrences in photos (visual dimension), 8 mentions in writing (narrative dimension), 3 shared transactions (financial dimension), a specific date range (temporal dimension), and sentiment scores from the text mentions (emotional dimension).</p>
+
+    <div class="highlight">
+        <p>The Diamond Layer adds epistemological dimensions: is this a fact (observed in data), a belief (stated by Martijn), a hypothesis (inferred by the system), or a contradiction (conflicting evidence)? A traditional database says "A knows B." ThetaOS says "A knows B, confirmed across 5 evidence types, strongest in 2019-2022, with positive sentiment, initiated primarily by A, and this is a measured fact, not an assumption."</p>
+    </div>
+
+    <p>This encoding depth is what allows Tom to answer not just "do you know this person?" but "how do you know them, since when, how well, in what context, and how sure are we?" &mdash; the same way your brain answers those questions, by reading across the dimensions of a multidimensional memory.</p>
+
+    <span class="status-badge status-built">Built &mdash; Layer 3, Diamond Layer</span>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="hebbian-learning.html">&larr; Hebbian</a>
+    <span class="nav-count">5 / 19</span>
+    <a class="nav-btn" href="action-potential.html">Action Pot. &rarr;</a>
+</div>
+
+</body>
+</html>

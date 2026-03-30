@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Long-Term Potentiation — Life Lens System</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+.status-built { background: rgba(85,170,153,0.2); color: #5a9; border: 1px solid #5a9; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+.nav-btn.disabled { color: #555; border-color: #444; background: none; pointer-events: none; }
+.nav-count { font-size: 14px; color: #b0b0b0; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="long-term-potentiation-nl.html">NL</a>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 24px;">
+    <a class="nav-btn" href="myelin.html">&larr; Myelin</a>
+    <a class="back" href="../#emulation-table" style="border: none;">&larr; Overview</a>
+    <a class="nav-btn" href="hebbian-learning.html">Hebbian &rarr;</a>
+</div>
+
+<div class="content">
+    <div class="topic-label">Brain Mechanism 3 of 19</div>
+    <h1>Long-Term Potentiation</h1>
+    <p class="subtitle">Repetition strengthens connections.</p>
+
+    <h2>What is it</h2>
+    <p>Long-Term Potentiation &mdash; LTP &mdash; is the process by which a synapse becomes stronger when it is activated repeatedly. Fire a signal across the same connection many times, and the receiving neuron becomes more sensitive to that signal. The threshold drops. The response gets faster. The connection becomes preferred.</p>
+    <p>LTP was first observed in rabbit brains in 1973 by Terje L&oslash;mo and Tim Bliss. They stimulated a neural pathway with rapid, repeated pulses and found that the synapse stayed strengthened for hours, days, even weeks afterward. It was the first physical evidence that repetition literally changes the brain's wiring.</p>
+    <p>Think of it as a dirt path through a field. Walk it once and the grass bends back. Walk it every day and you get a permanent trail. LTP is the mechanism that turns temporary activation into lasting structure.</p>
+
+    <h2>What it does in the brain</h2>
+    <p>LTP is widely considered the cellular basis of learning and memory. When you study a fact, practise a chord, or repeat someone's name, you are triggering LTP. The synapse between the relevant neurons grows more receptors on the receiving side, releases more neurotransmitters on the sending side, and sometimes even grows new synaptic connections between the same two neurons.</p>
+    <p>This is why cramming the night before an exam works poorly compared to spaced repetition over weeks. A single intense session triggers short-term potentiation &mdash; it fades. Repeated sessions over time trigger LTP &mdash; it persists. The brain rewards consistency, not intensity.</p>
+    <p>LTP also explains why first impressions are so sticky. A highly emotional or novel event triggers a burst of activity that mimics rapid repetition, producing instant potentiation. You remember where you were on September 11 because the emotional intensity acted like a thousand repetitions compressed into minutes.</p>
+
+    <h2>What it does in ThetaOS</h2>
+    <p>Every time a connection between two entities appears in a new data source, its weight increases. Peter Ros doesn't have a single link to Martijn &mdash; he has 153 photo-days, 92 text mentions, dozens of calendar entries, and multiple transaction records. Each appearance is a repetition event. Each repetition thickens the connection.</p>
+    <p>The system tracks not just whether a link exists, but how many times it has been independently confirmed across different layers. A person mentioned once in a single email has a potentiation score of 1. A person confirmed across photos, text, transactions, calendar, and phone records has a potentiation score that makes their dossier almost instant to generate.</p>
+
+    <div class="highlight">
+        <p>IJssalon Garrone: 79 recorded visits, 587 euros in transactions. Each visit is a potentiation event. The system doesn't just know Garrone exists &mdash; it knows it's a high-frequency location with a specific spending pattern, seasonal peaks, and connections to specific people who appear in those visits. That's LTP: repetition turned into rich, fast, reliable recall.</p>
+    </div>
+
+    <p>The nightly cronjob recalculates potentiation scores across all 309 tables, ensuring that every new data point from the day strengthens the connections it touches. Tomorrow's system remembers better than today's &mdash; not because it has more data, but because the repeated signals have been consolidated.</p>
+
+    <span class="status-badge status-built">Built &mdash; Layer 2</span>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="myelin.html">&larr; Myelin</a>
+    <span class="nav-count">3 / 19</span>
+    <a class="nav-btn" href="hebbian-learning.html">Hebbian &rarr;</a>
+</div>
+
+</body>
+</html>

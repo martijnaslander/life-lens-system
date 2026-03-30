@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Working Memory — Life Lens System</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+.status-open { background: rgba(153,153,153,0.2); color: #999; border: 1px solid #999; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+.nav-btn.disabled { color: #555; border-color: #444; background: none; pointer-events: none; }
+.nav-count { font-size: 14px; color: #b0b0b0; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="working-memory-nl.html">NL</a>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 24px;">
+    <a class="nav-btn" href="sleep-consolidation.html">&larr; Sleep</a>
+    <a class="back" href="../#emulation-table" style="border: none;">&larr; Overview</a>
+    <a class="nav-btn" href="default-mode-network.html">DMN &rarr;</a>
+</div>
+
+<div class="content">
+    <div class="topic-label">Brain Mechanism 16 of 19</div>
+    <h1>Working Memory</h1>
+    <p class="subtitle">Small active buffer vs vast long-term store.</p>
+
+    <h2>What is it</h2>
+    <p>Working memory is the brain's scratchpad. It holds the small amount of information you're actively thinking about right now &mdash; typically 4 to 7 items. It's what you use when you hold a phone number in your head while walking to find a pen, or when you keep track of the ingredients you've already added to a recipe.</p>
+    <p>Working memory is fundamentally different from long-term memory. Long-term memory is vast, durable, and mostly unconscious. Working memory is tiny, fleeting, and fully conscious. The relationship between them is like the relationship between a desk and a warehouse. The desk is where you do your work. The warehouse is where everything is stored. You constantly move things between the two, but the desk can only hold so much at once.</p>
+    <p>The capacity limit of working memory is not a design flaw. It's a feature. By limiting what can be active simultaneously, the brain forces prioritisation. You can't think about everything at once, so you must choose what matters right now. This constraint is what makes focused thought possible.</p>
+
+    <h2>What it does in the brain</h2>
+    <p>Working memory is maintained by sustained neural firing in the prefrontal cortex. Unlike long-term memories, which are stored as stable synaptic patterns, working memory items are kept alive by neurons that literally keep firing &mdash; a costly, energy-intensive process. This is why maintaining focus is tiring. Your prefrontal cortex is burning energy to keep those neurons firing.</p>
+    <p>When working memory is full and a new item demands attention, something must be evicted. This happens automatically and often below conscious awareness. You're holding three facts in mind, a fourth arrives, and one of the original three silently drops away. This is why interruptions are so destructive to complex thought: each interruption evicts something from working memory that must be laboriously reloaded from long-term storage.</p>
+    <p>The interaction between working memory and long-term memory is bidirectional. Working memory pulls items from long-term storage (remembering a fact), processes them (combining facts to reach a conclusion), and then writes the result back to long-term storage (learning something new). It's the active workspace where thinking happens.</p>
+
+    <h2>What it does in ThetaOS</h2>
+    <p>This mechanism is being explored for ThetaOS. The question is: should the system have a concept of "currently active" versus "stored but dormant"? Currently, every query treats the entire 309-table database equally. There is no distinction between information that's contextually relevant right now and information from a decade ago.</p>
+    <p>A working memory layer would give Tom a "desk" &mdash; a small, fast context of what's currently being discussed, recently mentioned, or contextually relevant to the current conversation. Instead of searching the entire database for every query, Tom would first check the working memory buffer and only reach into long-term storage when the buffer doesn't have the answer.</p>
+
+    <div class="highlight">
+        <p>Consider a conversation about an upcoming meeting with Peter Ros. A working memory system would load Peter's dossier into the active buffer at the first mention. Subsequent questions about Peter &mdash; "when did we last meet?" "what did we discuss?" "is he connected to anyone at that organisation?" &mdash; would be answered from the buffer, not from a fresh database scan each time. The conversation would feel natural and flowing, the way talking to a person with a good memory feels natural &mdash; they don't pause to look up each fact because the relevant context is already on their mental desk.</p>
+    </div>
+
+    <p>This is not yet built. Tom currently has conversation context (what's been said in this session) but not true working memory (a curated set of entities and connections loaded proactively based on context). The difference is significant: conversation context is passive (what was mentioned), while working memory would be active (what's likely to be needed). Building this requires predicting relevance, which requires understanding context &mdash; the hardest problem in personal knowledge management.</p>
+
+    <span class="status-badge status-open">Exploring</span>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="sleep-consolidation.html">&larr; Sleep</a>
+    <span class="nav-count">16 / 19</span>
+    <a class="nav-btn" href="default-mode-network.html">DMN &rarr;</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cerebrospinal Fluid — Life Lens System</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+.status-built { background: rgba(85,170,153,0.2); color: #5a9; border: 1px solid #5a9; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+.nav-btn.disabled { color: #555; border-color: #444; background: none; pointer-events: none; }
+.nav-count { font-size: 14px; color: #b0b0b0; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="cerebrospinal-fluid-nl.html">NL</a>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 24px;">
+    <a class="nav-btn" href="blood-brain-barrier.html">&larr; BBB</a>
+    <a class="back" href="../#emulation-table" style="border: none;">&larr; Overview</a>
+    <a class="nav-btn" href="immune-patrol.html">Immune &rarr;</a>
+</div>
+
+<div class="content">
+    <div class="topic-label">Brain Mechanism 10 of 19</div>
+    <h1>Cerebrospinal Fluid</h1>
+    <p class="subtitle">Washes waste, maintains the medium.</p>
+
+    <h2>What is it</h2>
+    <p>Cerebrospinal fluid (CSF) is the clear, colorless liquid that surrounds and fills the cavities of the brain and spinal cord. Your brain floats in it. There are about 150 milliliters of CSF at any given time, and the body produces and absorbs roughly 500 milliliters per day &mdash; replacing it completely three to four times daily.</p>
+    <p>CSF has three jobs: it cushions the brain physically (reducing its effective weight from 1,400 grams to about 25 grams), it delivers nutrients to neural tissue, and &mdash; most importantly for this discussion &mdash; it carries away metabolic waste. Neurons produce toxic byproducts as they work. CSF flushes them out.</p>
+    <p>In 2012, researchers discovered the glymphatic system: a network of channels that opens up during deep sleep, allowing CSF to wash through the brain at greatly increased flow. This is now believed to be a primary reason why sleep is biologically necessary. Without it, waste accumulates. With it, the brain cleans itself every night.</p>
+
+    <h2>What it does in the brain</h2>
+    <p>The waste removal function of CSF is not optional maintenance. It's survival. Among the waste products cleared by CSF are beta-amyloid and tau proteins &mdash; the same proteins that accumulate in Alzheimer's disease. Current research suggests that poor glymphatic clearance (from chronic sleep deprivation, aging, or vascular disease) may directly contribute to neurodegeneration.</p>
+    <p>CSF also maintains the chemical environment in which neurons operate. pH, ion concentration, glucose levels &mdash; all are regulated by the constant flow of fresh CSF. This is different from the blood-brain barrier, which controls what enters. CSF controls the internal environment after things have entered.</p>
+    <p>Think of the BBB as a bouncer at the door and CSF as the cleaning crew inside. Both are necessary. Without the bouncer, bad things get in. Without the cleaning crew, the waste from normal operations builds up until the venue is unusable.</p>
+
+    <h2>What it does in ThetaOS</h2>
+    <p>Layer 6 includes the CSF equivalent: the nightly maintenance cronjob. Every night, automated scripts run across the database performing cleanup operations. Orphaned records get linked or flagged. Duplicate entries get merged. Stale caches get cleared. Consistency checks run across all 309 tables to ensure referential integrity.</p>
+    <p>Just as CSF flow increases dramatically during deep sleep, the system's maintenance processes run when the system is idle &mdash; at night, when no queries are active and no new data is arriving. The database is effectively "sleeping," and the cleaning process takes advantage of the quiet.</p>
+
+    <div class="highlight">
+        <p>The nightly cronjob recalculates potentiation scores, refreshes the Hebbian co-occurrence tables, rebuilds search indexes, and purges temporary processing artifacts. It also generates the daily "Feitenkaart" &mdash; a snapshot of system health: how many entities, how many connections, what changed today. This is the equivalent of fresh CSF: the system wakes up each morning with a clean environment, updated statistics, and no accumulated waste from yesterday's processing.</p>
+    </div>
+
+    <p>Without this nightly flush, the database would gradually degrade. Orphaned records would accumulate. Search indexes would fall out of sync. Potentiation scores would become stale. The system would still work, but increasingly slowly and unreliably &mdash; exactly what happens to a brain when CSF flow is impaired.</p>
+
+    <span class="status-badge status-built">Built &mdash; Layer 6</span>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="blood-brain-barrier.html">&larr; BBB</a>
+    <span class="nav-count">10 / 19</span>
+    <a class="nav-btn" href="immune-patrol.html">Immune &rarr;</a>
+</div>
+
+</body>
+</html>

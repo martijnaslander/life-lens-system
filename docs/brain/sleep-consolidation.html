@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sleep Consolidation — Life Lens System</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+.status-designed { background: rgba(221,187,136,0.2); color: #db8; border: 1px solid #db8; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+.nav-btn.disabled { color: #555; border-color: #444; background: none; pointer-events: none; }
+.nav-count { font-size: 14px; color: #b0b0b0; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="sleep-consolidation-nl.html">NL</a>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 24px;">
+    <a class="nav-btn" href="synaptic-pruning.html">&larr; Pruning</a>
+    <a class="back" href="../#emulation-table" style="border: none;">&larr; Overview</a>
+    <a class="nav-btn" href="working-memory.html">Working Mem. &rarr;</a>
+</div>
+
+<div class="content">
+    <div class="topic-label">Brain Mechanism 15 of 19</div>
+    <h1>Sleep Consolidation</h1>
+    <p class="subtitle">Memories move from working to long-term during sleep.</p>
+
+    <h2>What is it</h2>
+    <p>During the day, your brain stores new experiences in a temporary buffer &mdash; primarily the hippocampus. These memories are fragile, easily disrupted, and not yet integrated with your broader knowledge. During sleep, particularly during slow-wave (deep) sleep, the brain replays these experiences and transfers them to the neocortex for long-term storage.</p>
+    <p>This process is called memory consolidation, and it requires sleep. Not rest. Not quiet wakefulness. Sleep. Specifically, the brain generates patterns of neural activity during deep sleep that literally replay the day's experiences at compressed speed. A learning episode that took 10 minutes awake might be replayed in 10 seconds during sleep, over and over, each replay strengthening the long-term trace.</p>
+    <p>Sleep consolidation is not just copying. It's reorganising. During consolidation, the brain extracts patterns, discards details, integrates new memories with old ones, and sometimes generates novel connections that weren't apparent during waking experience. This is why you sometimes wake up with the solution to a problem you couldn't solve the night before. Your sleeping brain found it.</p>
+
+    <h2>What it does in the brain</h2>
+    <p>The hippocampus and neocortex engage in a dialogue during sleep. The hippocampus replays recent experiences. The neocortex checks them against existing knowledge. When a new experience fits well with existing patterns, it's integrated smoothly. When it contradicts existing knowledge, the conflict is flagged &mdash; sometimes experienced as a dream.</p>
+    <p>Sleep deprivation devastates memory formation. You can learn perfectly well without sleep &mdash; the hippocampus records the experience normally. But without sleep to consolidate, the memory fades rapidly. Students who sleep after studying retain dramatically more than students who stay awake the same number of hours. The learning happened equally. The consolidation didn't.</p>
+    <p>Different sleep stages consolidate different types of memory. Slow-wave sleep consolidates declarative memories (facts, events). REM sleep consolidates procedural memories (skills, habits) and emotional memories. A full night's sleep, with its natural progression through all stages, consolidates across all memory types. Disrupted sleep disrupts specific types of consolidation.</p>
+
+    <h2>What it does in ThetaOS</h2>
+    <p>The nightly cronjob is ThetaOS's sleep consolidation. During the day, data arrives in a "hippocampal buffer" &mdash; raw tables, processing queues, temporary staging areas. At night, the cronjob moves this data into the permanent structure: classifying it, linking it to existing entities, computing co-occurrence scores, updating potentiation weights, and rebuilding search indexes.</p>
+    <p>Like the brain's sleep consolidation, this nightly process does more than copy. It reorganises. It discovers new connections between today's data and last month's data. It recalculates which entities have strengthened and which have dimmed. It generates the Feitenkaart &mdash; a compressed summary of the system's state, analogous to the brain's compressed replay of daily experiences.</p>
+
+    <div class="highlight">
+        <p>The parallel is precise: during the day, ThetaOS is "awake" &mdash; receiving queries, ingesting data, responding to Tom. At night, it "sleeps" &mdash; no queries, no input, just consolidation. The system that wakes up tomorrow is measurably different from the system that went to sleep tonight. New connections have been integrated. Old ones have been recalculated. The knowledge base is not just bigger but better organised. That's consolidation: the overnight transformation of raw experience into structured knowledge.</p>
+    </div>
+
+    <p>The design extends to a planned "REM equivalent": a secondary nightly process that runs after the main consolidation, looking for unexpected connections, contradictions, and patterns that the primary process didn't flag. This is designed but not yet implemented. Currently, the cronjob handles the slow-wave equivalent &mdash; the reliable, systematic consolidation. The creative, pattern-finding REM equivalent is next.</p>
+
+    <span class="status-badge status-designed">Designed &mdash; nightly cronjob</span>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="synaptic-pruning.html">&larr; Pruning</a>
+    <span class="nav-count">15 / 19</span>
+    <a class="nav-btn" href="working-memory.html">Working Mem. &rarr;</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hebbian Learning — Life Lens System</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+.status-built { background: rgba(85,170,153,0.2); color: #5a9; border: 1px solid #5a9; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+.nav-btn.disabled { color: #555; border-color: #444; background: none; pointer-events: none; }
+.nav-count { font-size: 14px; color: #b0b0b0; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="hebbian-learning-nl.html">NL</a>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 24px;">
+    <a class="nav-btn" href="long-term-potentiation.html">&larr; LTP</a>
+    <a class="back" href="../#emulation-table" style="border: none;">&larr; Overview</a>
+    <a class="nav-btn" href="multidimensional-encoding.html">Encoding &rarr;</a>
+</div>
+
+<div class="content">
+    <div class="topic-label">Brain Mechanism 4 of 19</div>
+    <h1>Hebbian Learning</h1>
+    <p class="subtitle">Neurons that fire together wire together.</p>
+
+    <h2>What is it</h2>
+    <p>In 1949, psychologist Donald Hebb proposed a simple rule: when neuron A repeatedly helps activate neuron B, the connection between them strengthens. The famous summary &mdash; "neurons that fire together wire together" &mdash; captures one of the most fundamental principles in neuroscience.</p>
+    <p>Hebbian learning is different from simple repetition (LTP). LTP says: use a connection more, it gets stronger. Hebb says: when two things are active at the same time, a connection forms between them. It's the difference between practising a single note and learning that a chord sounds right. Co-activation creates association.</p>
+    <p>This is how your brain builds categories, links memories to emotions, and connects a smell to a place you visited twenty years ago. Simultaneity is the teacher.</p>
+
+    <h2>What it does in the brain</h2>
+    <p>Hebbian learning is how associations form. You hear a song while falling in love, and forever after the song triggers the emotion. The auditory neurons and the emotional neurons fired together, so they wired together. Neither caused the other &mdash; they simply co-occurred, and the brain treated co-occurrence as meaning.</p>
+    <p>This mechanism is also how the brain forms clusters. You meet someone at work, at a conference, and at a dinner. Each time, neurons representing that person fire alongside neurons representing professional context. Eventually the person IS professional context in your neural map &mdash; even if you've never consciously categorised them.</p>
+    <p>The dark side of Hebbian learning is bias. If two things happen to co-occur by accident and the brain encodes them as linked, you get a false association. Stereotypes are Hebbian learning gone wrong: co-occurrence mistaken for causation.</p>
+
+    <h2>What it does in ThetaOS</h2>
+    <p>Layer 7 (Hebbian Co-occurrence) and Layer 9 (Hebbian Clustering) implement exactly this principle. When two entities appear together in the same context &mdash; the same photo, the same meeting, the same transaction batch, the same week &mdash; the system creates or strengthens a link between them. Nobody told it these things are related. Co-occurrence told it.</p>
+    <p>This is how ThetaOS discovers relationships that were never explicitly entered. A person and a location that appear together in 14 different weeks get a Hebbian connection, even if no one ever said "this person goes to this place." The data said it by co-firing.</p>
+
+    <div class="highlight">
+        <p>Peter Ros and the city of The Hague: they co-occur in photos, in calendar entries, in text mentions. No one labelled Peter as "The Hague." But across 153 photo-days and 92 text mentions, the Hebbian layer discovered it. Ask Tom about Peter and The Hague surfaces automatically &mdash; not because it was filed there, but because the neurons fired together.</p>
+    </div>
+
+    <p>Layer 9 goes further: it clusters entities that share Hebbian connections. If A co-occurs with B, and B co-occurs with C, but A and C never directly co-occur, the system still recognises them as part of the same cluster. This is how ThetaOS builds its network graph &mdash; the same way your brain builds its social map.</p>
+
+    <span class="status-badge status-built">Built &mdash; Layers 7 + 9</span>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="long-term-potentiation.html">&larr; LTP</a>
+    <span class="nav-count">4 / 19</span>
+    <a class="nav-btn" href="multidimensional-encoding.html">Encoding &rarr;</a>
+</div>
+
+</body>
+</html>

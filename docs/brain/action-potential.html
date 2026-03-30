@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Action Potential — Life Lens System</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+.status-built { background: rgba(85,170,153,0.2); color: #5a9; border: 1px solid #5a9; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+.nav-btn.disabled { color: #555; border-color: #444; background: none; pointer-events: none; }
+.nav-count { font-size: 14px; color: #b0b0b0; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="action-potential-nl.html">NL</a>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 24px;">
+    <a class="nav-btn" href="multidimensional-encoding.html">&larr; Encoding</a>
+    <a class="back" href="../#emulation-table" style="border: none;">&larr; Overview</a>
+    <a class="nav-btn" href="saltatory-conduction.html">Saltatory &rarr;</a>
+</div>
+
+<div class="content">
+    <div class="topic-label">Brain Mechanism 6 of 19</div>
+    <h1>Action Potential</h1>
+    <p class="subtitle">All-or-nothing firing, threshold, summation.</p>
+
+    <h2>What is it</h2>
+    <p>An action potential is the moment a neuron fires. It's a sudden, brief reversal of electrical charge that travels down the length of a nerve fiber. The critical feature: it's all-or-nothing. A neuron either fires completely or doesn't fire at all. There is no half-fire, no gentle fire, no "maybe" fire.</p>
+    <p>But reaching that firing point requires summation. A neuron receives input from thousands of other neurons simultaneously. Some inputs are excitatory (push toward firing), some are inhibitory (push away from it). The neuron sums them all. If the total exceeds a threshold &mdash; roughly -55 millivolts &mdash; it fires. If not, nothing happens.</p>
+    <p>This means decisions in the brain are not made by single signals. They're made by the accumulated weight of many signals, some for, some against, until the balance tips. It's a voting system with a quorum.</p>
+
+    <h2>What it does in the brain</h2>
+    <p>The action potential is what turns continuous, analogue input into discrete, digital output. Your senses deliver a constant stream of subtle signals. The action potential mechanism converts that stream into clear yes/no decisions: this is a face, that is a threat, this word means "dog."</p>
+    <p>The threshold mechanism prevents noise from becoming signal. Random fluctuations in neural activity never reach the threshold. Only coordinated, repeated, or strong inputs do. This is how the brain maintains clarity in a sea of noise &mdash; the same way a microphone has a noise gate that only opens above a certain volume.</p>
+    <p>The summation mechanism also enables nuance despite the all-or-nothing output. A neuron can't fire "a little." But it can fire frequently or infrequently. A strong stimulus causes rapid firing &mdash; many action potentials per second. A weak stimulus causes slow firing. The information is in the frequency, not the amplitude.</p>
+
+    <h2>What it does in ThetaOS</h2>
+    <p>Layer 4 implements action potential logic as a threshold system for surfacing information. When Tom receives a query, the system doesn't dump everything it knows. It sums the evidence: how many layers confirm this connection? How recent is the data? How strong is the potentiation? If the sum exceeds a threshold, that piece of information fires &mdash; it appears in the response.</p>
+    <p>Weak connections with thin myelin stay below threshold. They exist in the database but don't surface unless specifically asked for. Strong connections with thick myelin fire immediately. This is why asking Tom about a well-known contact produces an instant, rich dossier, while asking about a barely-known name produces a sparse response or nothing at all.</p>
+
+    <div class="highlight">
+        <p>The summation principle in practice: if someone appears in only one photo (visual input) but also in three text mentions (narrative input) and a calendar entry (temporal input), these separate signals sum together and cross the threshold. Any single signal alone might not be enough. Together, they fire. This prevents noise &mdash; a single accidental mention doesn't create a false connection &mdash; while ensuring that genuine but subtle patterns get detected.</p>
+    </div>
+
+    <p>The all-or-nothing principle also governs Tom's confidence display. Tom doesn't say "I'm 47% sure." He either presents information as reliable (above threshold) or flags it as uncertain (below threshold, summoned only on explicit request). Binary clarity built on analogue accumulation &mdash; exactly like the brain.</p>
+
+    <span class="status-badge status-built">Built &mdash; Layer 4</span>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="multidimensional-encoding.html">&larr; Encoding</a>
+    <span class="nav-count">6 / 19</span>
+    <a class="nav-btn" href="saltatory-conduction.html">Saltatory &rarr;</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Epistemological Tagging — Life Lens System</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+.status-built { background: rgba(85,170,153,0.2); color: #5a9; border: 1px solid #5a9; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+.nav-btn.disabled { color: #555; border-color: #444; background: none; pointer-events: none; }
+.nav-count { font-size: 14px; color: #b0b0b0; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="epistemological-tagging-nl.html">NL</a>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 24px;">
+    <a class="nav-btn" href="saltatory-conduction.html">&larr; Saltatory</a>
+    <a class="back" href="../#emulation-table" style="border: none;">&larr; Overview</a>
+    <a class="nav-btn" href="blood-brain-barrier.html">BBB &rarr;</a>
+</div>
+
+<div class="content">
+    <div class="topic-label">Brain Mechanism 8 of 19</div>
+    <h1>Epistemological Tagging</h1>
+    <p class="subtitle">Distinguishing facts from beliefs from hypotheses.</p>
+
+    <h2>What is it</h2>
+    <p>Your brain doesn't treat all information equally. You know your birthday is a fact. You believe your favourite restaurant is the best in town. You suspect your colleague is looking for a new job. These are three different categories of knowledge, and your brain tags them differently &mdash; even though all three feel like "things you know."</p>
+    <p>Epistemological tagging is the brain's ability to attach a confidence label to information: this is certain, this is probable, this is a guess, this contradicts something else I know. It happens automatically, below conscious awareness. You don't decide to tag information. Your brain does it for you, based on the source, the repetition, the emotional weight, and the consistency with other things you know.</p>
+    <p>When this system breaks down &mdash; when the brain loses its ability to distinguish fact from fiction &mdash; the result is delusion. Not ignorance, but false certainty. The information is tagged as "fact" when it should be tagged as "hypothesis." The tagging system is what keeps sanity intact.</p>
+
+    <h2>What it does in the brain</h2>
+    <p>The prefrontal cortex and hippocampus work together to tag memories with source information. This is called "source monitoring" in cognitive science. You remember not just what you learned, but how you learned it: did you see it, hear it, read it, or imagine it? Each source carries a different confidence weight.</p>
+    <p>This is why hearsay feels different from firsthand experience. Both are stored as memories, but the epistemological tag is different. "I saw the accident" and "someone told me about an accident" produce different neural signatures. The content may be identical. The tag is not.</p>
+    <p>The brain also tags for internal consistency. When new information contradicts existing knowledge, the anterior cingulate cortex signals a conflict. You feel this as cognitive dissonance &mdash; that uncomfortable sense that something doesn't add up. It's the epistemological tagging system raising a flag.</p>
+
+    <h2>What it does in ThetaOS</h2>
+    <p>Layer 5 and the Double Helix implement epistemological tagging as a core feature. Every piece of information in the system carries a tag: measured (observed in data), stated (said by Martijn), inferred (calculated by the system), or contradicted (conflicts with other evidence). These are not optional metadata. They are required fields.</p>
+    <p>This means ThetaOS can distinguish between "Peter Ros was in The Hague on March 5" (measured: photo with GPS data) and "Peter Ros probably lives near The Hague" (inferred: frequent co-occurrence with The Hague locations). Both are useful. Neither should be confused with the other.</p>
+
+    <div class="highlight">
+        <p>The Double Helix structure: one strand holds the data, the other holds the epistemological tag. They twist together but are never merged. When Tom reports something, he can always trace back not just to the data, but to the tag: "I know this because of 14 photos" is different from "I suspect this because of a co-occurrence pattern." The system never presents inference as fact. The tag prevents it &mdash; exactly as the prefrontal cortex prevents a healthy brain from treating imagination as memory.</p>
+    </div>
+
+    <p>The contradiction tag is particularly powerful. When two data sources disagree &mdash; a calendar says one location, a photo's GPS says another &mdash; the system doesn't pick a winner. It tags both as contradicted and surfaces the conflict for human resolution. Layer 10 (human confirmation) resolves what the machine cannot. This is epistemological honesty: admitting what you don't know is as important as stating what you do.</p>
+
+    <span class="status-badge status-built">Built &mdash; Layer 5, Double Helix</span>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="saltatory-conduction.html">&larr; Saltatory</a>
+    <span class="nav-count">8 / 19</span>
+    <a class="nav-btn" href="blood-brain-barrier.html">BBB &rarr;</a>
+</div>
+
+</body>
+</html>

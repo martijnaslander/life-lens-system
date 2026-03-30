@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saltatory Conduction — Life Lens System</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+.status-built { background: rgba(85,170,153,0.2); color: #5a9; border: 1px solid #5a9; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+.nav-btn.disabled { color: #555; border-color: #444; background: none; pointer-events: none; }
+.nav-count { font-size: 14px; color: #b0b0b0; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="saltatory-conduction-nl.html">NL</a>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 24px;">
+    <a class="nav-btn" href="action-potential.html">&larr; Action Pot.</a>
+    <a class="back" href="../#emulation-table" style="border: none;">&larr; Overview</a>
+    <a class="nav-btn" href="epistemological-tagging.html">Epist. Tag &rarr;</a>
+</div>
+
+<div class="content">
+    <div class="topic-label">Brain Mechanism 7 of 19</div>
+    <h1>Saltatory Conduction</h1>
+    <p class="subtitle">Signals skip along thick paths.</p>
+
+    <h2>What is it</h2>
+    <p>Saltatory conduction is the way electrical signals travel along myelinated nerve fibers. Instead of flowing continuously along the entire length of the fiber &mdash; which is slow &mdash; the signal jumps from one gap in the myelin to the next. These gaps are called Nodes of Ranvier, and the jumping is what "saltatory" means (from the Latin <em>saltare</em>, to leap).</p>
+    <p>An unmyelinated nerve conducts signals at about 1-2 meters per second. A heavily myelinated nerve conducts at 70-120 meters per second. The signal doesn't travel faster along the fiber itself. It skips the insulated parts entirely and regenerates only at the nodes. Less work, more speed.</p>
+    <p>This is not just faster &mdash; it's dramatically more energy-efficient. The brain uses about 20% of the body's energy despite being 2% of its mass. Without saltatory conduction, it would need even more. Skipping is survival.</p>
+
+    <h2>What it does in the brain</h2>
+    <p>Saltatory conduction creates a two-tier system in the brain. Well-used pathways are myelinated and conduct signals at high speed. Rarely-used pathways are unmyelinated and conduct slowly. This means the brain automatically prioritises its most important connections by giving them the fast lane.</p>
+    <p>When you learn a complex skill &mdash; playing an instrument, speaking a language, driving a car &mdash; the relevant neural pathways get progressively more myelinated. Early on, your reactions are slow and effortful. Later, they're fast and automatic. That transition from slow to fast IS the transition from unmyelinated to myelinated conduction.</p>
+    <p>The jumping pattern also makes the signal more reliable. At each node, the signal is fully regenerated. There's no signal degradation over distance. A myelinated fiber transmits a signal as strongly at the end as at the beginning, no matter how long the path.</p>
+
+    <h2>What it does in ThetaOS</h2>
+    <p>Layer 4 implements saltatory conduction through pre-computed indexes and cached query paths. When a query path is frequently used &mdash; "tell me about Peter Ros," "what happened last week," "show my Garrone visits" &mdash; the system builds a fast lane. The response doesn't traverse every table every time. It jumps directly to the pre-computed result nodes, regenerating only the latest data at each stop.</p>
+    <p>First query about a new topic: slow, full table scan, touching all 309 tables that might be relevant. Second query: faster, because the system now knows which tables matter. Tenth query: near-instant, because the path is fully "myelinated" with cached intermediate results.</p>
+
+    <div class="highlight">
+        <p>Peter Ros is a fully myelinated path. Ask Tom about Peter and the response assembles in under three seconds: 153 photo-days, 92 text mentions, financial links, organisational connections, temporal patterns. The system doesn't re-scan everything. It jumps from cached node to cached node, regenerating only what changed since last night's cronjob. An unmyelinated query &mdash; someone mentioned once, years ago &mdash; takes longer because there's no fast lane. Every table must be checked from scratch.</p>
+    </div>
+
+    <p>The nightly cronjob acts as the myelination process itself: it identifies which paths were used during the day, strengthens their caches, and lets unused caches gradually thin. High-frequency paths stay fast. Abandoned paths slow down. The system's speed is not uniform &mdash; it's proportional to use, exactly like the brain.</p>
+
+    <span class="status-badge status-built">Built &mdash; Layer 4</span>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="action-potential.html">&larr; Action Pot.</a>
+    <span class="nav-count">7 / 19</span>
+    <a class="nav-btn" href="epistemological-tagging.html">Epist. Tag &rarr;</a>
+</div>
+
+</body>
+</html>

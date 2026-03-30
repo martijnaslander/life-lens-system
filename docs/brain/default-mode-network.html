@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Default Mode Network — Life Lens System</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+.status-open { background: rgba(153,153,153,0.2); color: #999; border: 1px solid #999; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+.nav-btn.disabled { color: #555; border-color: #444; background: none; pointer-events: none; }
+.nav-count { font-size: 14px; color: #b0b0b0; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="default-mode-network-nl.html">NL</a>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 24px;">
+    <a class="nav-btn" href="working-memory.html">&larr; Working Mem.</a>
+    <a class="back" href="../#emulation-table" style="border: none;">&larr; Overview</a>
+    <a class="nav-btn" href="neurotransmitters.html">Neurotrans. &rarr;</a>
+</div>
+
+<div class="content">
+    <div class="topic-label">Brain Mechanism 17 of 19</div>
+    <h1>Default Mode Network</h1>
+    <p class="subtitle">Free association, serendipity when brain idles.</p>
+
+    <h2>What is it</h2>
+    <p>The default mode network (DMN) is a set of brain regions that becomes active when you're not focused on the outside world. Daydreaming, mind-wandering, thinking about yourself, remembering the past, imagining the future &mdash; these all activate the DMN. For decades, neuroscientists dismissed this activity as noise. Then they realised it was the brain's most creative state.</p>
+    <p>When you're focused on a task, specific brain networks activate and the DMN quiets down. When the task ends, the DMN lights up. It's the brain's "idle mode" &mdash; except it's not idle at all. It's doing something crucial: making connections between unrelated things, simulating scenarios, reviewing memories, and generating the kind of unexpected associations that focused thought can't produce.</p>
+    <p>The DMN is why your best ideas come in the shower, on a walk, or just before falling asleep. When the task-focused networks relax their grip, the DMN starts freely associating across the entire memory store. It's browsing without a search query &mdash; and sometimes it finds things you didn't know you were looking for.</p>
+
+    <h2>What it does in the brain</h2>
+    <p>The DMN connects brain regions that don't normally communicate during focused work: the medial prefrontal cortex (self-reflection), the posterior cingulate cortex (memory retrieval), the angular gyrus (semantic processing), and the hippocampus (episodic memory). When these regions talk to each other freely, without the constraint of a specific task, novel combinations emerge.</p>
+    <p>This is the neural basis of creativity. A painter struggling with a composition stops working and takes a walk. During the walk, the DMN connects visual memory fragments, emotional associations, and spatial concepts in combinations that the focused painting session couldn't produce. The painter returns with a solution that feels like it came from nowhere. It came from the DMN.</p>
+    <p>The DMN is also essential for empathy and social cognition. Imagining another person's perspective requires the same free-associative process: you simulate their experience using your own memories and emotional patterns. People with impaired DMN function (as in some forms of autism or brain injury) struggle with exactly these tasks.</p>
+
+    <h2>What it does in ThetaOS</h2>
+    <p>This is an open question &mdash; and one of the most interesting. Can a knowledge system have a default mode? Can it generate unexpected connections without being asked? Can it "daydream"?</p>
+    <p>The nightly cronjob already performs a primitive form of this: it runs across all 309 tables and sometimes finds connections that no one asked for. But it does this systematically, not creatively. A true DMN equivalent would randomly sample from the database, combine entities that share no direct connection, and present the unexpected juxtaposition to the user. "Did you know that the restaurant you visited last week is three doors down from the office of someone you met at a conference in 2019?"</p>
+
+    <div class="highlight">
+        <p>A possible implementation: a weekly "serendipity report" that picks random entities with high potentiation scores but no direct connection, and asks whether a connection exists. Peter Ros (153 photo-days) and a particular restaurant (79 visits) &mdash; are they ever connected? The system doesn't know, because it has never been asked. A DMN equivalent would ask on its own. Most of the time the answer would be no. But occasionally it would uncover a real connection that nobody thought to search for &mdash; exactly like a daydream that suddenly produces an insight.</p>
+    </div>
+
+    <p>This is not yet built and may never be fully automated. The value of the DMN is partly in its randomness, and random associations in a database are mostly noise. The challenge is generating meaningful serendipity without flooding the user with irrelevant coincidences. The brain solves this by filtering DMN output through the prefrontal cortex before it reaches consciousness. ThetaOS would need an equivalent filter &mdash; which brings us back to the Magische 13.</p>
+
+    <span class="status-badge status-open">Open</span>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="working-memory.html">&larr; Working Mem.</a>
+    <span class="nav-count">17 / 19</span>
+    <a class="nav-btn" href="neurotransmitters.html">Neurotrans. &rarr;</a>
+</div>
+
+</body>
+</html>

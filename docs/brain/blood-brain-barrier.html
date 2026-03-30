@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blood-Brain Barrier — Life Lens System</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+.status-built { background: rgba(85,170,153,0.2); color: #5a9; border: 1px solid #5a9; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+.nav-btn.disabled { color: #555; border-color: #444; background: none; pointer-events: none; }
+.nav-count { font-size: 14px; color: #b0b0b0; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="blood-brain-barrier-nl.html">NL</a>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 24px;">
+    <a class="nav-btn" href="epistemological-tagging.html">&larr; Epist. Tag</a>
+    <a class="back" href="../#emulation-table" style="border: none;">&larr; Overview</a>
+    <a class="nav-btn" href="cerebrospinal-fluid.html">CSF &rarr;</a>
+</div>
+
+<div class="content">
+    <div class="topic-label">Brain Mechanism 9 of 19</div>
+    <h1>Blood-Brain Barrier</h1>
+    <p class="subtitle">Filters what enters at the gate.</p>
+
+    <h2>What is it</h2>
+    <p>The blood-brain barrier (BBB) is a highly selective membrane that separates circulating blood from the brain's own fluid environment. It allows essential nutrients &mdash; glucose, amino acids, oxygen &mdash; to pass through while blocking toxins, pathogens, and most large molecules. It's not a wall. It's a customs checkpoint.</p>
+    <p>The BBB is formed by the endothelial cells that line the brain's blood vessels, packed so tightly together that almost nothing can squeeze between them. Substances must pass through the cells, not around them &mdash; and the cells are very choosy about what they let in.</p>
+    <p>This selectivity is why most drugs don't work on the brain. A medication that works perfectly in the body may be completely blocked by the BBB. It's also why brain infections are rare but devastating &mdash; pathogens that breach the barrier face almost no immune response on the other side, because the barrier normally keeps them out entirely.</p>
+
+    <h2>What it does in the brain</h2>
+    <p>The BBB maintains the brain's chemical stability. Neural signalling requires precise concentrations of ions, neurotransmitters, and other molecules. If blood chemicals could freely enter the brain, every meal, every medication, every hormonal fluctuation would disrupt neural function. The barrier keeps the brain's environment constant while the body's environment fluctuates.</p>
+    <p>It also protects against information pollution. The immune system in the body produces inflammatory signals constantly &mdash; in response to minor infections, injuries, even exercise. If those signals reached the brain unfiltered, the result would be constant neuroinflammation. The BBB filters inflammatory molecules, allowing only genuine emergency signals through.</p>
+    <p>When the BBB fails &mdash; through injury, disease, or chronic inflammation &mdash; the consequences are severe: brain fog, confusion, neurodegeneration. Many researchers now believe that a "leaky" blood-brain barrier plays a role in Alzheimer's, Parkinson's, and other neurodegenerative conditions.</p>
+
+    <h2>What it does in ThetaOS</h2>
+    <p>Layer 6 implements the blood-brain barrier as the system's input validation and filtering layer. Not everything that arrives at the system's gate is allowed in. Data must pass through classification, deduplication, and integrity checks before it enters the core database. Malformed data, duplicates, spam, and low-quality inputs are stopped at the barrier.</p>
+    <p>The ThetaPipeline is the physical implementation of this barrier. Raw data arrives from many sources &mdash; emails, photos, bank transactions, calendar exports, manual entries. Each source has its own pipeline stage that validates format, checks for duplicates, extracts structured information, and classifies the content. Only clean, classified data crosses into the 309-table core.</p>
+
+    <div class="highlight">
+        <p>A concrete example: when a bank transaction arrives from Bunq, the pipeline checks if it's a duplicate (same amount, same date, same counterparty), classifies it by category (food, transport, subscription), extracts the counterparty as an entity, links it to known locations or persons, and only then writes it to the database. A spam email or a corrupted photo export gets stopped at the barrier. The core database never sees garbage &mdash; the same way your brain never sees the toxins your blood-brain barrier filtered out.</p>
+    </div>
+
+    <p>This is why the system can trust its own data. Every fact in the database passed the barrier. Every connection was validated before it was stored. The barrier is invisible when it works &mdash; you only notice it when it fails, which is exactly how the biological BBB works too.</p>
+
+    <span class="status-badge status-built">Built &mdash; Layer 6</span>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="epistemological-tagging.html">&larr; Epist. Tag</a>
+    <span class="nav-count">9 / 19</span>
+    <a class="nav-btn" href="cerebrospinal-fluid.html">CSF &rarr;</a>
+</div>
+
+</body>
+</html>

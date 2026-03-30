@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homeostasis — Life Lens System</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+.status-designed { background: rgba(221,187,136,0.2); color: #db8; border: 1px solid #db8; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+.nav-btn.disabled { color: #555; border-color: #444; background: none; pointer-events: none; }
+.nav-count { font-size: 14px; color: #b0b0b0; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="homeostasis-nl.html">NL</a>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 24px;">
+    <a class="nav-btn" href="immune-patrol.html">&larr; Immune</a>
+    <a class="back" href="../#emulation-table" style="border: none;">&larr; Overview</a>
+    <a class="nav-btn" href="neuroplasticity.html">Neuroplast. &rarr;</a>
+</div>
+
+<div class="content">
+    <div class="topic-label">Brain Mechanism 12 of 19</div>
+    <h1>Homeostasis</h1>
+    <p class="subtitle">Chemical balance, ratios that signal health.</p>
+
+    <h2>What is it</h2>
+    <p>Homeostasis is the body's ability to maintain stable internal conditions despite external changes. Temperature, blood sugar, pH, oxygen levels &mdash; all are kept within narrow ranges by feedback loops that detect deviation and trigger correction. Too hot? Sweat. Too cold? Shiver. The target isn't a fixed number; it's a range, and the system constantly nudges itself back toward the center.</p>
+    <p>In the brain, homeostasis operates at multiple scales. At the cellular level, neurons regulate their own excitability: if they fire too often, they become less sensitive; if they fire too rarely, they become more sensitive. At the network level, excitatory and inhibitory signals are kept in balance. At the whole-brain level, energy supply, waste removal, and temperature are tightly controlled.</p>
+    <p>Homeostasis is not about being static. It's about being dynamically stable. A healthy system is constantly adjusting, constantly correcting, constantly measuring. The stability isn't the absence of change &mdash; it's the presence of responsive correction.</p>
+
+    <h2>What it does in the brain</h2>
+    <p>Neural homeostasis prevents both understimulation and overstimulation. If a brain region becomes too active (as in epilepsy), inhibitory mechanisms kick in to dampen the activity. If a region becomes too quiet (as after a stroke), the surrounding tissue increases its excitability to compensate. The brain is always seeking balance.</p>
+    <p>This is also why drug tolerance develops. A stimulant increases neural activity. The brain's homeostatic mechanisms respond by reducing sensitivity. The next dose needs to be larger to achieve the same effect. The brain is not becoming accustomed to the drug. It's actively fighting it, trying to return to its set point.</p>
+    <p>Sleep, nutrition, exercise, and social connection all play roles in maintaining neural homeostasis. When any of these is chronically disrupted, the brain's self-regulation systems are overwhelmed. The result is mood disorders, cognitive decline, or burnout &mdash; not a failure of willpower, but a failure of homeostatic capacity.</p>
+
+    <h2>What it does in ThetaOS</h2>
+    <p>The first measurement has been taken: the system now tracks its own vital signs. Database size, query response times, connection density, pipeline throughput, error rates &mdash; these are monitored and compared against baseline values. When a metric drifts outside its normal range, the system flags it.</p>
+    <p>The design goal is a self-regulating system that detects its own health. If the database grows but connection density drops, that signals a problem: data is accumulating without being properly linked. If query times increase but database size hasn't changed, that signals index degradation. Each metric is meaningful not in isolation, but as a ratio relative to others.</p>
+
+    <div class="highlight">
+        <p>The Feitenkaart &mdash; the nightly snapshot of system health &mdash; is the first homeostatic instrument. It reports: 309 tables, 170,000+ connections, pipeline status, last backup time, error count. But true homeostasis requires not just measurement but automatic correction. The designed next step: when the Feitenkaart detects that a metric has drifted, it triggers the appropriate maintenance routine automatically. Not a human reading a report &mdash; a system correcting itself, the way body temperature corrects without conscious thought.</p>
+    </div>
+
+    <p>This is early-stage. The measurement infrastructure exists. The automatic correction loops are designed but not yet implemented. Currently, a human (Martijn) reads the Feitenkaart and decides what to fix. The goal is for the system to close the loop itself &mdash; detect deviation, select correction, execute, measure again. That's true homeostasis.</p>
+
+    <span class="status-badge status-designed">Designed &mdash; first measurement taken</span>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="immune-patrol.html">&larr; Immune</a>
+    <span class="nav-count">12 / 19</span>
+    <a class="nav-btn" href="neuroplasticity.html">Neuroplast. &rarr;</a>
+</div>
+
+</body>
+</html>
