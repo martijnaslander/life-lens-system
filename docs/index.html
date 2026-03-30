@@ -14,31 +14,31 @@
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-    font-family: Georgia, 'Times New Roman', serif;
-    background: #fff;
-    color: #333;
-    line-height: 1.7;
-    font-size: 17px;
+    font-family: Verdana, system-ui, Helvetica, sans-serif;
+    background: #4a525a;
+    color: #fff;
+    line-height: 1.8;
+    font-size: 15px;
 }
-a { color: #06c; text-decoration: none; }
-a:hover { text-decoration: underline; }
+a { color: #ddd; text-decoration: none; border-bottom: 1px solid #888; padding-bottom: 2px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
 .container { max-width: 740px; margin: 0 auto; padding: 0 24px; }
 
 header {
     padding: 80px 0 50px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #5a6269;
 }
 header h1 {
     font-size: 42px;
     font-weight: 700;
-    color: #111;
+    color: #fff;
     letter-spacing: -1px;
     margin-bottom: 14px;
     line-height: 1.2;
 }
 header .subtitle {
     font-size: 19px;
-    color: #666;
+    color: #aaa;
     margin-bottom: 32px;
     line-height: 1.6;
 }
@@ -54,39 +54,39 @@ header .subtitle {
 .stats-row .num {
     font-size: 28px;
     font-weight: 700;
-    color: #111;
+    color: #fff;
 }
 .stats-row .label {
     font-size: 12px;
-    color: #999;
+    color: #aaa;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 .author-line {
     font-size: 15px;
-    color: #999;
+    color: #aaa;
 }
 
 section {
     padding: 50px 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #5a6269;
 }
 section h2 {
     font-size: 28px;
-    color: #111;
+    color: #fff;
     margin-bottom: 12px;
     letter-spacing: -0.5px;
 }
 section .lead {
     font-size: 18px;
-    color: #666;
+    color: #aaa;
     margin-bottom: 36px;
 }
 
 /* Architecture diagram */
 .architecture {
-    background: #f8f8f8;
-    border: 1px solid #ddd;
+    background: #3e464e;
+    border: 1px solid #5a6269;
     border-radius: 8px;
     padding: 32px;
     margin: 30px 0 40px;
@@ -103,7 +103,7 @@ section .lead {
     position: absolute;
     top: -11px;
     left: 16px;
-    background: #f8f8f8;
+    background: #3e464e;
     padding: 0 8px;
     color: #3a7;
     font-size: 12px;
@@ -112,23 +112,23 @@ section .lead {
     letter-spacing: 1px;
 }
 .arch-stack {
-    border: 1px solid #ccc;
+    border: 1px solid #5a6269;
     border-radius: 6px;
     overflow: hidden;
     margin-bottom: 16px;
 }
 .arch-layer {
     padding: 10px 16px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #555;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #fff;
+    background: #4a525a;
 }
 .arch-layer:last-child { border-bottom: none; }
-.arch-layer .num { color: #999; font-size: 12px; width: 20px; }
-.arch-layer .name { color: #111; font-size: 14px; flex-grow: 1; }
-.arch-layer .function { color: #999; font-size: 11px; text-align: right; text-transform: uppercase; letter-spacing: 1px; }
+.arch-layer .num { color: #aaa; font-size: 12px; width: 20px; }
+.arch-layer .name { color: #fff; font-size: 14px; flex-grow: 1; }
+.arch-layer .function { color: #aaa; font-size: 11px; text-align: right; text-transform: uppercase; letter-spacing: 1px; }
 .arch-helix {
     text-align: center;
     padding: 10px;
@@ -146,22 +146,22 @@ section .lead {
 }
 .layer-item h3 {
     font-size: 20px;
-    color: #111;
+    color: #fff;
     margin-bottom: 4px;
 }
 .layer-item .type-tag {
     font-family: -apple-system, sans-serif;
     font-size: 11px;
-    color: #999;
+    color: #aaa;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 .layer-item p {
-    color: #555;
+    color: #ccc;
     margin-top: 6px;
 }
 .layer-item .analogy {
-    color: #999;
+    color: #aaa;
     font-style: italic;
     font-size: 15px;
 }
@@ -170,14 +170,14 @@ section .lead {
 .principle {
     margin-bottom: 28px;
     padding-left: 20px;
-    border-left: 3px solid #ddd;
+    border-left: 3px solid #666;
 }
 .principle h3 {
     font-size: 18px;
-    color: #111;
+    color: #fff;
     margin-bottom: 4px;
 }
-.principle p { color: #555; }
+.principle p { color: #ccc; }
 
 /* Blog phases */
 .phase {
@@ -186,25 +186,25 @@ section .lead {
 .phase-label {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 12px;
-    color: #999;
+    color: #aaa;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 6px;
 }
 .phase-title {
     font-size: 22px;
-    color: #111;
+    color: #fff;
     margin-bottom: 6px;
 }
 .phase-desc {
-    color: #888;
+    color: #aaa;
     font-size: 16px;
     margin-bottom: 16px;
 }
 .blog-list { list-style: none; }
 .blog-list li {
     padding: 6px 0;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #555;
 }
 .blog-list li a {
     font-size: 16px;
@@ -212,30 +212,30 @@ section .lead {
 
 /* Papers */
 .paper {
-    background: #f8f8f8;
-    border: 1px solid #e0e0e0;
+    background: #3e464e;
+    border: 1px solid #5a6269;
     border-radius: 6px;
     padding: 16px 20px;
     margin-bottom: 12px;
 }
-.paper h3 { font-size: 17px; color: #111; margin-bottom: 4px; }
-.paper .doi { font-family: 'SF Mono', monospace; font-size: 13px; color: #06c; }
-.paper .meta { font-size: 14px; color: #888; margin-top: 4px; }
+.paper h3 { font-size: 17px; color: #fff; margin-bottom: 4px; }
+.paper .doi { font-family: 'SF Mono', monospace; font-size: 13px; color: #ddd; }
+.paper .meta { font-size: 14px; color: #aaa; margin-top: 4px; }
 
 /* Origin table */
 .origin-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-.origin-table td { padding: 8px 0; border-bottom: 1px solid #eee; font-size: 15px; }
-.origin-table .day { color: #999; width: 50px; }
-.origin-table .what { color: #111; }
-.origin-table .how { color: #999; text-align: right; font-size: 14px; }
+.origin-table td { padding: 8px 0; border-bottom: 1px solid #555; font-size: 15px; }
+.origin-table .day { color: #aaa; width: 50px; }
+.origin-table .what { color: #fff; }
+.origin-table .how { color: #aaa; text-align: right; font-size: 14px; }
 
 footer {
     padding: 50px 0;
     text-align: center;
-    color: #999;
+    color: #aaa;
     font-size: 14px;
 }
-footer a { color: #888; }
+footer a { color: #aaa; }
 
 @media (max-width: 600px) {
     header h1 { font-size: 30px; }
@@ -423,7 +423,7 @@ footer a { color: #888; }
             </ul>
         </div>
 
-        <p style="color: #999; margin-top: 40px; font-size: 15px; text-align: center;">External: <a href="https://yogiaria.substack.com/p/as-we-may-think-has-become-real">As We May Think Has Become Real</a> &mdash; Aria Khodaverdi on ThetaOS</p>
+        <p style="color: #aaa; margin-top: 40px; font-size: 15px; text-align: center;">External: <a href="https://yogiaria.substack.com/p/as-we-may-think-has-become-real">As We May Think Has Become Real</a> &mdash; Aria Khodaverdi on ThetaOS</p>
     </div>
 </section>
 
@@ -447,7 +447,7 @@ footer a { color: #888; }
             <tr><td class="day">Day 3</td><td class="what">Double Helix</td><td class="how">Cross-pollination with Klai</td></tr>
             <tr><td class="day">Day 4</td><td class="what">Choroid Plexus</td><td class="how">Joy Otten, live demo for police</td></tr>
         </table>
-        <p style="color: #666;">Each layer revealed itself when the previous ones failed to explain what was happening. The data was always there. The architecture emerged from the data.</p>
+        <p style="color: #aaa;">Each layer revealed itself when the previous ones failed to explain what was happening. The data was always there. The architecture emerged from the data.</p>
     </div>
 </section>
 
