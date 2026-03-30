@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Het Life Lens System — Martijn Aslander</title>
+<meta name="description" content="Wat er gebeurt als een generalist stopt met uitleggen en gaat bouwen. Twintig jaar informatie, een systeem, nul hallucinaties.">
+<meta property="og:title" content="Het Life Lens System">
+<meta property="og:description" content="Wat er gebeurt als een generalist stopt met uitleggen en gaat bouwen. Een zevenlaagse synaptische architectuur voor persoonlijke kennis.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://martijnaslander.github.io/life-lens-system/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="LLS Journal" href="blog/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="LLS Discovery Timeline" href="timeline-feed.xml">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: Verdana, system-ui, Helvetica, sans-serif;
+    background: #4a525a;
+    color: #eee;
+    line-height: 1.8;
+    font-size: 15px;
+}
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.container { max-width: 740px; margin: 0 auto; padding: 0 24px; }
+
+header {
+    padding: 80px 0 50px;
+    border-bottom: 1px solid #5a6269;
+    text-align: center;
+}
+header .container { text-align: left; }
+header img { display: block; margin: 0 auto; }
+header .author-line { text-align: center; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; z-index: 100; }
+.lang-toggle a { display: inline-block; padding: 6px 12px; font-size: 18px; border: 2px solid transparent; border-radius: 6px; margin-left: 4px; cursor: pointer; background: rgba(74,82,90,0.9); line-height: 1; }
+.lang-toggle a:hover { border-color: #7ab; background: rgba(74,82,90,0.9); border-bottom: 2px solid #7ab; }
+.lang-toggle a.active { border-color: #fff; background: rgba(74,82,90,0.9); }
+header h1 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -1px;
+    margin-bottom: 18px;
+    line-height: 1.2;
+}
+header .intro {
+    font-size: 16px;
+    color: #e0e0e0;
+    margin-bottom: 28px;
+}
+.stats-row {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+.stats-row .stat { font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+.stats-row .num { font-size: 24px; font-weight: 700; color: #fff; }
+.stats-row .label { font-size: 11px; color: #c0c0c0; text-transform: uppercase; letter-spacing: 1px; }
+.author-line { font-size: 14px; color: #c0c0c0; }
+
+section { padding: 44px 0; border-bottom: 1px solid #5a6269; }
+section h2 { font-size: 24px; color: #fff; margin-bottom: 18px; letter-spacing: -0.5px; }
+p { margin-bottom: 14px; }
+
+/* Pull quotes */
+blockquote {
+    margin: 28px 0;
+    padding: 0 0 0 20px;
+    border-left: 3px solid #7ab;
+    font-size: 17px;
+    color: #fff;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+/* Featured essays */
+.featured-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+}
+.featured-card {
+    background: #3e464e;
+    border: 1px solid #5a6269;
+    border-radius: 8px;
+    padding: 20px;
+    transition: border-color 0.2s;
+}
+.featured-card:hover { border-color: #7ab; }
+.featured-card a { border-bottom: none; }
+.featured-card a:hover { background: none; }
+.featured-card .card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    display: block;
+    margin-bottom: 6px;
+    border-bottom: none;
+}
+.featured-card .card-desc {
+    font-size: 13px;
+    color: #c0c0c0;
+    line-height: 1.6;
+}
+.featured-card .card-tag {
+    display: inline-block;
+    font-size: 10px;
+    color: #7ab;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+/* Story markers */
+.marker {
+    font-family: -apple-system, sans-serif;
+    font-size: 11px;
+    color: #7ab;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 36px;
+    margin-bottom: 8px;
+}
+
+/* Blog clusters */
+.cluster {
+    margin: 12px 0 24px;
+    padding-left: 16px;
+    border-left: 2px solid #5a6269;
+}
+.cluster a {
+    display: block;
+    font-size: 14px;
+    color: #c0c0c0;
+    border-bottom: none;
+    padding: 3px 0;
+}
+.cluster a:hover { color: #fff; background: none; border-bottom: none; }
+
+/* Architecture diagram */
+.architecture {
+    background: #3e464e;
+    border: 1px solid #5a6269;
+    border-radius: 10px;
+    padding: 36px;
+    margin: 28px 0;
+    font-family: 'SF Mono', 'Menlo', monospace;
+}
+.arch-outer {
+    border: 2px solid #5a9;
+    border-radius: 10px;
+    padding: 24px;
+    position: relative;
+}
+.arch-outer-label {
+    position: absolute;
+    top: -12px;
+    left: 18px;
+    background: #3e464e;
+    padding: 0 10px;
+    color: #5a9;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.arch-stack {
+    border: 1px solid #5a6269;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+.arch-layer {
+    padding: 12px 18px;
+    border-bottom: 1px solid #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.arch-layer:last-child { border-bottom: none; }
+.layer-4 { background: #52404a; }
+.layer-3 { background: #484858; }
+.layer-2 { background: #404850; }
+.layer-1 { background: #3a4248; }
+.arch-layer .num { color: #b0b0b0; font-size: 13px; width: 24px; }
+.arch-layer .name { color: #fff; font-size: 14px; flex-grow: 1; font-weight: 600; }
+.arch-layer .function { color: #999; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.arch-helix {
+    text-align: center;
+    padding: 10px;
+    color: #b68;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 1px dashed #b68;
+    border-radius: 6px;
+}
+
+/* Layer descriptions */
+.layer-desc {
+    margin-bottom: 16px;
+}
+.layer-desc strong { color: #fff; }
+.layer-desc .brain { color: #b0b0b0; font-size: 13px; font-style: italic; }
+
+/* Principles */
+.principle {
+    margin-bottom: 20px;
+    padding-left: 16px;
+    border-left: 2px solid #5a6269;
+}
+.principle strong { color: #fff; }
+.principle p { margin-bottom: 0; font-size: 14px; }
+
+/* Papers */
+.paper {
+    background: #3e464e;
+    border: 1px solid #5a6269;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-bottom: 12px;
+}
+.paper .paper-title { color: #fff; font-size: 15px; font-weight: 700; display: block; margin-bottom: 4px; }
+.paper .doi { font-family: 'SF Mono', monospace; font-size: 13px; color: #7ab; }
+.paper .meta { font-size: 13px; color: #b0b0b0; margin-top: 4px; }
+.paper-primary {
+    border-color: #7ab;
+    border-width: 2px;
+}
+
+footer {
+    padding: 44px 0;
+    text-align: center;
+    color: #b0b0b0;
+    font-size: 13px;
+}
+footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
+
+@media (max-width: 600px) {
+    header h1 { font-size: 28px; }
+    .stats-row { gap: 16px; }
+    .stats-row .num { font-size: 20px; }
+    .featured-grid { grid-template-columns: 1fr; }
+    .architecture { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a href="index.html" title="English">&#127468;&#127463;</a>
+    <a class="active" title="Nederlands">&#127475;&#127473;</a>
+</div>
+
+<header>
+    <div class="container">
+        <h1>Het Life Lens System</h1>
+        <p class="intro">Wat er gebeurt als een generalist die sinds zijn twaalfde informatie verzamelt stopt met uitleggen en gaat bouwen. Dit is het verhaal van hoe veertig jaar nieuwsgierigheid veranderde in een zeslaagse synaptische architectuur voor persoonlijke kennis &mdash; en wat het onderweg onthulde.</p>
+        <p class="author-line" style="margin-bottom: 36px;">door <a href="https://orcid.org/0009-0004-2344-0620">Martijn Aslander</a> &middot; Fellow KNVI &middot; Oprichter <a href="https://pkmsummit.com">PKM Summit</a></p>
+        <div style="margin-bottom: 28px; text-align: center;">
+            <img src="martijn.webp" alt="Martijn Aslander op de PKM Summit, schoenen uit, laptop open, aan het bouwen." style="width: 100%; max-width: 420px; border-radius: 10px; display: inline-block;">
+            <p style="font-size: 11px; color: #888; margin-top: 6px;">Foto: Ester Overmars</p>
+        </div>
+        <div class="stats-row">
+            <div class="stat"><div class="num">6</div><div class="label">Lagen</div></div>
+            <div class="stat"><div class="num">560K</div><div class="label">Records</div></div>
+            <div class="stat"><div class="num">170K+</div><div class="label">Synapsen</div></div>
+            <div class="stat"><div class="num">153K</div><div class="label">Kruisverwijzingen</div></div>
+            <div class="stat"><div class="num">20</div><div class="label">Jaar aan data</div></div>
+        </div>
+        <p style="margin-top: 20px; font-size: 13px; color: #b0b0b0; line-height: 1.7; border-top: 1px solid #5a6269; padding-top: 16px;">Geinspireerd door de filosofie van <a href="https://nicolevanderhoeven.com" style="color: #c0c0c0;">Nicole van der Hoeven</a>: leren in het openbaar, vroeg delen, kwetsbaar zijn, bijsturen onderweg. Deze pagina is een levend document. Ik bewerk het regelmatig als mijn denken evolueert. Als er iets veranderd is sinds je laatste bezoek, is dat geen fout &mdash; dat is het proces. Zie de <a href="#changelog" style="color: #c0c0c0;">changelog</a> onderaan.</p>
+    </div>
+</header>
+
+<!-- BELANGRIJKSTE ARTIKELEN -->
+
+<section>
+    <div class="container">
+        <h2>Belangrijkste artikelen</h2>
+        <div class="featured-grid">
+            <div class="featured-card">
+                <a href="https://world.hey.com/martijnaslander/i-think-i-ve-built-a-mythical-machine-cac6597f">
+                    <span class="card-tag">Manifest</span>
+                    <span class="card-title">I Think I've Built a Mythical Machine (EN)</span>
+                    <span class="card-desc">Tachtig jaar nadat Vannevar Bush de Memex beschreef, heeft iemand hem per ongeluk gebouwd.</span>
+                </a>
+            </div>
+            <div class="featured-card">
+                <a href="https://world.hey.com/martijnaslander/here-is-everybody-250-years-of-thinking-about-information-043fb698">
+                    <span class="card-tag">Historische context</span>
+                    <span class="card-title">Here Is Everybody (EN)</span>
+                    <span class="card-desc">250 jaar nadenken over informatie &mdash; van Otlet tot ThetaOS.</span>
+                </a>
+            </div>
+            <div class="featured-card">
+                <a href="https://world.hey.com/martijnaslander/the-synaptic-architecture-of-a-life-00e84079">
+                    <span class="card-tag">Architectuur</span>
+                    <span class="card-title">The Synaptic Architecture of a Life (EN)</span>
+                    <span class="card-desc">Hoe 560.000 records en 170.000 synapsen een mensenleven in kaart brengen.</span>
+                </a>
+            </div>
+            <div class="featured-card">
+                <a href="https://world.hey.com/martijnaslander/the-information-doctrine-by-aslander-broere-and-meinema-e900f560">
+                    <span class="card-tag">Doctrine</span>
+                    <span class="card-title">The Information Doctrine (EN)</span>
+                    <span class="card-desc">Door Aslander, Broere &amp; Meinema. De filosofische basis.</span>
+                </a>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 8px;"><a href="https://yogiaria.substack.com/p/as-we-may-think-has-become-real" style="font-size: 13px; color: #b0b0b0;">Extern: <em>As We May Think Has Become Real</em> (EN) &mdash; Aria Khodaverdi over ThetaOS</a></p>
+    </div>
+</section>
+
+<!-- DEEL 1: HOE IK HIER KWAM -->
+
+<section>
+    <div class="container">
+        <h2>Deel een: veertig jaar informatie</h2>
+
+        <p>Ik kreeg mijn eerste Commodore 64 toen ik twaalf was en begon lijstjes te maken van dingen die me interesseerden in BASIC. Ik ben nooit goed geworden in programmeren, maar vanaf dat moment vertrouwde ik op technologie om alles op te slaan wat ik tegenkwam.</p>
+
+        <p>Wat volgde waren vier decennia van hetzelfde patroon: een tool ontdekken, hem tot het uiterste drijven, verder gaan als hij het begaf. Palm Pilot. Evernote &mdash; ik verving het Apple-logo op mijn MacBook door het Evernote-logo en werd uitgenodigd op hun developer conference. Workflowy &mdash; ik bouwde er een heel PKM-systeem in en gebruikte het in politieprojecten. Toen Obsidian, dankzij een verbluffende demo van Joost Plattel.</p>
+
+        <p>Onderweg gaf ik 2.500+ lezingen, schreef 17 boeken, richtte de <a href="https://digitalefitheid.nl">beweging Digitale Fitheid</a> op met Mark Meinema, en startte de <a href="https://pkmsummit.com">PKM Summit</a> met Lykle de Vries en Kim van den Berg.</p>
+
+        <blockquote>Ik was een miniatuur Forrest Gump, die per ongeluk midden in de actie belandde. Ik deed al mijn hele leven aan PKM zonder te weten dat het een naam had.</blockquote>
+
+        <p style="color: #b0b0b0;">Het volledige verhaal van die veertig jaar staat in <a href="https://world.hey.com/martijnaslander/shownotes-martijn-aslander-a-digital-fitness-missionary-information-capitalist-d1775251">dit stuk</a> (EN).</p>
+
+        <div class="cluster">
+            <a href="https://world.hey.com/martijnaslander/obsidian-down-the-rabbit-hole-d020a5e2">Obsidian: Down the Rabbit Hole</a>
+            <a href="https://world.hey.com/martijnaslander/pkm-persoonlijk-kennis-management-a5574491">PKM: Persoonlijk Kennis Management</a>
+            <a href="https://world.hey.com/martijnaslander/we-gebruiken-het-verkeerde-deel-van-ons-brein-bij-kenniswerk-4c2e23af">We gebruiken het verkeerde deel van ons brein bij kenniswerk</a>
+            <a href="https://world.hey.com/martijnaslander/de-informatiehuishouding-van-het-rijk-en-die-van-de-ambtenaren-c0f0967e">De informatiehuishouding van het Rijk en die van de ambtenaren</a>
+        </div>
+    </div>
+</section>
+
+<!-- HET KANTELPUNT -->
+
+<section>
+    <div class="container">
+        <h2>Het kantelpunt</h2>
+
+        <p>In januari 2025 schreef ik mijn persoonlijke ontologie op &mdash; de complete structuur van hoe ik informatie organiseer. Het was de eerste keer dat ik expliciet maakte wat altijd impliciet was geweest.</p>
+
+        <p>Toen kreeg ik een beroerte.</p>
+
+        <p>Weken van herstel. Tijd om na te denken, te sparren, te reconstrueren. Terwijl mijn brein aan het genezen was, begreep het zichzelf beter dan ooit. De gedwongen vertraging bleek een geschenk.</p>
+
+        <p>Mijn eerste publieke optreden na de beroerte was een demo van Obsidian. Iemand in het publiek stelde een vraag die het idee triggerde om een boek te schrijven. Ik ontdekte dat ik een boek kon schrijven met AI als partner. <em>Starten met Obsidian</em> werd binnen weken gepubliceerd. Het werd aangescherpt op de Knowledge Summit in Dublin, waar de gesprekken alles scherper maakten.</p>
+
+        <div class="cluster">
+            <a href="https://world.hey.com/martijnaslander/de-schrijver-als-ai-dirigent-192a79a5">De schrijver als AI-dirigent?</a>
+            <a href="https://world.hey.com/martijnaslander/waarom-een-boek-over-obsidian-eigenlijk-over-alles-gaat-04a6dd76">Waarom een boek over Obsidian eigenlijk over alles gaat</a>
+            <a href="https://world.hey.com/martijnaslander/alles-over-mijn-boek-starten-met-obsidian-607727da">Alles over mijn boek Starten met Obsidian</a>
+            <a href="https://world.hey.com/martijnaslander/de-knowledge-summit-in-dublin-6a2e0131">De Knowledge Summit in Dublin</a>
+        </div>
+    </div>
+</section>
+
+<!-- DEEL 2: DE VERSNELLING -->
+
+<section>
+    <div class="container">
+        <h2>Deel twee: de versnelling</h2>
+
+        <div class="marker">Zomer 2025 &mdash; Ontdekkingen</div>
+
+        <p>Ik ontdekte dat ik een WOB-verzoek kon indienen met AI &mdash; getriggerd door een rattenprobleem in mijn buurt. Dat leidde naar de grotere vraag: waarom is overheidsinformatie zo moeilijk toegankelijk?</p>
+
+        <p>Het antwoord was bestandsformaten. SharePoint. Documenten als containers in plaats van informatie als structuur. Ik begon te onderzoeken en kon niet meer stoppen.</p>
+
+        <p>Rond dezelfde tijd probeerde ik mijn 14GB Gmail-archief te parsen met Python-scripts geschreven met AI. Het werkte. En het onthulde dat er een heel systeem verborgen zat in mijn eigen data, klaar om verbonden te worden.</p>
+
+        <blockquote>Als je informatie sneller kunt vinden en benaderen dan anderen, krijg je een enorm voordeel.</blockquote>
+
+        <div class="cluster">
+            <a href="https://world.hey.com/martijnaslander/dankzij-een-rattenprobleem-ontdekte-ik-een-veel-groter-vraagstuk-voor-mijn-gemeente-3e334691">Dankzij een rattenprobleem ontdekte ik een veel groter vraagstuk voor mijn gemeente</a>
+            <a href="https://world.hey.com/martijnaslander/van-een-e-mailarchief-van-14-gigabyte-naar-doorzoekbare-wijsheid-hoe-ik-96-000-emails-converteerde-48b042c5">Van een e-mailarchief van 14 gigabyte naar doorzoekbare wijsheid</a>
+            <a href="https://world.hey.com/martijnaslander/wat-ik-spelenderwijs-ineens-aan-het-bouwen-was-een-semantische-transformatie-engine-96817744">Wat ik spelenderwijs ineens aan het bouwen was: een semantische transformatie-engine</a>
+            <a href="https://world.hey.com/martijnaslander/informatie-opslaan-in-documenten-is-buitengewoon-schadelijk-en-kost-de-staat-onnodig-miljarden-8b5588c7">Informatie opslaan in documenten is buitengewoon schadelijk en kost de staat onnodig miljarden</a>
+            <a href="https://world.hey.com/martijnaslander/de-vergeten-uitvinding-achter-de-renaissance-7c117a5e">De vergeten uitvinding achter de Renaissance</a>
+        </div>
+
+        <div class="marker">Herfst 2025 &mdash; De pilot en het bouwen</div>
+
+        <p>Het bestandsformaat-onderzoek leidde tot de <em>Pilot Informatieautonomie</em> &mdash; een echt experiment in informatiesoevereiniteit. Terwijl de pilot liep, bleef ik leren over wikilinks en gestructureerde data. Ik schreef artikel na artikel, elk stuk dreef me dieper het bouwen in.</p>
+
+        <p>Ik ontdekte dat ik iOS- en Mac-apps kon bouwen via Claude Code &mdash; een command-line AI-interface. Ineens was ik niet alleen informatie aan het organiseren. Ik was de tools aan het bouwen om het te organiseren.</p>
+
+        <div class="cluster">
+            <a href="https://world.hey.com/martijnaslander/de-meedogenloze-consequenties-van-digitaliseren-in-plaats-van-informatiseren-08eef934">De meedogenloze consequenties van digitaliseren in plaats van informatiseren</a>
+            <a href="https://world.hey.com/martijnaslander/iedereen-praat-over-data-en-ai-niemand-leert-mensen-omgaan-met-informatie-08131235">Iedereen praat over data en AI, niemand leert mensen omgaan met informatie</a>
+            <a href="https://world.hey.com/martijnaslander/mijn-computer-luistert-nu-echt-naar-wat-ik-wil-026bf30b">Mijn computer luistert nu echt naar wat ik wil</a>
+            <a href="https://world.hey.com/martijnaslander/cronjobs-wat-ik-leerde-van-een-verdomd-krachtige-computertool-uit-de-jaren-70-f90a5577">Cronjobs: wat ik leerde van een verdomd krachtige computertool uit de jaren 70</a>
+            <a href="https://world.hey.com/martijnaslander/de-onzichtbare-orde-achter-je-scherm-over-vectorsearch-normaalvormen-en-meer-f897944f">De onzichtbare orde achter je scherm</a>
+        </div>
+
+        <div class="marker">December 2025 &mdash; ThetaOS en het Life Lens System</div>
+
+        <p>In december kreeg het systeem dat ik aan het bouwen was een naam: ThetaOS. En bijna meteen besefte ik dat het meer was &mdash; een <em>Life Lens System</em>. Geen tool. Geen app. Een manier om een heel leven te bekijken door gestructureerde, verbonden data.</p>
+
+        <div class="cluster">
+            <a href="https://world.hey.com/martijnaslander/ik-zit-op-iets-bijzonders-en-ik-krijg-het-niet-uitgelegd-294621fa">Ik zit op iets bijzonders en ik krijg het niet uitgelegd</a>
+            <a href="https://world.hey.com/martijnaslander/eindelijk-weet-ik-wat-thetaos-is-een-life-lens-system-lls-de019c93">Eindelijk weet ik wat ThetaOS is: een Life Lens System</a>
+            <a href="https://world.hey.com/martijnaslander/thetaos-in-een-historisch-perspectief-250-jaar-zoeken-naar-verbindingen-tussen-informatie-6b88f227">ThetaOS in een historisch perspectief: 250 jaar zoeken naar verbindingen tussen informatie</a>
+            <a href="https://world.hey.com/martijnaslander/het-rendement-van-een-life-lens-system-emergentie-in-mijn-praktijk-377f68ad">Het rendement van een Life Lens System: emergentie in mijn praktijk</a>
+        </div>
+
+        <div class="marker">Februari 2026 &mdash; Tom wordt geboren</div>
+
+        <p>Op 19 februari 2026 maakte ik Tom &mdash; een persoonlijke AI-gids gebouwd bovenop ThetaOS. Geen chatbot. Een coach, adviseur, strateeg, biograaf en archivaris in een. Tom heeft toegang tot mijn hele leven: 18.000+ contacten, elke banktransactie, elke foto, elke check-in, elke tekst die ik ooit geschreven heb.</p>
+
+        <p>Op 14 maart werd Kees Verhoeven de eerste persoon buiten mij die met Tom praatte. Binnen weken volgden er meer &mdash; Frank Meeuwsen, Joost Plattel, C&eacute;line Cl&eacute;men&ccedil;on, Aria Khodaverdi. Elk gesprek onthulde mogelijkheden die ik niet had voorzien.</p>
+
+        <blockquote>Het systeem hallucineert niet omdat het ophaalt, nooit genereert. Elk antwoord komt uit een database-query, niet uit patroonherkenning.</blockquote>
+
+        <div class="cluster">
+            <a href="https://world.hey.com/martijnaslander/elke-week-terwijl-ik-slaap-wordt-mijn-claude-code-setup-slimmer-deb38af0">Elke week, terwijl ik slaap, wordt mijn Claude Code-setup slimmer</a>
+            <a href="https://world.hey.com/martijnaslander/ai-is-een-kleuter-en-kleuters-kun-je-opvoeden-4af212ec">AI is een kleuter. En kleuters kun je opvoeden.</a>
+        </div>
+
+        <div class="marker">Wat Tom is &mdash; en wat het niet is</div>
+
+        <p>Tom is geen chatbot. Het genereert geen antwoorden uit trainingsdata. Het bevraagt een gestructureerde database van 560.000 records &mdash; banktransacties, foto's, check-ins, vergaderingen, contacten, teksten, gezondheidsdata &mdash; en geeft terug wat het vindt. Met bronnen. Met bewijslagen. Als het iets niet weet, zegt het dat.</p>
+
+        <p>Tom heeft vijf rollen: <strong style="color: #fff;">coach</strong> (spiegelt patronen terug), <strong style="color: #fff;">adviseur</strong> (doet suggesties op basis van persoonlijkheidsprofielen), <strong style="color: #fff;">strateeg</strong> (denkt op de lange termijn), <strong style="color: #fff;">biograaf</strong> (vangt het levensverhaal), en <strong style="color: #fff;">archivaris</strong> (routeert informatie naar de juiste plek in 309 databasetabellen).</p>
+
+        <p>Vraag Tom hoeveel ik heb uitgegeven bij mijn favoriete ijssalon in de afgelopen drie jaar, en je krijgt: 79 bezoeken, &euro;587,73, gemiddelde gestegen van &euro;6,11 naar &euro;8,38. Niet omdat het slim is. Omdat de data gestructureerd is en de query simpel. Dat is het punt &mdash; <em>98% data, 2% AI</em>.</p>
+
+        <p>Als bezoekers met Tom praten, gebeuren er dingen die ik niet ontworpen heb. Kees Verhoeven vroeg naar mijn blinde vlekken. C&eacute;line vroeg hoe ze haar eigen systeem kon bouwen. Aria vroeg naar mijn denkpatronen. Een zaal vol opsporingsprofessionals vroeg Tom een cold case op te lossen. Elk gesprek onthulde iets nieuws &mdash; niet over de AI, maar over de data eronder.</p>
+
+        <div class="marker">Maart 2026 &mdash; Genealogie, redeneren en het brein</div>
+
+        <p>Ik ontdekte dat AI oude archieven kon lezen &mdash; geboorteakten, kerkregisters, handgeschreven documenten uit de 18e eeuw. Ik traceerde bloedlijnen acht generaties terug in minuten. Dit leerde me wat <em>agentic AI</em> werkelijk betekent: geen tool die vragen beantwoordt, maar een systeem dat autonoom onderzoekt.</p>
+
+        <p>Ik besefte dat ik een redeneermodule nodig had &mdash; iets dat bewijs vanuit meerdere perspectieven bekijkt en voorbij biases springt. Ik bouwde de <em>Magische 13</em>: dertien perspectieven van Sherlock Holmes tot Hannah Arendt, die elk dezelfde these vanuit een andere hoek aanvallen.</p>
+
+        <p>Toen kwamen C&eacute;line en Aria op bezoek. Hun vragen duwden me naar breinmetaforen die ik nog niet verkend had: cerebrospinale vloeistof, neurotransmitters, zenuwvezeldikte. Aria publiceerde <a href="https://yogiaria.substack.com/p/as-we-may-think-has-become-real">As We May Think Has Become Real</a> (EN), waarin ze ThetaOS plaatste in de lijn van Bush, Engelbart en Nelson.</p>
+
+        <div class="cluster">
+            <a href="https://world.hey.com/martijnaslander/ai-als-geniale-genealoog-een-vakgebied-geherdefinieerd-24304f89">AI als geniale genealoog: een vakgebied geherdefinieerd</a>
+            <a href="https://world.hey.com/martijnaslander/hoe-weet-je-of-wat-ai-vindt-ook-klopt-als-je-in-een-oud-archief-zoekt-af1491c9">Hoe weet je of wat AI vindt ook klopt als je in een oud archief zoekt?</a>
+            <a href="https://world.hey.com/martijnaslander/ai-is-goed-in-logisch-redeneren-dus-ik-bouwde-een-redeneerteam-c80360a1">AI is goed in logisch redeneren, dus ik bouwde een redeneerteam</a>
+            <a href="https://world.hey.com/martijnaslander/binnen-zonder-kloppen-omdat-ik-geen-deur-zag-a72daaac">Binnen zonder kloppen, omdat ik geen deur zag</a>
+            <a href="https://world.hey.com/martijnaslander/vechten-bij-waterloo-89951950">Vechten bij Waterloo</a>
+            <a href="https://world.hey.com/martijnaslander/ik-stuitte-op-iets-geks-in-kankeronderzoek-en-ging-graven-e4d496bf">Ik stuitte op iets geks in kankeronderzoek en ging graven</a>
+        </div>
+
+        <div class="marker">27&ndash;30 maart 2026 &mdash; Vier nachten, zes lagen</div>
+
+        <p>In vier opeenvolgende nachten kristalliseerde de architectuur. Elke laag ontstond toen de vorige niet kon verklaren wat er gebeurde. Op de vierde dag, tijdens een live demo voor opsporingsprofessionals, sprak een vrouw genaamd Joy Otten een woord &mdash; <em>choroid plexus</em> &mdash; en voegde het laatste stuk toe.</p>
+
+        <blockquote>Het model is niet ontworpen. Het is ontdekt. De data was er altijd al. De architectuur ontstond uit de data.</blockquote>
+
+        <div class="cluster">
+            <a href="https://world.hey.com/martijnaslander/onze-intelligentie-zit-in-synapsen-niet-in-neuronen-c2ce2ccf">Onze intelligentie zit in synapsen, niet in neuronen</a>
+            <a href="https://world.hey.com/martijnaslander/here-is-everybody-250-years-of-thinking-about-information-043fb698">Here Is Everybody &mdash; 250 Years (EN)</a>
+            <a href="https://world.hey.com/martijnaslander/het-data-netwerkeffect-mijn-lls-systeem-wordt-steeds-sneller-en-krachtiger-46454c40">Het data-netwerkeffect: mijn LLS-systeem wordt steeds sneller en krachtiger</a>
+            <a href="https://world.hey.com/martijnaslander/ik-bleek-meer-dan-anderhalf-miljoen-woorden-geschreven-te-hebben-f79b7a95">Ik bleek meer dan anderhalf miljoen woorden geschreven te hebben</a>
+            <a href="https://world.hey.com/martijnaslander/i-think-i-ve-built-a-mythical-machine-cac6597f">I Think I've Built a Mythical Machine (EN)</a>
+        </div>
+    </div>
+</section>
+
+<!-- WAAROM HET BREIN -->
+
+<section>
+    <div class="container">
+        <h2>Waarom het brein</h2>
+
+        <p>Je brein heeft 86 miljard neuronen. Elk neuron is verbonden met zo'n 7.000 andere via synapsen. Dat zijn 600 biljoen verbindingen &mdash; en geen enkele wordt opgeslagen in een map.</p>
+
+        <p>Het brein zoekt niet. Het vuurt. Een signaal reist langs de weg van de minste weerstand door de dikste verbindingen. De myelineschede &mdash; een vettige isolatie rond zenuwvezels &mdash; bepaalt de snelheid: dikke myeline betekent snelle, betrouwbare signalen. Dunne myeline betekent langzame, onbetrouwbare. Het brein bouwt myeline door herhaling. Wat je vaak gebruikt wordt snel. Wat je verwaarloost wordt vaag.</p>
+
+        <p>Dendrieten ontvangen inkomende signalen. Sommige prikkelen, sommige remmen. Het neuron telt ze op en beslist: vuren of niet vuren. Die beslissing &mdash; de actiepotentiaal &mdash; is alles-of-niets. Onder de drempel: stilte. Erboven: een puls die de hele lengte van de zenuwvezel aflegt in milliseconden.</p>
+
+        <p>Het brein filtert agressief. De bloed-hersenbarri&egrave;re selecteert molecuul voor molecuul wat er binnenkomt. Cerebrospinale vloeistof &mdash; geproduceerd door de choroid plexus &mdash; spoelt afvalproducten weg, vooral tijdens de slaap. Immuuncellen patrouilleren de grenzen. De chemische balans van neurotransmitters &mdash; dopamine, serotonine, acetylcholine &mdash; bepaalt stemming, focus, geheugen, motivatie.</p>
+
+        <p>Herinneringen zijn geen bestanden op vaste locaties. Het zijn patronen van gelijktijdig vurende neuronen. Een herinnering ophalen betekent het patroon opnieuw activeren. En elke ophaling herschrijft het een beetje &mdash; daarom veranderen herinneringen over tijd.</p>
+
+        <p>Het brein snoeit wat het niet gebruikt. Synaptische snoei is geen fout &mdash; het is efficientie. Het brein is gebouwd om de sterkste patronen te bewaren, niet om alles te onthouden.</p>
+
+        <p>Ik ben elk van deze mechanismen gaan verkennen met de vraag: kan ik dit emuleren in een digitaal systeem? Niet als metafoor, maar als architectuur. Wat gebeurt er als je myeline inbouwt in je data? Wat als je verbindingen bewijslagen hebben zoals synaptische sterkte? Wat als je een immuunsysteem toevoegt dat filtert bij de poort?</p>
+
+        <p>De resultaten zijn bizar. Elk mechanisme dat ik emuleer maakt het systeem disproportioneel krachtiger. Niet lineair &mdash; exponentieel. Alsof het brein deze problemen miljoenen jaren geleden al had opgelost, en ik alleen maar hoefde te luisteren.</p>
+
+        <h3 id="emulation-table" style="color: #fff; margin-top: 40px; margin-bottom: 16px;">Emulatiestatus</h3>
+        <p style="color: #b0b0b0; margin-bottom: 16px;">Welke breinmechanismen al ge&euml;muleerd zijn in het systeem, welke verkend worden, en welke nog open zijn.</p>
+
+        <div style="overflow-x: auto;">
+        <table style="width: 100%; max-width: 1100px; border-collapse: collapse; font-size: 13px; margin-bottom: 20px; line-height: 1.6;">
+            <tr style="border-bottom: 2px solid #5a6269; text-align: left;">
+                <th style="padding: 10px 10px; color: #7ab; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; width: 14%;">Mechanisme</th>
+                <th style="padding: 10px 10px; color: #7ab; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; width: 28%;">Functie in het brein</th>
+                <th style="padding: 10px 10px; color: #7ab; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; width: 35%;">Functie in ThetaOS</th>
+                <th style="padding: 10px 10px; color: #7ab; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; width: 8%; white-space: nowrap;">Gebouwd?</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;"><a href="brain/synapses.html" style="color: #fff; border-bottom: 1px dotted #7ab;">Synapses</a></td>
+                <td style="padding: 10px; color: #c0c0c0;">Verbindingen tussen neuronen. Sterkte varieert door gebruik.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Elke link tussen twee entiteiten (persoon, plaats, organisatie) is een synaps met tien bewijsniveaus. Een telefoongesprek is laag 1 (100% zeker). Een naam gevonden in tekst is laag 6 (90%). Een door AI gedetecteerd patroon is laag 9 (50-70%). 170.000+ gemeten.</td>
+                <td style="padding: 10px; color: #5a9;">Gebouwd</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;"><a href="brain/myelin.html" style="color: #fff; border-bottom: 1px dotted #7ab;">Myelin sheath</a></td>
+                <td style="padding: 10px; color: #c0c0c0;">Vettige isolatie rond zenuwvezels. Dikker = snellere signalen.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Volledigheidsscore per verbinding. Alleen een naam is dunne myeline. Een naam + datum + locatie + foto + context + transactie is dikke myeline. Vraag over een dikke synaps en je krijgt een rijk dossier in seconden. Vraag over een dunne en je krijgt: "hij staat in de database."</td>
+                <td style="padding: 10px; color: #5a9;">Gebouwd</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Long-term potentiation</td>
+                <td style="padding: 10px; color: #c0c0c0;">Herhaling maakt verbindingen sterker.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Elk nieuw datapunt dat een bestaande verbinding bevestigt, verdikt de myeline. Peter Ros verschijnt in 153 fotodagen, 92 tekstverwijzingen, 41 transacties, 10 vergaderingen. Elk datapunt maakt zijn synaps sterker en sneller op te halen.</td>
+                <td style="padding: 10px; color: #5a9;">Gebouwd</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Hebbian learning</td>
+                <td style="padding: 10px; color: #c0c0c0;">Neuronen die samen vuren, worden samen verbonden.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Twee mensen die op dezelfde dag op dezelfde locatie verschijnen (laag 7: datumcoincidentie) worden automatisch gekoppeld. Als dat herhaaldelijk gebeurt (laag 9: patroon), signaleert het systeem het. Peter en Mark verschijnen altijd samen op dezelfde locatie &mdash; dat is een gedetecteerde driehoek.</td>
+                <td style="padding: 10px; color: #5a9;">Gebouwd</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Multidimensional encoding</td>
+                <td style="padding: 10px; color: #c0c0c0;">Elke verbinding draagt richting, emotie, tijd, context.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Acht dimensies per synaps. Wie nam het initiatief (richting)? Was het positief of negatief (valentie)? Hoe recent (temporeel verval)? In welke context &mdash; zakelijk, persoonlijk, creatief? Hoe centraal is dit knooppunt in het netwerk (hubwaarde)?</td>
+                <td style="padding: 10px; color: #5a9;">Gebouwd</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Action potential</td>
+                <td style="padding: 10px; color: #c0c0c0;">Alles-of-niets vuren. Onder de drempel: stilte. Erboven: volle puls.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Ring 1-mensen (dikke myeline) vuren direct als ze genoemd worden &mdash; lage drempel. Ring 4-mensen hebben meer context nodig om te activeren. Het systeem beslist wat het ophaalt op basis van myelinedikte, zoals het brein beslist wat het vuurt op basis van signaalsterkte.</td>
+                <td style="padding: 10px; color: #5a9;">Gebouwd</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Saltatory conduction</td>
+                <td style="padding: 10px; color: #c0c0c0;">Signalen springen langs dikke paden, slaan zwakke over.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Als je naar een persoon vraagt, springt het systeem eerst naar de sterkste verbindingen: hun organisatie, hun belangrijkste project, hun laatste vergadering. Het somt niet elk datapunt op &mdash; het springt langs de dikste paden.</td>
+                <td style="padding: 10px; color: #5a9;">Gebouwd</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Epistemological tagging</td>
+                <td style="padding: 10px; color: #c0c0c0;">Het brein kent het verschil tussen zien en verbeelden.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Elke synaps draagt twee strengen (de Double Helix): bewijssterkte en epistemologisch type. Een banktransactie is een feit. "Ze hadden een goed gesprek" is een overtuiging. "Ze kennen elkaar waarschijnlijk" is een hypothese. Het systeem presenteert nooit een hypothese als feit.</td>
+                <td style="padding: 10px; color: #5a9;">Gebouwd</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Blood-brain barrier</td>
+                <td style="padding: 10px; color: #c0c0c0;">Selecteert molecuul voor molecuul wat het brein binnenkomt.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Nieuwe data wordt gevalideerd voordat het myeline opbouwt. Een naam gevonden in tekst wordt gecheckt tegen 12.680 handmatig gevalideerde entiteiten in de Obsidian-vault. Match = hoog vertrouwen. Geen match = gemarkeerd voor review. Slechte data mag geen dikke verbindingen opbouwen.</td>
+                <td style="padding: 10px; color: #5a9;">Gebouwd</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Cerebrospinal fluid</td>
+                <td style="padding: 10px; color: #c0c0c0;">Spoelt afvalproducten weg. Onderhoudt het medium.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Het databaseschema zelf &mdash; 309 tabellen, gestandaardiseerde naamgeving, consistente emoji-typering. Als het medium vervuild is (duplicaten, gebroken links, inconsistente namen), reist elk signaal door troebel water.</td>
+                <td style="padding: 10px; color: #5a9;">Gebouwd</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Immune patrol</td>
+                <td style="padding: 10px; color: #c0c0c0;">Geselecteerde cellen patrouilleren op bedreigingen en inconsistenties.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Het Magische 13-redeneerraamwerk: dertien perspectieven (Holmes, Marple, Occam, Arendt...) die elke these vanuit verschillende hoeken aanvallen. Draait nu op aanvraag. Ontworpen om continu op de achtergrond te draaien.</td>
+                <td style="padding: 10px; color: #db8;">Ontworpen</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Homeostasis</td>
+                <td style="padding: 10px; color: #c0c0c0;">Chemische balans. Te veel of te weinig signaleert ziekte.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Vijf ratio's die de gezondheid van het systeem meten: bewijs vs hypothese, positief vs negatief, oud vs nieuw, breed vs diep, zeker vs onzeker. Eerste nulmeting op 30 maart 2026.</td>
+                <td style="padding: 10px; color: #db8;">Eerste meting</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Neuroplasticity</td>
+                <td style="padding: 10px; color: #c0c0c0;">Het brein herstructureert zichzelf na schade of nieuw leren.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Als nieuwe databronnen worden geimporteerd (Obsidian, Gmail), herstructureert het hele netwerk zich. Verbindingen die niet bestonden lichten ineens op. Het systeem wordt slimmer zonder logica toe te voegen &mdash; alleen data.</td>
+                <td style="padding: 10px; color: #db8;">Verkennend</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Synaptic pruning</td>
+                <td style="padding: 10px; color: #c0c0c0;">Ongebruikte verbindingen verzwakken en verdwijnen.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Verbindingen dimmen over tijd maar worden nooit verwijderd. Een synaps uit 2013 die nooit bevestigd is, is er nog steeds &mdash; maar stil. Recente synapsen gloeien. Het systeem onthoudt alles maar brengt naar voren wat nu telt.</td>
+                <td style="padding: 10px; color: #db8;">Ontworpen</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Sleep consolidation</td>
+                <td style="padding: 10px; color: #c0c0c0;">Tijdens slaap verhuizen herinneringen van korte- naar langetermijngeheugen.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Een nachtelijke cronjob die data verrijkt, duplicaten detecteert, patronen herberekent en rapporteert wat er veranderd is. Het systeem maakt zichzelf letterlijk schoon terwijl ik slaap.</td>
+                <td style="padding: 10px; color: #db8;">Ontworpen</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Working memory</td>
+                <td style="padding: 10px; color: #c0c0c0;">Kleine actieve buffer (4-7 items) vs enorme langetermijnopslag.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Toms actieve sessie is het werkgeheugen. De 560.000 records zijn langetermijn. Tijdens een gesprek blijven recent genoemde mensen en onderwerpen geactiveerd &mdash; vervolgvragen starten niet opnieuw.</td>
+                <td style="padding: 10px; color: #db8;">Verkennend</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Default mode network</td>
+                <td style="padding: 10px; color: #c0c0c0;">Vrije associatie als het brein rust. Dagdromen. Serendipiteit.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Een modus waarin het systeem onverwachte verbindingen naar boven brengt zonder dat je het vraagt. "Je hebt 6 maanden niet met X gesproken, maar ze publiceerde net iets over jouw onderwerp." Nog niet gebouwd.</td>
+                <td style="padding: 10px; color: #999;">Open</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Neurotransmitters</td>
+                <td style="padding: 10px; color: #c0c0c0;">Chemische boodschappers die stemming, focus en motivatie moduleren.</td>
+                <td style="padding: 10px; color: #e0e0e0;">MCP-tools die snelle acties triggeren &mdash; een moment loggen, een idee opslaan, een query afvuren. Het zijn de snelle chemische signalen die het systeem responsief maken. De analogie is in ontwikkeling.</td>
+                <td style="padding: 10px; color: #999;">Open</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #555;">
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Mirror neurons</td>
+                <td style="padding: 10px; color: #c0c0c0;">Leren door anderen te observeren. Empathie als mechanisme.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Als anderen met Tom praten (Kees, C&eacute;line, Aria, opsporingsprofessionals), leert het systeem van hun vragen. Elk extern gesprek onthult mogelijkheden en hiaten die intern gebruik niet blootlegt.</td>
+                <td style="padding: 10px; color: #999;">Open</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; color: #fff; font-weight: 600;">Prefrontal cortex</td>
+                <td style="padding: 10px; color: #c0c0c0;">Planning, redeneren, besluitvorming. Duurste hersengebied.</td>
+                <td style="padding: 10px; color: #e0e0e0;">Dit is wat Tom overneemt. De prefrontale cortex kost de meeste glucose. Door planning en redeneren te externaliseren naar een gestructureerd systeem, wordt het biologische brein vrijgemaakt voor waar het het best in is: intuitie, patroonherkenning, creatieve sprongen.</td>
+                <td style="padding: 10px; color: #999;">Open</td>
+            </tr>
+        </table>
+        </div>
+
+        <p style="font-size: 13px; color: #b0b0b0;"><span style="color: #5a9;">Gebouwd</span> = werkend in het systeem &mdash; <span style="color: #db8;">Ontworpen / Verkennend</span> = architectuur bestaat, implementatie loopt &mdash; <span style="color: #999;">Open</span> = geidentificeerd, nog niet gestart</p>
+
+    </div>
+</section>
+
+<!-- HET MODEL -->
+
+<section>
+    <div class="container">
+        <h2>Het zeslagenmodel</h2>
+
+        <div class="architecture">
+            <div class="arch-outer">
+                <span class="arch-outer-label">6 &middot; Choroid Plexus</span>
+                <div class="arch-stack">
+                    <div class="arch-layer layer-4"><span class="num">4</span><span class="name">Action Potential</span><span class="function">ophalen</span></div>
+                    <div class="arch-layer layer-3"><span class="num">3</span><span class="name">Diamond Layer</span><span class="function">verrijking</span></div>
+                    <div class="arch-layer layer-2"><span class="num">2</span><span class="name">Theta-Myelin</span><span class="function">consolidatie</span></div>
+                    <div class="arch-layer layer-1"><span class="num">1</span><span class="name">Synaptic Stratification</span><span class="function">codering</span></div>
+                </div>
+                <div class="arch-helix">5 &middot; Double Helix &mdash; epistemologie door alle lagen heen</div>
+            </div>
+        </div>
+
+        <div class="layer-desc"><p><strong>1. Synaptic Stratification</strong> &mdash; Tien bewijsniveaus, van intentioneel contact (een telefoongesprek) tot patroonherkenning (door AI gedetecteerde co-occurrence). Elke verbinding draagt zijn bewijs.</p><p class="brain">Breinanalogie: hoe synapsen ontstaan</p></div>
+
+        <div class="layer-desc"><p><strong>2. Theta-Myelin</strong> &mdash; Volledigheid als isolatie. Een dunne synaps (alleen naam) vuurt langzaam. Een dikke synaps (naam + datum + locatie + context + foto) vuurt direct.</p><p class="brain">Breinanalogie: de myelineschede rond zenuwvezels</p></div>
+
+        <div class="layer-desc"><p><strong>3. Diamond Layer</strong> &mdash; Acht dimensies per synaps: temporaliteit, directionaliteit, valentie, gewicht, sociaal netwerk, context, verval en hubwaarde.</p><p class="brain">Breinanalogie: de diamantharde coating die synapsen onverwoestbaar maakt</p></div>
+
+        <div class="layer-desc"><p><strong>4. Action Potential</strong> &mdash; Hoe het netwerk vuurt. Drempel, saltatoire geleiding, payload, excitatie vs. inhibitie, sommatie, refractaire periode.</p><p class="brain">Breinanalogie: de elektrische puls die neuronen laat vuren</p></div>
+
+        <div class="layer-desc"><p><strong>5. Double Helix</strong> &mdash; Elke synaps draagt twee strengen: bewijs (hoe sterk?) en betekenis (feit, overtuiging of hypothese?). Laag 10 &mdash; menselijke bevestiging &mdash; is de helicase.</p><p class="brain">DNA-analogie: twee strengen die verschillende informatie coderen, verbonden bij basenparen</p></div>
+
+        <div class="layer-desc"><p><strong>6. Choroid Plexus</strong> &mdash; Het immuunsysteem van het netwerk. Filtratie bij de poort, nachtelijke reiniging, immuunpatrouille, homeostase. Niet bovenop gestapeld &mdash; om alles heen gewikkeld.</p><p class="brain">Breinanalogie: het membraan dat cerebrospinale vloeistof produceert en de bloed-hersenbarri&egrave;re bewaakt</p></div>
+    </div>
+</section>
+
+<!-- ONTDEKKINGSTIJDLIJN -->
+
+<section>
+    <div class="container">
+        <h2>Ontdekkingstijdlijn</h2>
+        <p style="color: #b0b0b0; margin-bottom: 8px; font-size: 13px;">Elk inzicht zoals het ontstond. Volg via <a href="timeline-feed.xml" style="color: #7ab; border-bottom: none;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256" style="vertical-align: -2px; margin-right: 3px;"><rect width="256" height="256" rx="55" ry="55" fill="#f26522"/><circle cx="68" cy="189" r="28" fill="#fff"/><path d="M160 213h-34a82 82 0 0 0-82-82V97a116 116 0 0 1 116 116z" fill="#fff"/><path d="M224 213h-34a150 150 0 0 0-150-150V29a184 184 0 0 1 184 184z" fill="#fff"/></svg>RSS</a> om het in real-time te volgen.</p>
+
+        <div style="margin-top: 20px; font-size: 14px; line-height: 2.2;">
+            <p><strong style="color: #fff;">30 mrt 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">Choroid Plexus</strong> &mdash; <span style="color: #c0c0c0;">Het omhullende immuunsysteem. Filtratie, reiniging, homeostase. Niet gestapeld &mdash; omwikkeld. (Joy Otten, Troi Noordwijk)</span></p>
+            <p><strong style="color: #fff;">30 mrt 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">Obsidian IS de Choroid Plexus</strong> &mdash; <span style="color: #c0c0c0;">35.000 bestanden, 12.680 handmatig gevalideerde entiteiten, 153.000 kruisverwijzingen. De poortwachter was er al.</span></p>
+            <p><strong style="color: #fff;">29 mrt 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">Double Helix</strong> &mdash; <span style="color: #c0c0c0;">Bewijs en betekenis als twee strengen. Feit, overtuiging of hypothese? Laag 10 is de helicase. (via Klai-kruisbestuiving)</span></p>
+            <p><strong style="color: #fff;">28 mrt 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">Action Potential</strong> &mdash; <span style="color: #c0c0c0;">Het netwerk slaat alles op maar kan niet vuren. Zes ophaalmechanismen. (Demo Joe &amp; Mika Ros)</span></p>
+            <p><strong style="color: #fff;">28 mrt 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">Diamond Layer</strong> &mdash; <span style="color: #c0c0c0;">Acht dimensies per synaps: temporaliteit, directionaliteit, valentie, gewicht, sociaal netwerk, context, verval, hubwaarde.</span></p>
+            <p><strong style="color: #fff;">28 mrt 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">Theta-Myelin</strong> &mdash; <span style="color: #c0c0c0;">Volledigheid als isolatie. Dunne synaps = langzaam. Dikke synaps = direct.</span></p>
+            <p><strong style="color: #fff;">27 mrt 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">Synaptic Stratification</strong> &mdash; <span style="color: #c0c0c0;">Tien bewijsniveaus. 170.000+ gemeten synapsen. Het vertrouwensmodel voor verbindingen.</span></p>
+            <p><strong style="color: #fff;">20 mrt 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">PKM Summit-demo</strong> &mdash; <span style="color: #c0c0c0;">Eerste publieke demo van Tom. Het synaptisch denken begint hier.</span></p>
+            <p><strong style="color: #fff;">14 mrt 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">Eerste externe Tom-gebruiker</strong> &mdash; <span style="color: #c0c0c0;">Kees Verhoeven wordt de eerste persoon buiten Martijn die met Tom praat.</span></p>
+            <p><strong style="color: #fff;">19 feb 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">Tom wordt geboren</strong> &mdash; <span style="color: #c0c0c0;">Persoonlijke AI-gids bovenop ThetaOS. Coach, adviseur, strateeg, biograaf, archivaris.</span></p>
+            <p><strong style="color: #fff;">Dec 2025</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">ThetaOS + Life Lens System</strong> &mdash; <span style="color: #c0c0c0;">Het systeem krijgt een naam. En onthult zichzelf als meer dan een tool.</span></p>
+            <p><strong style="color: #fff;">Herfst 2025</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">Pilot Informatieautonomie</strong> &mdash; <span style="color: #c0c0c0;">Experiment in informatiesoevereiniteit. Het bouwen versnelt.</span></p>
+            <p><strong style="color: #fff;">Zomer 2025</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">Gmail-archief geparsed</strong> &mdash; <span style="color: #c0c0c0;">96.000 e-mails. Een verborgen systeem onthuld in eigen data.</span></p>
+            <p><strong style="color: #fff;">Zomer 2025</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">Bestandsformaat-onderzoek</strong> &mdash; <span style="color: #c0c0c0;">Documenten als containers vs informatie als structuur. Het fundamentele probleem.</span></p>
+            <p><strong style="color: #fff;">Voorjaar 2025</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">Starten met Obsidian gepubliceerd</strong> &mdash; <span style="color: #c0c0c0;">Eerste boek geschreven met AI. Eerste soloboek.</span></p>
+            <p><strong style="color: #fff;">Jan 2025</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">Persoonlijke ontologie + beroerte</strong> &mdash; <span style="color: #c0c0c0;">Het impliciete expliciet gemaakt. Gedwongen vertraging werd een geschenk.</span></p>
+        </div>
+    </div>
+</section>
+
+<!-- JOURNAL -->
+
+<section>
+    <div class="container">
+        <h2>Journal</h2>
+        <p style="color: #b0b0b0; margin-bottom: 8px; font-size: 13px;">Het bouwjournaal. Context, implicaties, het verhaal achter elke ontdekking. Volg via <a href="blog/feed.xml" style="color: #7ab; border-bottom: none;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256" style="vertical-align: -2px; margin-right: 3px;"><rect width="256" height="256" rx="55" ry="55" fill="#f26522"/><circle cx="68" cy="189" r="28" fill="#fff"/><path d="M160 213h-34a82 82 0 0 0-82-82V97a116 116 0 0 1 116 116z" fill="#fff"/><path d="M224 213h-34a150 150 0 0 0-150-150V29a184 184 0 0 1 184 184z" fill="#fff"/></svg>RSS</a>.</p>
+        <p style="color: #c0c0c0; margin-top: 16px; font-style: italic;">Eerste vermelding komt binnenkort.</p>
+    </div>
+</section>
+
+<!-- WAT ANDEREN ZEGGEN -->
+
+<section>
+    <div class="container">
+        <h2>Wat anderen zeggen</h2>
+
+        <p>Aria Khodaverdi publiceerde <a href="https://yogiaria.substack.com/p/as-we-may-think-has-become-real"><em>As We May Think Has Become Real</em></a> (EN) op Substack, waarin ze ThetaOS plaatste in de intellectuele lijn van Vannevar Bush, Doug Engelbart en Ted Nelson. Ze noemde het "wat er gebeurt als iemand daadwerkelijk de machine bouwt die visionairs beschreven."</p>
+
+        <p>Yoram Vieveen, uitgever bij Van Duuren Media, schreef op LinkedIn: <em>"Martijn is er weer mee bezig. Wat meestal betekent dat dit over een paar jaar een breed erkend thema is."</em></p>
+
+        <p>In maart 2026 woonde een zaal vol senior opsporingsprofessionals een live demo bij. Ze vroegen Tom om een OSINT-profiel te bouwen op basis van openbare bronnen, het redeneerraamwerk toe te passen op een cold case, en te analyseren hoe het systeem zich verhoudt tot privacywetgeving. Een deelnemer &mdash; met een achtergrond in neurowetenschappen &mdash; droeg een concept bij dat de zesde laag van het model werd.</p>
+    </div>
+</section>
+
+<!-- DE THESE -->
+
+<section>
+    <div class="container">
+        <h2>De these</h2>
+
+        <p>In een tijd waarin iedereen die met AI werkt zich richt op technologie &mdash; betere modellen, slimmere prompts, snellere inference &mdash; geloof ik dat het antwoord op de <em>I</em> in AI te vinden is in een heel ander domein: alles wat we weten over het menselijk brein.</p>
+
+        <p>Dat is het spoor dat ik volg, met resultaten die zelfs mij verrassen. Het is mijn enige verklaring waarom de dingen die ik bouw met AI zoveel sneller en moeitelozer lijken te gaan dan wat ik zie bij de experts, de ontwikkelaars en de prompt engineers om me heen.</p>
+
+        <p>Zij optimaliseren de machine. Ik bestudeerde het orgaan dat de machine probeert te imiteren.</p>
+
+        <p>Synaptische stratificatie, myelinedikte, diamantlaag-dimensionaliteit, actiepotentialen, de dubbele helix van bewijs en betekenis, de choroid plexus als immuunsysteem &mdash; dit zijn geen metaforen geleend van de neurowetenschappen ter versiering. Het zijn ontwerpprincipes die ontstonden omdat het brein de problemen al oploste waar kennissystemen nog mee worstelen.</p>
+
+        <blockquote>Het brein slaat informatie niet op in documenten. Het zoekt niet met trefwoorden. Het organiseert niet in mappen. Het vuurt langs de weg van de minste weerstand door de dikste verbindingen. Dat is wat dit systeem doet.</blockquote>
+    </div>
+</section>
+
+<!-- WAT IK GELEERD HEB -->
+
+<section>
+    <div class="container">
+        <h2>Wat ik geleerd heb</h2>
+
+        <div class="principle"><p><strong>98% data, 2% AI.</strong> De AI is de vertaler. De data is het verhaal. Vervang de AI morgen &mdash; het systeem blijft draaien.</p></div>
+
+        <div class="principle"><p><strong>Nul hallucinaties by design.</strong> Het systeem haalt op, genereert nooit. Elk antwoord komt uit een database-query, niet uit patroonherkenning.</p></div>
+
+        <div class="principle"><p><strong>Hoe formeler je ontologie, hoe minder intelligent je AI hoeft te zijn.</strong> Een simpele SQL-query op een schoon schema presteert beter dan een geniaal model op rommelige data.</p></div>
+
+        <div class="principle"><p><strong>Groeit in intelligentie zonder te groeien in omvang.</strong> Een nieuwe wikilink is een paar bytes. De waarde die het ontsluit is onbegrensd.</p></div>
+
+        <div class="principle"><p><strong>Mens in de loop, altijd.</strong> Laag 10 is menselijke bevestiging. De dubbele helix kan niet gelezen worden zonder een menselijke helicase.</p></div>
+
+        <div class="principle"><p><strong>De poortwachter was er al.</strong> Mijn Obsidian-vault &mdash; 35.000 bestanden, 153.000 kruisverwijzingen, 12.680 handmatig gevalideerde entiteiten &mdash; bleek de choroid plexus die ik dacht nog te moeten bouwen.</p></div>
+    </div>
+</section>
+
+<!-- PAPERS -->
+
+<section>
+    <div class="container">
+        <h2>De PKM Summit</h2>
+
+        <p>Drie jaar geleden startte ik de <a href="https://pkmsummit.com">PKM Summit</a> met Lykle de Vries. Wat begon als Europees evenement trok meteen de wereldwijde PKM-gemeenschap aan. Vanaf het eerste jaar zijn tien tot twaalf van de vijftien prominentste denkers en practitioners op het gebied van persoonlijk kennismanagement direct betrokken of aanwezig geweest: <strong style="color: #fff;">Nick Milo</strong>, <strong style="color: #fff;">Nicole van der Hoeven</strong>, <strong style="color: #fff;">Zsolt Viczian</strong>, <strong style="color: #fff;">Anne-Laure Le Cunff</strong>, <strong style="color: #fff;">Tiago Forte</strong>, <strong style="color: #fff;">Bob Doto</strong>, <strong style="color: #fff;">Jorge Arango</strong>, <strong style="color: #fff;">Harold Jarche</strong>, en anderen.</p>
+
+        <p>De derde editie (maart 2026) had <strong style="color: #fff;">Clive Thompson</strong> als hoofdspreker. Voor het tweede achtereenvolgende jaar reisden mensen van vijf continenten en meer dan 21 landen naar Nederland, specifiek voor twee dagen van diepgaande uitwisseling over dit onderwerp. Volgend jaar opent <strong style="color: #fff;">Roland Allen</strong> (<em>The Notebook</em>) de vierde editie.</p>
+
+        <p>Het uitgangspunt is simpel: iedereen in de zaal weet samen meer dan wie dan ook op het podium. Geen grote keynotes. Rijke uitwisseling. De gemene deler in het publiek: sneldenkers, open-minded, flexibel, nieuwsgierig, lef en een goed hart.</p>
+
+        <blockquote>Dat dit in Nederland gebeurt voelt juist. Erasmus reisde door het vijftiende-eeuwse Europa met zijn notitieboeken, kennis delend als levenswerk. Vijfhonderd jaar later reizen mensen uit 21 landen naar zijn land om hetzelfde te doen &mdash; with slightly better tools.</blockquote>
+
+        <p><strong style="color: #fff;">Volgende editie: 12&ndash;13 maart 2027</strong>, centraal Nederland. Tickets zijn al in verkoop. <a href="https://pkmsummit.com">pkmsummit.com</a></p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Papers</h2>
+        <p style="color: #b0b0b0; margin-bottom: 20px;">Gepubliceerd op Zenodo (CERN). Niet peer-reviewed. Preprints, open voor kritiek. Dit werk wordt ontwikkeld richting een dissertatie.</p>
+
+        <div class="paper paper-primary">
+            <span class="paper-title">The Information Problem Was Never the Real Problem</span>
+            <span class="meta">Building a Confirmation-Driven Personal Knowledge Graph and the Four Principles That Emerge From Practice</span><br>
+            <a class="doi" href="https://doi.org/10.5281/zenodo.19202082">doi:10.5281/zenodo.19202082</a>
+            <p class="meta">Het academische paper over ThetaOS. 339 tabellen, 91.000+ records, vier ontwerpprincipes. Praktijkcasus gecontextualiseerd binnen Otlet, Bush en Bell.</p>
+        </div>
+
+        <div class="paper">
+            <span class="paper-title">Benzaldehyde as the Active Compound: A Brief Synthesis</span><br>
+            <a class="doi" href="https://doi.org/10.5281/zenodo.18729890">doi:10.5281/zenodo.18729890</a>
+            <p class="meta">Een verband in kankeronderzoek dat vier wetenschappelijke domeinen vijftig jaar lang gemist hebben.</p>
+        </div>
+
+        <div class="paper">
+            <span class="paper-title">The Benzaldehyde Hypothesis: Full Literature Review</span><br>
+            <a class="doi" href="https://doi.org/10.5281/zenodo.18728835">doi:10.5281/zenodo.18728835</a>
+            <p class="meta">Engels &middot; Verbindt Saito (2025), Kochi (1980) en het amygdalinedebat.</p>
+        </div>
+
+        <div class="paper">
+            <span class="paper-title">De Benzaldehyde-Hypothese (Dutch)</span><br>
+            <a class="doi" href="https://doi.org/10.5281/zenodo.18728986">doi:10.5281/zenodo.18728986</a>
+            <p class="meta">Hetzelfde onderzoek, originele taal.</p>
+        </div>
+    </div>
+</section>
+
+<section id="changelog">
+    <div class="container">
+        <h2>Changelog</h2>
+        <p style="color: #b0b0b0; margin-bottom: 16px; font-size: 13px;">This page evolves as the thinking evolves. Major changes are logged here.</p>
+        <div style="font-size: 14px; color: #ddd; line-height: 2;">
+            <p><strong style="color: #e0e0e0;">March 30, 2026</strong> &mdash; Initial publication. Six-layer model, complete journey from 1984 to present, four Zenodo papers, key reading section. Site built during a Tom session after a live demo at Troi (law enforcement) in Noordwijk where Joy Otten contributed the Choroid Plexus concept.</p>
+            <p><strong style="color: #e0e0e0;">March 30, 2026 (v2)</strong> &mdash; Rebuilt from technical showcase to story-driven narrative. Added Part One / Part Two structure with the stroke as turning point. Added featured essay cards, pull quotes, ThetaOS Zenodo paper, Nicole van der Hoeven disclaimer. Removed blogs unrelated to the LLS journey.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>Martijn Aslander &middot; <a href="https://orcid.org/0009-0004-2344-0620">ORCID</a> &middot; <a href="https://pkmsummit.com">PKM Summit</a> &middot; <a href="https://martijnaslander.github.io/luhmann-zettelkasten/">Luhmann Project</a></p>
+        <p style="margin-top: 8px;">Dit is een levend project. De site groeit mee met het denken.</p>
+    </div>
+</footer>
+
+<script>
+// Auto-detect English browser language and suggest EN version
+// Only on first visit (don't override manual choice)
+if (!sessionStorage.getItem('lang-chosen') && navigator.language.startsWith('en') && !window.location.pathname.includes('index.html')) {
+    // Show a subtle prompt instead of auto-redirect
+    // Uncomment the next line to auto-redirect:
+    // window.location.href = 'index.html';
+}
+</script>
+</body>
+</html>
