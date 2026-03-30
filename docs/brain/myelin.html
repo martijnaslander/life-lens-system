@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Myelin Sheath — Life Lens System</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+.status-built { background: rgba(85,170,153,0.2); color: #5a9; border: 1px solid #5a9; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 12px 24px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; }
+.nav-btn:hover { color: #fff; border-color: #7ab; background: none; }
+.nav-count { font-size: 13px; color: #777; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="myelin-nl.html">NL</a>
+</div>
+
+<a class="back" href="../#emulation-table">&larr; Back to overview</a>
+
+<div class="content">
+    <div class="topic-label">Brain Mechanism 2 of 19</div>
+    <h1>Myelin Sheath</h1>
+    <p class="subtitle">The insulation that makes signals fast and reliable.</p>
+
+    <h2>What is it</h2>
+    <p>Myelin is a fatty substance that wraps around nerve fibers like insulation around an electrical cable. It's produced by specialised cells (oligodendrocytes in the brain, Schwann cells in the body). Without myelin, a nerve signal crawls. With thick myelin, it races.</p>
+    <p>Multiple sclerosis is what happens when myelin degrades. The signals still travel, but slowly, unreliably, sometimes not at all. The hardware is fine. The insulation is broken.</p>
+
+    <h2>What it does in the brain</h2>
+    <p>Myelin grows through repetition. Every time you practise a skill, the myelin around those nerve fibers gets a little thicker. That's why practice makes permanent: you're literally building insulation. A concert pianist has extraordinarily thick myelin around the nerve fibers that control finger movement.</p>
+    <p>The difference between an expert and a novice is not talent. It's myelin thickness.</p>
+
+    <h2>What it does in ThetaOS</h2>
+    <p>Every connection in the system has a completeness score &mdash; that's its myelin. The score depends on three things:</p>
+
+    <div class="highlight">
+        <p><strong>How many layers?</strong> A connection confirmed by a phone call (layer 1), a bank transaction (layer 3), a photo (layer 5) and a text mention (layer 6) has four layers of myelin. A connection with only a name has one.</p>
+        <p style="margin-top: 12px;"><strong>How often per layer?</strong> Peter Ros appears in 153 photo-days. Not one photo &mdash; 153 separate days with photos. Each repetition thickens the myelin.</p>
+        <p style="margin-top: 12px;"><strong>How complete per mention?</strong> "Peter Ros, meeting" is thin. "Peter Ros, meeting on March 17 in The Hague about DFA" is thick. Same layer, different myelin quality.</p>
+    </div>
+
+    <p>Ask Tom about someone with thick myelin and you get a rich dossier in three seconds: their role, their organisation, 153 photo-days together, 92 text mentions, 41 transactions, 10 meetings, their connection to five other clusters in your network.</p>
+
+    <p>Ask about someone with thin myelin and you get: "He's in the database."</p>
+
+    <p>That's the same difference as a myelinated nerve fiber versus a bare one. The data is there in both cases. The speed and richness of the response is entirely determined by the insulation.</p>
+
+    <span class="status-badge status-built">Built &mdash; Layer 2 (Theta-Myelin)</span>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="synapses.html">&larr; Synapses</a>
+    <span class="nav-count">2 / 19</span>
+    <a class="nav-btn" href="long-term-potentiation.html">LTP &rarr;</a>
+</div>
+
+</body>
+</html>
