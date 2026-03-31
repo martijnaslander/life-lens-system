@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corpus Callosum — Life Lens System</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+.status-designed { background: rgba(221,187,136,0.2); color: #db8; border: 1px solid #db8; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+.nav-count { font-size: 14px; color: #b0b0b0; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="corpus-callosum-nl.html">NL</a>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 24px;">
+    <a class="nav-btn" href="prefrontal-cortex.html">&larr; PFC</a>
+    <a class="back" href="../#emulation-table" style="border: none;">&larr; Overview</a>
+    <a class="nav-btn" href="hippocampus.html">Hippocampus &rarr;</a>
+</div>
+
+<div class="content">
+    <div class="topic-label">Brain Mechanism 21 of 26</div>
+    <h1>Corpus Callosum</h1>
+    <p class="subtitle">The bridge between the halves.</p>
+
+    <h2>What is it</h2>
+    <p>Two hundred million nerve fibres connecting the left and right hemispheres. Bidirectional, always on. Without the corpus callosum the hemispheres work independently &mdash; the left hand literally doesn't know what the right hand is doing. It's not a service you start up. It's the physical wiring.</p>
+
+    <h2>What it does in the brain</h2>
+    <p>Every complex task requires both hemispheres: language is mostly left, spatial awareness mostly right, but any real thought demands coordination. The corpus callosum transfers information between the halves at enormous speed, creating the illusion of a unified mind. Cut it &mdash; as in split-brain surgery &mdash; and you get two independent consciousnesses in one skull, each unaware of the other's knowledge.</p>
+    <p>The key insight: the corpus callosum doesn't process information. It connects systems that process information. Without it, each half is competent but isolated. The whole is less than the sum of its parts.</p>
+
+    <h2>What it does in ThetaOS</h2>
+    <p>ThetaOS currently has seven islands: the VPS database (309 tables, 560K records), ThetaKeys on the Mac, Spokenly (voice transcription), the Obsidian vault (35,000+ files), Apple Photos (91,000+ photos), email, and WhatsApp via MoltBot. Each island is smart on its own but deaf to the rest.</p>
+
+    <div class="highlight">
+        <p><strong>The nightly cronjob is the night train.</strong> Once a day, sources are brought together. But the real corpus callosum is a highway &mdash; continuous, bidirectional, every second. That's what's being designed: an event bus where a change in one system notifies every other system that needs to know.</p>
+        <p style="margin-top: 12px;"><strong>Spokenly makes a transcription &rarr; event &rarr; ThetaKeys updates spoken words, VPS indexes text.</strong> Obsidian modifies a file &rarr; event &rarr; synapse update on VPS. VPS detects a pattern &rarr; event &rarr; Mac shows notification. All sources permanently connected, not just during Tom sessions.</p>
+    </div>
+
+    <p>Tom currently functions as a temporary corpus callosum: he bridges the islands, but only during a session. Between sessions the halves are separated. The design goal is to make the bridge permanent &mdash; so that when Tom comes online, the halves are already synchronised.</p>
+
+    <span class="status-badge status-designed">Designed &mdash; event bus</span>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="prefrontal-cortex.html">&larr; PFC</a>
+    <span class="nav-count">21 / 26</span>
+    <a class="nav-btn" href="hippocampus.html">Hippocampus &rarr;</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Broca &amp; Wernicke — Life Lens System</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+.status-built { background: rgba(85,170,153,0.2); color: #5a9; border: 1px solid #5a9; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+.nav-count { font-size: 14px; color: #b0b0b0; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="broca-wernicke-nl.html">NL</a>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 24px;">
+    <a class="nav-btn" href="hippocampus.html">&larr; Hippocampus</a>
+    <a class="back" href="../#emulation-table" style="border: none;">&larr; Overview</a>
+    <a class="nav-btn" href="mirror-neurons-system.html">Mirror &rarr;</a>
+</div>
+
+<div class="content">
+    <div class="topic-label">Brain Mechanism 23 of 26</div>
+    <h1>Broca &amp; Wernicke</h1>
+    <p class="subtitle">The language areas. Production and comprehension.</p>
+
+    <h2>What is it</h2>
+    <p>Two regions in the left hemisphere, connected by a fibre bundle called the fasciculus arcuatus. Broca's area produces language &mdash; it turns thoughts into grammatical sentences. Wernicke's area comprehends language &mdash; it turns sounds and text into meaning. Damage Broca's area and you understand everything but can't speak. Damage Wernicke's area and you speak fluently but it's nonsense.</p>
+
+    <h2>What it does in the brain</h2>
+    <p>Language is the brain's interface to the outside world. Without Broca, internal knowledge is trapped. Without Wernicke, external information can't enter. The fasciculus arcuatus ensures that comprehension and production stay connected &mdash; that what you say is related to what you understand. When this connection breaks, you get fluent aphasia: confident speech without meaning.</p>
+    <p>The asymmetry matters: production and comprehension are separate functions, housed in separate regions, that must be actively connected. Understanding something and expressing it are different skills with different failure modes.</p>
+
+    <h2>What it does in ThetaOS</h2>
+    <p>Claude. Borrowed, not owned. The only component that is entirely external. The language layer is a plugin, not an organ. Swappable: today Claude Opus, tomorrow a different model.</p>
+
+    <div class="highlight">
+        <p><strong>Wernicke aphasia in ThetaOS:</strong> hallucinations. Fluent production without grounding in meaning. The fix was not improving the language but strengthening the fasciculus arcuatus &mdash; linking every statement to a source, every claim to an evidence layer.</p>
+        <p style="margin-top: 12px;"><strong>The 98/2 connection:</strong> language is the 2%. Data is the 98%. If the language layer disappears, the interface is lost but the knowledge survives. That's by design. Steph Ango says: file over app. Martijn says: data over model. The model is the voice. The data is the story. The story survives every voice.</p>
+    </div>
+
+    <p>If Claude disappears tomorrow, the CLAUDE.md describes how Tom works. The skills describe workflows. The database is documented. A different model reads it and continues. The voice changes. The story doesn't. That's the most vulnerable component being the most replaceable one &mdash; a deliberate architectural choice.</p>
+
+    <span class="status-badge status-built">Built &mdash; external &mdash; Claude</span>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="hippocampus.html">&larr; Hippocampus</a>
+    <span class="nav-count">23 / 26</span>
+    <a class="nav-btn" href="mirror-neurons-system.html">Mirror &rarr;</a>
+</div>
+
+</body>
+</html>
