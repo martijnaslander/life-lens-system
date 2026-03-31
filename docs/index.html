@@ -742,7 +742,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 
         <h3 style="color: #fff; margin-top: 32px; margin-bottom: 12px;">Layer 1 in practice: Cross-source verification</h3>
 
-        <p>My accounting system (Moneybird) said I had 37 open invoices totaling over 30,000 euros. My bank (Bunq) had 34,000 transactions across seven accounts. The question: which invoices are actually unpaid?</p>
+        <p>My accounting system said I had dozens of open invoices. My bank had tens of thousands of transactions across multiple accounts. The question: which invoices are actually unpaid?</p>
 
         <p>The system checks three levels of evidence:</p>
         <ul style="margin: 12px 0 12px 24px; line-height: 2;">
@@ -751,9 +751,9 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
             <li><strong>Level 3</strong>: No match found on any account &mdash; genuinely unpaid</li>
         </ul>
 
-        <p>After cross-checking, 37 invoices became 10. The rest had been paid but not registered. No AI pattern matching was involved. Just SQL on clean data. Zero hallucination by design.</p>
+        <p>After cross-checking, less than a third remained. The rest had been paid but not registered. No AI pattern matching was involved. Just SQL on clean data. Zero hallucination by design.</p>
 
-        <p>One invoice &mdash; 5,000 euros from KNVI &mdash; looked like it might have been paid because a 5,000 euro transfer appeared on the same account. But the system traced it to an internal transfer for a completely different purpose (ASML/Tradingplaza). The amount matched, the source didn&rsquo;t. The system correctly kept it as unpaid. Triple-verified by checking every transaction from that organization across all accounts and all time.</p>
+        <p>One invoice looked like it might have been paid because the exact same amount appeared on the same account. But the system traced it to an internal transfer for a completely different purpose. The amount matched, the source didn&rsquo;t. The system correctly kept it as unpaid. Triple-verified by checking every transaction from that organization across all accounts and all time.</p>
 
         <p>This is what synaptic stratification looks like in practice: not a theoretical evidence scale, but an actual verification engine that distinguishes between &ldquo;the accounting system thinks it&rsquo;s unpaid&rdquo; and &ldquo;the bank proves it&rsquo;s unpaid.&rdquo;</p>
 
@@ -804,7 +804,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
         <p style="color: #b0b0b0; margin-bottom: 8px; font-size: 13px;">Each insight as it emerged. Subscribe via <a href="timeline-feed.xml" style="color: #7ab; border-bottom: none;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256" style="vertical-align: -2px; margin-right: 3px;"><rect width="256" height="256" rx="55" ry="55" fill="#f26522"/><circle cx="68" cy="189" r="28" fill="#fff"/><path d="M160 213h-34a82 82 0 0 0-82-82V97a116 116 0 0 1 116 116z" fill="#fff"/><path d="M224 213h-34a150 150 0 0 0-150-150V29a184 184 0 0 1 184 184z" fill="#fff"/></svg>RSS</a> to follow in real-time.</p>
 
         <div style="margin-top: 20px; font-size: 14px; line-height: 2.2;">
-            <p><strong style="color: #fff;">31 Mar 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">The Instant Dashboard</strong> &mdash; <span style="color: #c0c0c0;">Three layers proven in a single build session. Cross-source invoice verification (37&rarr;10), sub-second retrieval via 4KB JSON, on-sight synapse thickening. Cyclical temporal comparison as unexpected bonus.</span></p>
+            <p><strong style="color: #fff;">31 Mar 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">The Instant Dashboard</strong> &mdash; <span style="color: #c0c0c0;">Three layers proven in a single build session. Cross-source invoice verification, sub-second retrieval via 4KB JSON, on-sight synapse thickening. Cyclical temporal comparison as unexpected bonus.</span></p>
             <p><strong style="color: #fff;">30 Mar 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">The Kahneman Ratio</strong> &mdash; <span style="color: #c0c0c0;">Daniel Brouwer pointed out that 98/2 (data/AI) matches <a href="https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow" style="color:#c0c0c0;">Kahneman</a>'s System 1/System 2. Not a coincidence &mdash; when architecture is faithful to the brain, the ratios emerge on their own.</span></p>
             <p><strong style="color: #fff;">30 Mar 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">Obsidian IS the Choroid Plexus</strong> &mdash; <span style="color: #c0c0c0;">35,000 files, 12,680 hand-validated entities, 153,000 cross-references. The gatekeeper was already there.</span></p>
             <p><strong style="color: #fff;">30 Mar 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">Choroid Plexus</strong> &mdash; <span style="color: #c0c0c0;">The enveloping immune system. Filtration, cleansing, homeostasis. Not stacked &mdash; wrapped around. (Joy Otten, Troi Noordwijk)</span></p>
