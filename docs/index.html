@@ -723,6 +723,79 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
     </div>
 </section>
 
+<!-- THE INSTANT DASHBOARD -->
+
+<section>
+    <div class="container">
+        <h2>The Instant Dashboard: Three Layers Proven in Practice</h2>
+        <p style="color: #b0b0b0; margin-bottom: 18px; font-size: 13px;">March 30, 2026</p>
+
+        <p>The six-layer model was designed on paper. This is the story of how three of those layers proved themselves in a single build session &mdash; not through theory, but through a keystroke.</p>
+
+        <h3 style="color: #fff; margin-top: 32px; margin-bottom: 12px;">The starting point</h3>
+
+        <p>I wanted one thing: a hotkey to check if my server was still running. Green dot or red dot. That&rsquo;s it.</p>
+
+        <p>But once I had that screen open, I thought: I&rsquo;m already looking. Why don&rsquo;t I see my last bank transactions? Then I don&rsquo;t need to open my banking app. And if I see transactions, why not see which invoices are still unpaid? Then I don&rsquo;t need to open my accounting software.</p>
+
+        <p>Within a day, I had four tiles side by side &mdash; banking, accounting, ticket sales, LinkedIn &mdash; all preloaded, all updated every sixty seconds, all accessible with a single keystroke and a tap of the arrow key.</p>
+
+        <h3 style="color: #fff; margin-top: 32px; margin-bottom: 12px;">Layer 1 in practice: Cross-source verification</h3>
+
+        <p>My accounting system (Moneybird) said I had 37 open invoices totaling over 30,000 euros. My bank (Bunq) had 34,000 transactions across seven accounts. The question: which invoices are actually unpaid?</p>
+
+        <p>The system checks three levels of evidence:</p>
+        <ul style="margin: 12px 0 12px 24px; line-height: 2;">
+            <li><strong>Level 1</strong>: The invoice number appears literally in the bank transaction description &mdash; certain match</li>
+            <li><strong>Level 2</strong>: The exact amount arrived on the correct company account after the invoice date &mdash; strong evidence</li>
+            <li><strong>Level 3</strong>: No match found on any account &mdash; genuinely unpaid</li>
+        </ul>
+
+        <p>After cross-checking, 37 invoices became 10. The rest had been paid but not registered. No AI pattern matching was involved. Just SQL on clean data. Zero hallucination by design.</p>
+
+        <p>One invoice &mdash; 5,000 euros from KNVI &mdash; looked like it might have been paid because a 5,000 euro transfer appeared on the same account. But the system traced it to an internal transfer for a completely different purpose (ASML/Tradingplaza). The amount matched, the source didn&rsquo;t. The system correctly kept it as unpaid. Triple-verified by checking every transaction from that organization across all accounts and all time.</p>
+
+        <p>This is what synaptic stratification looks like in practice: not a theoretical evidence scale, but an actual verification engine that distinguishes between &ldquo;the accounting system thinks it&rsquo;s unpaid&rdquo; and &ldquo;the bank proves it&rsquo;s unpaid.&rdquo;</p>
+
+        <h3 style="color: #fff; margin-top: 32px; margin-bottom: 12px;">Layer 4 in practice: Instant retrieval</h3>
+
+        <p>The entire financial health of three companies &mdash; open invoices, recent transactions, ticket sales for next year&rsquo;s conference &mdash; is accessible in under one second. Cmd+Opt+T, arrow right, and it&rsquo;s there.</p>
+
+        <p>The data is precomputed every sixty seconds into a 4KB JSON file on the server. At viewing time, there are no API calls, no loading spinners, no authentication prompts. The desktop app reads the cached file and renders it.</p>
+
+        <p>This is what action potential means in the model: the network fires along the path of least resistance through the thickest connections. You don&rsquo;t search. You don&rsquo;t navigate. You glance.</p>
+
+        <p>Three seconds of looking tells you:</p>
+        <ul style="margin: 12px 0 12px 24px; line-height: 2;">
+            <li>Green tiles: nothing needs attention</li>
+            <li>Orange tile: look closer</li>
+            <li>A specific invoice, a specific amount, a specific client name</li>
+        </ul>
+
+        <p>Then you press Escape and you&rsquo;re back to work.</p>
+
+        <h3 style="color: #fff; margin-top: 32px; margin-bottom: 12px;">Layer 2 in practice: Thickening synapses on sight</h3>
+
+        <p>A bank transaction reads &ldquo;SumUp *Batman Taxi Se.&rdquo; That&rsquo;s a thin synapse &mdash; raw data with no meaning. You were there, you remember it was a taxi in Amsterdam, but the system doesn&rsquo;t know.</p>
+
+        <p>You click on it. A text field appears. You type &ldquo;Taxi Batman - 020.&rdquo; The system updates the mapping, and every past and future transaction from that terminal inherits the name. The synapse just got thicker &mdash; not through repetition over time, but through a single act of recognition.</p>
+
+        <p>This is myelination in practice. The biological brain wraps myelin around frequently-used neural pathways to speed up signal transmission. The digital system wraps context around raw data to speed up comprehension. Both serve the same purpose: making retrieval faster by making connections richer.</p>
+
+        <h3 style="color: #fff; margin-top: 32px; margin-bottom: 12px;">The unexpected discovery: Cyclical comparison</h3>
+
+        <p>The ticket sales tile doesn&rsquo;t just show &ldquo;37 tickets sold for PKM Summit 2027.&rdquo; It shows: &ldquo;On day 11 after the previous Summit, the 2025 edition had 52 tickets and the 2026 edition had 54. You have 37.&rdquo;</p>
+
+        <p>This is temporal context that no individual app provides. Eventbrite shows you absolute numbers. The Life Lens System shows you where you stand relative to yourself at the same point in the cycle. It turns a number into a narrative.</p>
+
+        <h3 style="color: #fff; margin-top: 32px; margin-bottom: 12px;">What this means</h3>
+
+        <p>The six-layer model was inspired by neuroscience. But inspiration is not proof. What happened on March 30 was proof: three layers operating simultaneously in a real system, on real data, solving a real problem &mdash; in under three seconds, triggered by a single keystroke.</p>
+
+        <p>The system doesn&rsquo;t think. It retrieves. And because the data is clean, structured, and cross-referenced, retrieval is all you need.</p>
+    </div>
+</section>
+
 <!-- DISCOVERY TIMELINE -->
 
 <section>
@@ -731,6 +804,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
         <p style="color: #b0b0b0; margin-bottom: 8px; font-size: 13px;">Each insight as it emerged. Subscribe via <a href="timeline-feed.xml" style="color: #7ab; border-bottom: none;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256" style="vertical-align: -2px; margin-right: 3px;"><rect width="256" height="256" rx="55" ry="55" fill="#f26522"/><circle cx="68" cy="189" r="28" fill="#fff"/><path d="M160 213h-34a82 82 0 0 0-82-82V97a116 116 0 0 1 116 116z" fill="#fff"/><path d="M224 213h-34a150 150 0 0 0-150-150V29a184 184 0 0 1 184 184z" fill="#fff"/></svg>RSS</a> to follow in real-time.</p>
 
         <div style="margin-top: 20px; font-size: 14px; line-height: 2.2;">
+            <p><strong style="color: #fff;">30 Mar 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">The Instant Dashboard</strong> &mdash; <span style="color: #c0c0c0;">Three layers proven in a single build session. Cross-source invoice verification (37&rarr;10), sub-second retrieval via 4KB JSON, on-sight synapse thickening. Cyclical temporal comparison as unexpected bonus.</span></p>
             <p><strong style="color: #fff;">30 Mar 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">The Kahneman Ratio</strong> &mdash; <span style="color: #c0c0c0;">Daniel Brouwer pointed out that 98/2 (data/AI) matches <a href="https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow" style="color:#c0c0c0;">Kahneman</a>'s System 1/System 2. Not a coincidence &mdash; when architecture is faithful to the brain, the ratios emerge on their own.</span></p>
             <p><strong style="color: #fff;">30 Mar 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">Obsidian IS the Choroid Plexus</strong> &mdash; <span style="color: #c0c0c0;">35,000 files, 12,680 hand-validated entities, 153,000 cross-references. The gatekeeper was already there.</span></p>
             <p><strong style="color: #fff;">30 Mar 2026</strong> <span style="color: #5a9;">&bull;</span> <strong style="color: #e0e0e0;">Choroid Plexus</strong> &mdash; <span style="color: #c0c0c0;">The enveloping immune system. Filtration, cleansing, homeostasis. Not stacked &mdash; wrapped around. (Joy Otten, Troi Noordwijk)</span></p>
@@ -758,7 +832,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
     <div class="container">
         <h2>Journal</h2>
         <p style="color: #b0b0b0; margin-bottom: 8px; font-size: 13px;">The build journal. Context, implications, the story behind each discovery. Subscribe via <a href="blog/feed.xml" style="color: #7ab; border-bottom: none;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256" style="vertical-align: -2px; margin-right: 3px;"><rect width="256" height="256" rx="55" ry="55" fill="#f26522"/><circle cx="68" cy="189" r="28" fill="#fff"/><path d="M160 213h-34a82 82 0 0 0-82-82V97a116 116 0 0 1 116 116z" fill="#fff"/><path d="M224 213h-34a150 150 0 0 0-150-150V29a184 184 0 0 1 184 184z" fill="#fff"/></svg>RSS</a>.</p>
-        <p style="color: #c0c0c0; margin-top: 16px; font-style: italic;">First entry coming soon.</p>
+        <p style="margin-top: 16px;"><strong style="color: #fff;">March 30, 2026</strong> &mdash; <a href="#" style="color: #e0e0e0;">The Instant Dashboard: Three Layers Proven in Practice</a> &mdash; <span style="color: #c0c0c0;">What started as a server health check hotkey grew into a cross-source financial dashboard. The story of how Layers 1, 2, and 4 proved themselves simultaneously on real data.</span></p>
     </div>
 </section>
 
@@ -865,6 +939,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
         <div style="font-size: 14px; color: #ddd; line-height: 2;">
             <p><strong style="color: #e0e0e0;">March 30, 2026</strong> &mdash; Initial publication. Six-layer model, complete journey from 1984 to present, four Zenodo papers, key reading section. Site built during a Tom session after a live demo at Troi (law enforcement) in Noordwijk where Joy Otten contributed the Choroid Plexus concept.</p>
             <p><strong style="color: #e0e0e0;">March 30, 2026 (v2)</strong> &mdash; Rebuilt from technical showcase to story-driven narrative. Added Part One / Part Two structure with the stroke as turning point. Added featured essay cards, pull quotes, ThetaOS Zenodo paper, Nicole van der Hoeven disclaimer. Removed blogs unrelated to the LLS journey.</p>
+            <p><strong style="color: #e0e0e0;">March 31, 2026</strong> &mdash; Added "The Instant Dashboard: Three Layers Proven in Practice" &mdash; first journal entry and full case study showing Layers 1, 2 and 4 operating simultaneously on real financial data. Added Discovery Timeline entry. Both EN and NL.</p>
             <p><strong style="color: #e0e0e0;">March 30, 2026 (v3)</strong> &mdash; Added PKM Summit section with Erasmus connection. Added "The Thesis" (the I in AI is found in the brain). Added "What Tom Is" section. Added "What Others Say" (Aria, Yoram, anonymised law enforcement demo). Added "Why the Brain" narrative with emulation status table &mdash; 19 brain mechanisms, each linked to its own detail page with full explanation and EN/NL toggle. Added Discovery Timeline with RSS feed. Added Journal section with RSS feed. Added Dutch translation (index-nl.html) with flag toggle. Added (NL) language markers on Dutch blog links. Added doctoral dissertation note. Added photo by Ester Overmars. Added "Others Building a Life Lens System" section. Enriched all brain mechanism descriptions in the table from one-liners to proper explanations.</p>
         </div>
     </div>
