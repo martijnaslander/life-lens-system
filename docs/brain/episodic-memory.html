@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Episodic Memory — Life Lens System</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+
+table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+th { text-align: left; padding: 10px 12px; font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #5a6269; }
+td { padding: 10px 12px; border-bottom: 1px solid #3e464e; color: #ddd; font-size: 14px; }
+tr:hover { background: #3e464e; }
+
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+.status-designed { background: rgba(119,170,187,0.2); color: #7ab; border: 1px solid #7ab; }
+
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+.nav-btn.disabled { color: #555; border-color: #444; background: none; pointer-events: none; }
+.nav-count { font-size: 14px; color: #b0b0b0; }
+
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+</style>
+</head>
+<body>
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 24px;">
+    <a class="nav-btn" href="working-memory.html">&larr; Previous</a>
+    <a class="back" href="../#emulation-table" style="border: none;">&larr; Overview</a>
+    <span class="nav-btn disabled">Next &rarr;</span>
+</div>
+
+<div class="content">
+    <div class="topic-label">Brain Mechanism 21 of 21</div>
+    <h1>Episodic Memory</h1>
+    <p class="subtitle">The hippocampus replaying events in sequence &mdash; the timeline as a lens, not an organ.</p>
+
+    <h2>What is it</h2>
+    <p>Episodic memory is the brain's ability to replay past events in chronological order. It's what lets you remember not just facts, but experiences &mdash; what happened, when it happened, and how it felt. The hippocampus is the conductor: it doesn't store the memories themselves, but orchestrates their replay from fragments spread across the entire cortex.</p>
+    <p>Without the hippocampus, you can still know facts (semantic memory), but you lose the ability to relive experiences in sequence. You know Paris is a city, but you can't replay your trip there.</p>
+
+    <h2>What it does in the brain</h2>
+    <p>The hippocampus binds together information from different brain regions into coherent episodes. A dinner with a friend involves visual cortex (their face), auditory cortex (the conversation), olfactory cortex (the food), amygdala (the emotion), and prefrontal cortex (the context). The hippocampus ties them into one memory and indexes it by time.</p>
+    <p>During sleep, the hippocampus replays important episodes to consolidate them into long-term memory. It decides what matters. Not every moment becomes a lasting memory &mdash; only the ones the hippocampus flags as significant.</p>
+
+    <h2>What it does in a Life Lens System</h2>
+    <p>A Life Lens System already contains all the ingredients of episodic memory. Meetings have dates. Conversations have dates. Accomplishments, joyful moments, setbacks, knowledge artifacts &mdash; all timestamped. The data is there. What's been missing is the replay function.</p>
+
+    <div class="highlight">
+        <p>A timeline is not a new data structure. It is the hippocampus doing what it always does: querying all synapses connected to an entity and sorting them by time. No new table. No new organ. A lens on existing data.</p>
+    </div>
+
+    <p>The trigger is simple: "timeline [entity name]". The mechanism is the dossier agent in chronological mode. It queries every table where the entity appears and returns events sorted by date.</p>
+
+    <h2>How other brain regions participate</h2>
+    <p>In the real brain, the hippocampus never works alone. Each brain region adds a dimension to episodic memory. The same is true in a Life Lens System:</p>
+
+    <table>
+        <tr><th>Brain Region</th><th>What it adds to the timeline</th></tr>
+        <tr><td>Thalamus</td><td>Routing &mdash; knows which tables are relevant for each entity</td></tr>
+        <tr><td>Amygdala</td><td>Emotional coloring &mdash; not just what happened, but how it felt</td></tr>
+        <tr><td>Broca / Wernicke</td><td>Narrative generation &mdash; the timeline told as a story, not a table</td></tr>
+        <tr><td>Prefrontal Cortex</td><td>Reasoning over time &mdash; "this accelerated in month five &mdash; why?"</td></tr>
+        <tr><td>Corpus Callosum</td><td>Cross-entity timelines &mdash; what was happening elsewhere at the same time?</td></tr>
+        <tr><td>Basal Ganglia</td><td>Pattern recognition across timelines &mdash; "this follows the same curve as..."</td></tr>
+        <tr><td>Insula</td><td>Anomaly detection &mdash; "this is accelerating unusually fast"</td></tr>
+        <tr><td>Cerebellum</td><td>Automatic enrichment &mdash; every new event makes the timeline richer</td></tr>
+    </table>
+
+    <h2>The synaptic layers over time</h2>
+    <p>The ten layers of synaptic stratification are not only spatial &mdash; they are also temporal. A single event can activate multiple trust layers simultaneously:</p>
+    <p>A logged conversation (layer 4, check-in) that was followed by a written message (layer 6, text as sleeping synapse) on a significant date (layer 7, date coincidence) that follows a recognizable pattern (layer 9, pattern recognition) and is confirmed by an external authority (layer 10, human confirmation) &mdash; that event carries five layers of evidence at once.</p>
+
+    <h2>What this makes possible</h2>
+    <p><strong>Comparative timelines.</strong> Place two projects side by side at the same stage. Are they following the same curve? Where do they diverge?</p>
+    <p><strong>Cross-pollination.</strong> A single event is simultaneously a person-event, an organization-event, and a concept-event. The timeline shows how ripples from one entity reach others.</p>
+    <p><strong>Narrative generation.</strong> Instead of a data dump, the system tells the story of an entity with a dramatic arc &mdash; beginning, turning points, acceleration, breakthroughs.</p>
+    <p><strong>Self-evidence.</strong> When someone asks "why should I believe this?", the answer isn't a pitch. It's a timeline with hundreds of converging, cross-validated data points with emotional and intellectual depth.</p>
+
+    <div class="highlight">
+        <p>The chronological dossier is not just memory. It is the system proving to itself that its ideas have history, validation, and trajectory. That is what the hippocampus does in the real brain: it doesn't just store memories. It replays them, connects them, and uses them to predict the future.</p>
+    </div>
+
+    <span class="status-badge status-designed">Designed &mdash; March 31, 2026</span>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="working-memory.html">&larr; Previous</a>
+    <span class="nav-count">21 / 21</span>
+    <span class="nav-btn disabled">Next &rarr;</span>
+</div>
+
+</body>
+</html>
