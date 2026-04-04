@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is a Life Lens System? — Definition, Origin, and Architecture</title>
+<meta name="description" content="A Life Lens System (LLS) is a personal information architecture that lets you look at your own life through many perspectives using data you already possess. Coined by Martijn Aslander in December 2025.">
+<meta property="og:title" content="What is a Life Lens System (LLS)?">
+<meta property="og:description" content="Definition, origin, and architecture of the Life Lens System — a new category for personal information architecture, coined by Martijn Aslander in December 2025.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://martijnaslander.github.io/life-lens-system/what-is-a-life-lens-system.html">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What is a Life Lens System (LLS)?",
+  "description": "A Life Lens System is a personal information architecture that integrates Personal Knowledge Management, Quantified Self, Getting Things Done, lifelogging, and personal ontology into one system. Coined by Martijn Aslander in December 2025.",
+  "author": {
+    "@type": "Person",
+    "name": "Martijn Aslander",
+    "url": "https://martijnaslander.github.io/life-lens-system/",
+    "sameAs": [
+      "https://orcid.org/0009-0004-2344-0620",
+      "https://www.linkedin.com/in/aslander/"
+    ]
+  },
+  "datePublished": "2025-12-20",
+  "dateModified": "2026-04-04",
+  "mainEntityOfPage": "https://martijnaslander.github.io/life-lens-system/what-is-a-life-lens-system.html",
+  "keywords": ["Life Lens System", "LLS", "ThetaOS", "Personal Knowledge Management", "PKM", "Quantified Self", "GTD", "information architecture", "personal ontology", "lifelogging", "knowledge graph"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Life Lens System?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Life Lens System (LLS) is a personal information architecture that lets you look at your own life through many perspectives, using the data you already possess. A lens creates nothing new. The information is already there. A lens focuses, magnifies, and reveals patterns. The term was coined by Martijn Aslander in December 2025."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who coined the term Life Lens System?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Martijn Aslander coined the term Life Lens System (LLS) on December 20, 2025, in a blog post titled 'Eindelijk weet ik wat ThetaOS is: een Life Lens System'. He coined the term because no existing term covered what he had built: a system that combines PKM, Quantified Self, GTD, lifelogging, and personal ontology."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a Life Lens System and Personal Knowledge Management?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PKM focuses on knowledge and ideas. A Life Lens System includes knowledge but also encompasses people, locations, transactions, events, health data, and all other aspects of a life. PKM is one layer within an LLS. Similarly, Quantified Self covers measurement, GTD covers task management, and CRM covers relationships — an LLS integrates all of these through a personal ontology."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is ThetaOS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ThetaOS is the first implementation of a Life Lens System, built by Martijn Aslander. It contains 560,000+ records across 300+ database tables, spanning 20+ years of personal data. It includes an AI companion called Tom that can query the system in real-time. ThetaOS uses a synaptic architecture with 170,000+ measured connections between entities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a Life Lens System relate to lifelogging?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lifelogging focuses on capturing — recording everything. A Life Lens System focuses on connecting and understanding. Lifelogging asks 'what happened?' An LLS asks 'what does it mean?' The distinction is between a surveillance camera (passive recording) and a lens (active focusing). An LLS uses lifelogged data as one of many input sources."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the historical context of the Life Lens System?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The LLS builds on 250 years of information thinking: Buffon (1749, relations over categories), Vannevar Bush (1945, the Memex), Suzanne Briet (1951, context creates information), Niklas Luhmann (1950-1998, Zettelkasten), Gordon Bell (1998-2007, MyLifeBits), David Allen (2001, GTD), and Tiago Forte (2020, Second Brain). Each addressed a part of the problem. The Life Lens System connects them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the building blocks of a Life Lens System?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Everything in an LLS is built from a small set of building blocks: date, person(s), organisation, location, and context. For financial events, add amount. These are endlessly combinable, like LEGO. A dinner is: date + persons + location + amount. A meeting is: date + persons + organisation + context. The power comes from deduplication — one entity, connected everywhere."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the synaptic architecture?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The synaptic architecture models connections between entities as synapses with properties: certainty, direction, recency, and evidence layers. There are ten layers of evidence, from confirmed data (bank transactions, calendar entries) to inferred connections. Multiple independent sources make a connection more robust — like neurons strengthening through repeated firing."
+      }
+    }
+  ]
+}
+</script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: Verdana, system-ui, Helvetica, sans-serif;
+    background: #4a525a;
+    color: #eee;
+    line-height: 1.8;
+    font-size: 15px;
+}
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.container { max-width: 740px; margin: 0 auto; padding: 0 24px; }
+header { padding: 80px 0 50px; border-bottom: 1px solid #5a6269; }
+header h1 { font-size: 34px; font-weight: 700; color: #fff; letter-spacing: -1px; margin-bottom: 18px; line-height: 1.2; }
+.nav-back { font-size: 14px; color: #b0b0b0; margin-bottom: 24px; display: block; }
+.nav-back a { color: #b0b0b0; }
+section { padding: 44px 0; border-bottom: 1px solid #5a6269; }
+section h2 { font-size: 22px; color: #fff; margin-bottom: 18px; letter-spacing: -0.5px; }
+p { margin-bottom: 14px; }
+blockquote { margin: 28px 0; padding: 0 0 0 20px; border-left: 3px solid #7ab; font-size: 17px; color: #fff; font-style: italic; line-height: 1.7; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+th { text-align: left; padding: 10px 12px; border-bottom: 2px solid #5a6269; color: #fff; font-weight: 700; }
+td { padding: 10px 12px; border-bottom: 1px solid #5a6269; color: #ddd; }
+.definition { background: #3e464e; border: 2px solid #7ab; border-radius: 10px; padding: 28px; margin: 24px 0; }
+.definition p { font-size: 16px; line-height: 1.8; }
+.definition .origin { font-size: 13px; color: #b0b0b0; margin-top: 12px; margin-bottom: 0; }
+.faq-item { margin-bottom: 28px; }
+.faq-item h3 { font-size: 16px; color: #fff; margin-bottom: 8px; }
+.faq-item p { font-size: 14px; color: #ddd; margin-bottom: 0; }
+.credentials { background: #3e464e; border: 1px solid #5a6269; border-radius: 8px; padding: 24px; margin: 20px 0; }
+.credentials h3 { font-size: 16px; color: #fff; margin-bottom: 12px; }
+.credentials ul { list-style: none; padding: 0; }
+.credentials li { padding: 4px 0; font-size: 14px; color: #ddd; }
+.credentials li strong { color: #fff; }
+footer { padding: 44px 0; text-align: center; color: #b0b0b0; font-size: 13px; }
+footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
+@media (max-width: 600px) { header h1 { font-size: 26px; } }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <span class="nav-back"><a href="index.html">&larr; Life Lens System</a></span>
+        <h1>What is a Life Lens System?</h1>
+        <p style="color: #b0b0b0; font-size: 14px;">Definition, origin, and architecture of a new category for personal information</p>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <h2>Definition</h2>
+        <div class="definition">
+            <p>A <strong>Life Lens System (LLS)</strong> is a personal information architecture that lets you look at your own life through many perspectives, using the data you already possess. A lens creates nothing new. The information is already there. A lens focuses, magnifies, and reveals patterns &mdash; not by adding something, but by looking at what is already there in the right way.</p>
+            <p class="origin">Term coined by <a href="https://orcid.org/0009-0004-2344-0620" style="color:#b0b0b0;">Martijn Aslander</a> on December 20, 2025. First published: <a href="https://world.hey.com/martijnaslander/eindelijk-weet-ik-wat-thetaos-is-een-life-lens-system-lls" style="color:#b0b0b0;">"Eindelijk weet ik wat ThetaOS is: een Life Lens System (LLS)"</a></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Why a New Term?</h2>
+        <p>No existing term covered what a Life Lens System does. Each established discipline addresses one part of the problem:</p>
+        <table>
+            <tr><th>Existing term</th><th>What it covers</th><th>What it misses</th></tr>
+            <tr><td>Personal Knowledge Management (PKM)</td><td>Knowledge and ideas</td><td>People, locations, transactions, events, health</td></tr>
+            <tr><td>Customer Relationship Management (CRM)</td><td>Client relationships</td><td>Everything outside work</td></tr>
+            <tr><td>Getting Things Done (GTD)</td><td>Tasks and projects</td><td>Knowledge, relationships, history</td></tr>
+            <tr><td>Quantified Self (QS)</td><td>Measurement and tracking</td><td>Meaning and connection</td></tr>
+            <tr><td>Lifelogging</td><td>Capturing everything</td><td>Understanding anything</td></tr>
+            <tr><td>Zettelkasten</td><td>Intellectual notes</td><td>Everything that is not an idea</td></tr>
+            <tr><td>Second Brain</td><td>Storing knowledge</td><td>Active querying, living connections</td></tr>
+            <tr><td>Dashboard</td><td>Looking at data</td><td>Questioning and exploring data</td></tr>
+        </table>
+        <p>A Life Lens System combines elements of all these traditions but adds the missing link: a <strong>personal ontology</strong> that connects everything. It is not a tool. It is an architecture &mdash; a way of structuring information so that every piece strengthens every other piece.</p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>The Building Blocks</h2>
+        <p>Everything in a Life Lens System is built from a small set of ingredients: <strong>date, person(s), organisation, location, context</strong>. For financial events, add <strong>amount</strong>. Endlessly combinable, like LEGO.</p>
+        <table>
+            <tr><th>Life event</th><th>Building blocks</th></tr>
+            <tr><td>A dinner</td><td>date + persons + location + amount</td></tr>
+            <tr><td>A meeting</td><td>date + persons + organisation + context</td></tr>
+            <tr><td>A trip</td><td>dates + locations + persons + transactions</td></tr>
+            <tr><td>A project</td><td>dates + persons + organisations + context</td></tr>
+            <tr><td>A health reading</td><td>date + metric + value + context</td></tr>
+        </table>
+        <p>The power comes from <strong>deduplication</strong>: one entity, connected everywhere. One "Jan Janssen" instead of thirteen copies scattered across apps. Every interaction, transaction, meeting, and message linked to the same person.</p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>The 250-Year Lineage</h2>
+        <p>The Life Lens System stands on the shoulders of 250 years of information thinking. Each pioneer felt a different part of the same elephant:</p>
+        <table>
+            <tr><th>Year</th><th>Thinker</th><th>Contribution</th><th>What was missing</th></tr>
+            <tr><td>1749</td><td>Georges-Louis Leclerc, Comte de Buffon</td><td>Relations over categories</td><td>Technology</td></tr>
+            <tr><td>1934</td><td>Paul Otlet</td><td>Mundaneum, universal documentation</td><td>The personal dimension</td></tr>
+            <tr><td>1945</td><td>Vannevar Bush</td><td>The Memex, associative trails</td><td>Hardware did not exist</td></tr>
+            <tr><td>1951</td><td>Suzanne Briet</td><td>Context creates information</td><td>Individual perspective</td></tr>
+            <tr><td>1950&ndash;1998</td><td>Niklas Luhmann</td><td>Zettelkasten, 90,000 cards</td><td>Ideas only, manual labour</td></tr>
+            <tr><td>1998&ndash;2007</td><td>Gordon Bell</td><td>MyLifeBits, capture everything</td><td>No meaning, only data</td></tr>
+            <tr><td>2001</td><td>David Allen</td><td>GTD, tasks and projects</td><td>No connection to knowledge or people</td></tr>
+            <tr><td>2020</td><td>Tiago Forte</td><td>Second Brain, knowledge archival</td><td>Passive archive, no active lens</td></tr>
+            <tr><td><strong>2025</strong></td><td><strong>Martijn Aslander</strong></td><td><strong>Life Lens System: lens on your whole life</strong></td><td><strong>First working implementation (ThetaOS)</strong></td></tr>
+        </table>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>First Implementation: ThetaOS</h2>
+        <p><a href="index.html">ThetaOS</a> is the first implementation of a Life Lens System, built by Martijn Aslander starting in 2024. Key metrics:</p>
+        <table>
+            <tr><td><strong>Records</strong></td><td>560,000+</td></tr>
+            <tr><td><strong>Database tables</strong></td><td>300+</td></tr>
+            <tr><td><strong>Measured synapses</strong></td><td>170,000+</td></tr>
+            <tr><td><strong>Cross-references</strong></td><td>153,000+</td></tr>
+            <tr><td><strong>Data span</strong></td><td>20+ years (email archive from 2004, transactions from 2017, notes from 2019)</td></tr>
+            <tr><td><strong>AI companion</strong></td><td>Tom &mdash; queries the system in real-time, suggests connections, human confirms</td></tr>
+            <tr><td><strong>Architecture</strong></td><td>Six-layer synaptic model with ten evidence layers per connection</td></tr>
+            <tr><td><strong>Core principle</strong></td><td>98% structure, 2% AI &mdash; the value is in the data, not the model</td></tr>
+        </table>
+        <p>The full architecture, brain mechanism mappings, discovery timeline, and build journal are documented on <a href="index.html">the main site</a>.</p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>What is a Life Lens System?</h3>
+            <p>A Life Lens System (LLS) is a personal information architecture that lets you look at your own life through many perspectives, using the data you already possess. It combines PKM, Quantified Self, GTD, lifelogging, and personal ontology into one integrated system.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Who coined the term?</h3>
+            <p>Martijn Aslander coined the term Life Lens System on December 20, 2025. He is the founder of the European PKM Summit, Fellow of the KNVI, author of 17 books, and has given 2,500+ presentations on information architecture, digital fitness, and personal knowledge management.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How is this different from PKM?</h3>
+            <p>PKM focuses on knowledge and ideas. A Life Lens System includes knowledge but also encompasses people, locations, transactions, events, health data, and all other aspects of a life. PKM is one layer within an LLS.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How is this different from lifelogging?</h3>
+            <p>Lifelogging focuses on capturing &mdash; recording everything. A Life Lens System focuses on connecting and understanding. Lifelogging asks "what happened?" An LLS asks "what does it mean?" An LLS uses lifelogged data as one of many input sources.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What is the synaptic architecture?</h3>
+            <p>The synaptic architecture models connections between entities as synapses with properties: certainty, direction, recency, and evidence layers. Ten layers of evidence range from confirmed data (bank transactions, calendar entries) to inferred connections. Multiple independent sources strengthen a connection &mdash; like neurons firing together.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What is Tom?</h3>
+            <p>Tom is an AI companion that lives inside ThetaOS. It can query the full system in real-time, find patterns across decades of data, and suggest connections. The human (Martijn) confirms or rejects every suggestion. Tom is not the brain &mdash; it is the librarian.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I build my own Life Lens System?</h3>
+            <p>Yes. A Life Lens System is a concept, not a product. ThetaOS is one implementation. The core principles (personal ontology, deduplication, building blocks, confirmed linking) can be applied with different tools. The architecture is documented publicly on this site.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Where can I learn more?</h3>
+            <p>The <a href="index.html">main site</a> documents the full architecture, 19+ brain mechanism mappings, a discovery timeline, and a build journal. Key external references: <a href="https://yogiaria.substack.com/p/as-we-may-think-has-become-real">Aria Khodaverdi's analysis</a> comparing ThetaOS to Vannevar Bush's Memex, and the <a href="https://pkmsummit.com">European PKM Summit</a> where the system was first demonstrated live.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>About the Author</h2>
+        <div class="credentials">
+            <h3>Martijn Aslander</h3>
+            <ul>
+                <li><strong>Coined:</strong> Life Lens System (December 2025), Digitale Fitheid / Digital Fitness (2019)</li>
+                <li><strong>Built:</strong> ThetaOS &mdash; first working LLS implementation (560,000+ records)</li>
+                <li><strong>Founded:</strong> European PKM Summit (2024, with Lykle de Vries and Kim van den Berg)</li>
+                <li><strong>Fellow:</strong> KNVI (Koninklijke Nederlandse Vereniging van Informatieprofessionals)</li>
+                <li><strong>Books:</strong> 17 published (including <em>Nooit af</em>, <em>Starten met Obsidian</em>)</li>
+                <li><strong>Presentations:</strong> 2,500+ (NS, Politie, Rijksoverheid, Belastingdienst, UWV, and many more)</li>
+                <li><strong>Domains:</strong> PKM, Quantified Self, GTD, information architecture, digital fitness</li>
+                <li><strong>Active in QS community since 2012;</strong> attended and spoke at QS conferences</li>
+                <li><strong>GTD practitioner since 2004;</strong> first Dutch edition foreword contributor</li>
+                <li><strong>ORCID:</strong> <a href="https://orcid.org/0009-0004-2344-0620">0009-0004-2344-0620</a></li>
+            </ul>
+        </div>
+        <p>Martijn has spent 25 years at the intersection of personal knowledge management, information architecture, quantified self, and digital fitness &mdash; as practitioner, speaker, author, and builder. The Life Lens System is the synthesis of that work.</p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Publications</h2>
+        <table>
+            <tr><th>Date</th><th>Title</th></tr>
+            <tr><td>Dec 16, 2025</td><td><a href="https://world.hey.com/martijnaslander/ik-zit-op-iets-bijzonders-en-ik-krijg-het-niet-uitgelegd-fdc95edf">Ik zit op iets bijzonders en ik krijg het niet uitgelegd</a></td></tr>
+            <tr><td>Dec 20, 2025</td><td><a href="https://world.hey.com/martijnaslander/eindelijk-weet-ik-wat-thetaos-is-een-life-lens-system-lls">Eindelijk weet ik wat ThetaOS is: een Life Lens System (LLS)</a></td></tr>
+            <tr><td>Dec 21, 2025</td><td><a href="https://world.hey.com/martijnaslander/thetaos-in-een-historisch-perspectief-250-jaar-zoeken">ThetaOS in een historisch perspectief: 250 jaar zoeken</a></td></tr>
+            <tr><td>Dec 28, 2025</td><td><a href="https://world.hey.com/martijnaslander/het-rendement-van-een-life-lens-system-emergentie">Het rendement van een Life Lens System: emergentie</a></td></tr>
+            <tr><td>Mar 20, 2026</td><td><a href="https://world.hey.com/martijnaslander/here-is-everybody-250-years-of-thinking-about-information-043fb698">Here Is Everybody &mdash; 250 Years of Thinking About Information</a></td></tr>
+            <tr><td>Mar 24, 2026</td><td><a href="https://world.hey.com/martijnaslander/i-think-i-ve-built-a-mythical-machine-cac6597f">I Think I've Built a Mythical Machine</a></td></tr>
+            <tr><td>Mar 29, 2026</td><td><a href="https://world.hey.com/martijnaslander/the-synaptic-architecture-of-a-life-00e84079">The Synaptic Architecture of a Life</a></td></tr>
+        </table>
+        <p style="margin-top: 16px;"><strong>External:</strong> <a href="https://yogiaria.substack.com/p/as-we-may-think-has-become-real">As We May Think Has Become Real</a> by Aria Khodaverdi (March 2026) &mdash; the first in-depth external analysis of ThetaOS and the Life Lens System concept.</p>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>Martijn Aslander &middot; <a href="https://orcid.org/0009-0004-2344-0620">ORCID</a> &middot; <a href="https://pkmsummit.com">PKM Summit</a> &middot; <a href="index.html">Life Lens System</a></p>
+        <p style="margin-top: 8px;">Last updated: April 4, 2026</p>
+    </div>
+</footer>
+
+<script data-goatcounter="https://life-lens-system.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
