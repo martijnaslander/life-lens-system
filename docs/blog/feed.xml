@@ -6,7 +6,21 @@
     <link>https://martijnaslander.github.io/life-lens-system/blog/</link>
     <atom:link href="https://martijnaslander.github.io/life-lens-system/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
-    <lastBuildDate>Tue, 31 Mar 2026 10:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 13 Apr 2026 18:00:00 +0200</lastBuildDate>
+    <item>
+        <title>Weak Signals, Strong Patterns</title>
+        <description>What LinkedIn reactions reveal about your network — if you listen. How the Life Lens System picks up public signals, cross-references them against a personal database of 21,000+ persons, and classifies them into rings of relevance. Demonstrated with real data from a single LinkedIn post.</description>
+        <link>https://martijnaslander.github.io/life-lens-system/blog/weak-signals.html</link>
+        <pubDate>Sun, 13 Apr 2026 18:00:00 +0200</pubDate>
+        <guid>https://martijnaslander.github.io/life-lens-system/blog/weak-signals.html</guid>
+    </item>
+    <item>
+        <title>Cluster Firing</title>
+        <description>When a city center becomes a neural network. How myelin, saltatory conduction and action potentials work together in the Life Lens System, demonstrated with real data from 29 shops in Haarlem.</description>
+        <link>https://martijnaslander.github.io/life-lens-system/blog/cluster-firing.html</link>
+        <pubDate>Sun, 13 Apr 2026 12:00:00 +0200</pubDate>
+        <guid>https://martijnaslander.github.io/life-lens-system/blog/cluster-firing.html</guid>
+    </item>
     <item>
         <title>Fifty Brains on a Laptop</title>
         <description>Once your Life Lens System has a brain, it can multiply fifty times. Ten Tom sessions, five sub-agents each, fifty parallel thinkers on a laptop. But fifty times nothing is nothing. The multiplication only works because the foundation is solid.</description>

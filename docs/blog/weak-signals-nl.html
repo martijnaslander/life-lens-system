@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zwakke Signalen, Sterke Patronen — Life Lens System</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Zwakke Signalen, Sterke Patronen — Wat LinkedIn-reacties onthullen over je netwerk",
+  "description": "Hoe het Life Lens System publieke signalen opvangt, kruist tegen een persoonlijke database, en classificeert in ringen van relevantie — gedemonstreerd met echte data van een LinkedIn-post.",
+  "author": {
+    "@type": "Person",
+    "name": "Martijn Aslander",
+    "url": "https://martijnaslander.github.io/life-lens-system/"
+  },
+  "datePublished": "2026-04-13",
+  "mainEntityOfPage": "https://martijnaslander.github.io/life-lens-system/blog/weak-signals-nl.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "The Life Lens System",
+    "url": "https://martijnaslander.github.io/life-lens-system/"
+  },
+  "keywords": ["Life Lens System", "LLS", "ThetaOS", "sensorische neuronen", "LinkedIn", "zwakke signalen", "netwerkanalyse", "persoonlijke informatie-architectuur", "Martijn Aslander"]
+}
+</script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 20px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 44px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 22px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 24px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 18px; }
+th { text-align: left; color: #7ab; padding: 8px 12px; border-bottom: 2px solid #5a6269; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+td { padding: 6px 12px; border-bottom: 1px solid #3e464e; color: #ddd; }
+tr:hover td { background: #3e464e; }
+.ring-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+.ring-known { background: #7ab; }
+.ring-new { background: #555; border: 1px solid #888; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a href="weak-signals.html">EN</a>
+    <a class="active">NL</a>
+</div>
+
+<a class="back" href="../index-nl.html#emulation-table">&larr; Overzicht</a>
+
+<div class="content">
+    <div class="topic-label">Blog &mdash; april 2026</div>
+    <h1>Zwakke Signalen, Sterke Patronen</h1>
+    <p class="subtitle">Wat LinkedIn-reacties onthullen over je netwerk &mdash; als je luistert.</p>
+
+    <h2>Een post, elf stemmen</h2>
+    <p>Op 13 april 2026 publiceerde Monique Brinks een LinkedIn-post. Ze beschreef hoe ze in 2003 een stagiair begeleidde die duizenden handgeschreven kaarten over verzetsmensen uit bezet Groningen door de scanner haalde. Daarna beschreef ze wat er drieentwintig jaar later gebeurde, toen een AI-systeem datzelfde archief transcribeerde &mdash; 3.150 kaarten in 100 minuten &mdash; en het kruiste met vijf andere archieven om een compleet verzetsnetwerk te reconstrueren.</p>
+    <p>Binnen zes uur had de post 98 likes en 19 reacties. Voor de meeste mensen stopt de informatie daar. Getallen op een scherm. Een notificatiebadge.</p>
+    <p>Het systeem zag iets anders.</p>
+
+    <h2>De kruisverwijzing</h2>
+    <p>Het systeem haalde de post op, extraheerde de naam van elke reageerder, en kruiste elke naam aan tegen een database van 21.330 bekende personen. Geen vage match. Geen gok. Een precieze kruisverwijzing: voornaam en achternaam samen, geverifieerd tegen bestaande records.</p>
+    <p>Dit is wat het vond:</p>
+
+    <table>
+        <tr><th>Reageerder</th><th>Ring</th><th>Status</th></tr>
+        <tr><td>Monique Brinks</td><td><span class="ring-dot ring-known"></span> 1</td><td>Bekend &mdash; auteur post, projectpartner</td></tr>
+        <tr><td>Kees Verhoeven</td><td><span class="ring-dot ring-known"></span> 2</td><td>Bekend &mdash; oud-Kamerlid, eerste gebruiker van het systeem</td></tr>
+        <tr><td>Geert Jonker</td><td><span class="ring-dot ring-known"></span> 2</td><td>Bekend &mdash; direct betrokken bij het project</td></tr>
+        <tr><td>Jaap Karman</td><td><span class="ring-dot ring-known"></span> 2</td><td>Bekend</td></tr>
+        <tr><td>Sylvia Kempen-Bakker</td><td><span class="ring-dot ring-known"></span> 2</td><td>Bekend &mdash; archivaris</td></tr>
+        <tr><td>Carla Wolbers</td><td><span class="ring-dot ring-known"></span> 2</td><td>Bekend</td></tr>
+        <tr><td>Joost Geraets</td><td><span class="ring-dot ring-new"></span> 4</td><td>Nieuw signaal &mdash; twee inhoudelijke reacties</td></tr>
+        <tr><td>Raymund Sch&uuml;tz</td><td><span class="ring-dot ring-new"></span> 4</td><td>Nieuw signaal</td></tr>
+        <tr><td>Niek Jan van den Hout</td><td><span class="ring-dot ring-new"></span> 4</td><td>Nieuw signaal &mdash; tagde iemand</td></tr>
+        <tr><td>Lars Steenbeek</td><td><span class="ring-dot ring-new"></span> 4</td><td>Nieuw signaal &mdash; tagde iemand</td></tr>
+        <tr><td>Annelot Vijn</td><td><span class="ring-dot ring-new"></span> 4</td><td>Nieuw signaal &mdash; tagde twee mensen</td></tr>
+    </table>
+
+    <p>Zes van de elf reageerders stonden al in de database. Dat is geen toeval. Het is een netwerk dat reageert op relevante content.</p>
+
+    <h2>Wat de ringen betekenen</h2>
+    <p>Het ringsysteem is ontleend aan hoe <a href="../brain/sensory-neurons-nl.html">sensorische neuronen</a> werken in het brein. Niet elke prikkel bereikt het bewustzijn. De thalamus filtert inkomende signalen op basis van sterkte en relevantie. De ringen doen hetzelfde:</p>
+
+    <div class="highlight">
+        <p><strong>Ring 0</strong> &mdash; je eigen signaal. Je reageerde zelf op de post.<br>
+        <strong>Ring 1</strong> &mdash; kernnetwerk. Sterke bestaande verbinding, dikke myeline. Direct bewustzijn.<br>
+        <strong>Ring 2</strong> &mdash; bekend. De persoon staat in je database. Het systeem herkent ze.<br>
+        <strong>Ring 3</strong> &mdash; terugkerend onbekend. Niet in je database, maar eerder opgedoken bij andere posts. Dit is sensitisatie: een zwak signaal dat sterker wordt door herhaling.<br>
+        <strong>Ring 4</strong> &mdash; nieuw. Eerste keer gezien. Geregistreerd, maar onder de bewustzijnsdrempel.</p>
+    </div>
+
+    <p>Ring 4 is ruis tot het tegendeel bewezen is. Ring 2 is een bekende stem in de menigte. Ring 3 is de interessante &mdash; iemand die je nog niet kent, maar die blijft opduiken.</p>
+
+    <h2>Het signaal dat je gemist zou hebben</h2>
+    <p>Kees Verhoeven reageerde op de post. Een voormalig Tweede Kamerlid, schrijvend over "serieuze aandacht" en een "responsieve overheid." In een normale LinkedIn-feed staat die reactie tussen negen andere. Je ziet hem misschien, misschien niet.</p>
+    <p>Het systeem zag hem niet alleen. Het herkende hem. Kees Verhoeven was een van de eerste mensen die ooit met het systeem heeft gewerkt, jaren geleden. Die geschiedenis stond in de database. De kruisverwijzing bracht het direct naar boven. Een zwak signaal in een feed werd een sterk signaal met context.</p>
+    <p>Zonder de kruisverwijzing is de reactie tekst. Mee is het een relatie die jaren overspant en precies op het juiste moment opduikt.</p>
+
+    <h2>Wat er over tijd gebeurt</h2>
+    <p>Een post geeft je een momentopname. Twintig posts geven je een patroon. Het systeem bewaart elke reactie, elke reageerder, elke ringclassificatie. Na verloop van tijd beantwoordt het vragen die geen enkele losse post kan:</p>
+    <p><strong>Wie blijft terugkomen?</strong> Joost Geraets liet twee inhoudelijke reacties achter op deze post. Als hij ook op de volgende post reageert, verhuist hij van ring 4 naar ring 3. Het signaal is geen ruis meer &mdash; het is een patroon.</p>
+    <p><strong>Welke onderwerpen activeren welke netwerken?</strong> Een post over AI en archieven trekt misschien archivarissen en politici aan. Een post over persoonlijk kennismanagement trekt een heel andere groep. De overlap &mdash; mensen die op beide reageren &mdash; zijn de bruggen tussen je netwerken.</p>
+    <p><strong>Wat is het sentimenttraject?</strong> Is iemand consequent positief? Consequent kritisch? Stellen ze vragen die zich over tijd ontwikkelen? Het systeem volgt sentiment per reactie, waardoor je niet alleen ziet wie er reageert, maar ook hoe.</p>
+
+    <h2>Naar buiten kijken</h2>
+    <p>De meeste persoonlijke kennissystemen zijn introspectief. Ze slaan op wat je schrijft, wat je leest, wat je denkt. Het zijn uitstekende spiegels. Maar ze zijn doof. Ze horen niet wat er om je heen gebeurt, tenzij je het handmatig intypt.</p>
+    <p>Dit is de eerste implementatie van iets anders: een systeem dat luistert. Het vangt publieke signalen op &mdash; reacties op een sociaal platform &mdash; en vertaalt ze naar persoonlijke relevantie door ze te checken tegen alles wat het systeem al weet.</p>
+    <p>De LinkedIn-feed toonde 98 likes en 19 reacties. Het systeem toonde zes bekende stemmen, vijf nieuwe, een verbinding die jaren overspant, en een mechanisme om te volgen wat er daarna gebeurt.</p>
+    <p>Elf reacties op een enkele post. Zes bekend. Vijf nieuw. Het systeem las niet zomaar een LinkedIn-post &mdash; het luisterde naar een gesprek en herkende de stemmen.</p>
+
+    <p style="color: #888; margin-top: 40px; font-size: 13px;"><em>Geschreven 13 april 2026. Data: 19 reacties gekruist tegen 21.330 personen, 2 tabellen (linkedin_posts, linkedin_reacties), SQLite-database op een enkele VPS. Totale bouwtijd van idee tot werkend systeem: een gesprek.</em></p>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="cluster-firing-nl.html">&larr; Cluster Firing</a>
+    <span style="font-size: 14px; color: #b0b0b0;">Blog</span>
+    <span class="nav-btn" style="color: #555; border-color: #444; pointer-events: none;">Nieuwste &rarr;</span>
+</div>
+
+<script data-goatcounter="https://life-lens-system.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

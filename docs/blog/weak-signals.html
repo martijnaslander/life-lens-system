@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weak Signals, Strong Patterns — Life Lens System</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Weak Signals, Strong Patterns — What LinkedIn Reactions Reveal About Your Network",
+  "description": "How the Life Lens System picks up public signals, cross-references them against a personal database, and classifies them into rings of relevance — demonstrated with real data from a LinkedIn post.",
+  "author": {
+    "@type": "Person",
+    "name": "Martijn Aslander",
+    "url": "https://martijnaslander.github.io/life-lens-system/"
+  },
+  "datePublished": "2026-04-13",
+  "mainEntityOfPage": "https://martijnaslander.github.io/life-lens-system/blog/weak-signals.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "The Life Lens System",
+    "url": "https://martijnaslander.github.io/life-lens-system/"
+  },
+  "keywords": ["Life Lens System", "LLS", "ThetaOS", "sensory neurons", "LinkedIn", "weak signals", "network analysis", "personal information architecture", "Martijn Aslander"]
+}
+</script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 20px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 48px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 22px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 24px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 18px; }
+th { text-align: left; color: #7ab; padding: 8px 12px; border-bottom: 2px solid #5a6269; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+td { padding: 6px 12px; border-bottom: 1px solid #3e464e; color: #ddd; }
+tr:hover td { background: #3e464e; }
+.ring-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+.ring-known { background: #7ab; }
+.ring-new { background: #555; border: 1px solid #888; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="weak-signals-nl.html">NL</a>
+</div>
+
+<a class="back" href="../#emulation-table">&larr; Overview</a>
+
+<div class="content">
+    <div class="topic-label">Blog &mdash; April 2026</div>
+    <h1>Weak Signals, Strong Patterns</h1>
+    <p class="subtitle">What LinkedIn reactions reveal about your network &mdash; if you listen.</p>
+
+    <h2>One post, eleven voices</h2>
+    <p>On 13 April 2026, Monique Brinks published a LinkedIn post. She described how in 2003 she supervised a student scanning thousands of handwritten cards about resistance fighters from occupied Groningen. Then she described what happened twenty-three years later, when an AI system transcribed the same archive &mdash; 3,150 cards in 100 minutes &mdash; and cross-referenced it against five other archives to reconstruct an entire resistance network.</p>
+    <p>Within six hours, the post had 98 likes and 19 comments. For most people, that is where the information ends. Numbers on a screen. A notification badge.</p>
+    <p>The system saw something different.</p>
+
+    <h2>The cross-reference</h2>
+    <p>The system fetched the post, extracted the name of every commenter, and ran each name against a database of 21,330 known persons. Not a fuzzy match. Not a guess. A precise cross-reference: first name and last name together, verified against existing records.</p>
+    <p>Here is what it found:</p>
+
+    <table>
+        <tr><th>Commenter</th><th>Ring</th><th>Status</th></tr>
+        <tr><td>Monique Brinks</td><td><span class="ring-dot ring-known"></span> 1</td><td>Known &mdash; post author, project partner</td></tr>
+        <tr><td>Kees Verhoeven</td><td><span class="ring-dot ring-known"></span> 2</td><td>Known &mdash; former MP, first ever user of the system</td></tr>
+        <tr><td>Geert Jonker</td><td><span class="ring-dot ring-known"></span> 2</td><td>Known &mdash; directly involved in the project</td></tr>
+        <tr><td>Jaap Karman</td><td><span class="ring-dot ring-known"></span> 2</td><td>Known</td></tr>
+        <tr><td>Sylvia Kempen-Bakker</td><td><span class="ring-dot ring-known"></span> 2</td><td>Known &mdash; archivist</td></tr>
+        <tr><td>Carla Wolbers</td><td><span class="ring-dot ring-known"></span> 2</td><td>Known</td></tr>
+        <tr><td>Joost Geraets</td><td><span class="ring-dot ring-new"></span> 4</td><td>New signal &mdash; two substantive comments</td></tr>
+        <tr><td>Raymund Sch&uuml;tz</td><td><span class="ring-dot ring-new"></span> 4</td><td>New signal</td></tr>
+        <tr><td>Niek Jan van den Hout</td><td><span class="ring-dot ring-new"></span> 4</td><td>New signal &mdash; tagged someone</td></tr>
+        <tr><td>Lars Steenbeek</td><td><span class="ring-dot ring-new"></span> 4</td><td>New signal &mdash; tagged someone</td></tr>
+        <tr><td>Annelot Vijn</td><td><span class="ring-dot ring-new"></span> 4</td><td>New signal &mdash; tagged two people</td></tr>
+    </table>
+
+    <p>Six out of eleven commenters were already in the database. That is not coincidence. It is a network responding to relevant content.</p>
+
+    <h2>What the rings mean</h2>
+    <p>The ring system is borrowed from how <a href="../brain/sensory-neurons.html">sensory neurons</a> work in the brain. Not every stimulus reaches consciousness. The thalamus filters incoming signals based on strength and relevance. The rings do the same thing:</p>
+
+    <div class="highlight">
+        <p><strong>Ring 0</strong> &mdash; your own signal. You reacted to the post yourself.<br>
+        <strong>Ring 1</strong> &mdash; core network. Strong existing connection, thick myelin. Immediate awareness.<br>
+        <strong>Ring 2</strong> &mdash; known. The person is in your database. The system recognises them.<br>
+        <strong>Ring 3</strong> &mdash; recurring unknown. Not in your database, but they've appeared before on other posts. This is sensitisation: a weak signal gaining strength through repetition.<br>
+        <strong>Ring 4</strong> &mdash; new. First time seen. Registered, but below the awareness threshold.</p>
+    </div>
+
+    <p>Ring 4 is noise until proven otherwise. Ring 2 is a known voice in the crowd. Ring 3 is the interesting one &mdash; someone you don't know yet, but who keeps showing up.</p>
+
+    <h2>The signal you would have missed</h2>
+    <p>Kees Verhoeven commented on the post. A former member of the Dutch parliament, writing about "serious attention" and a "responsive government." In a normal LinkedIn feed, that comment sits between nine others. You might see it, you might not.</p>
+    <p>The system didn't just see it. It recognised him. Kees Verhoeven was one of the first people who ever used the system, years ago. That history was in the database. The cross-reference surfaced it instantly. A weak signal in a feed became a strong signal with context.</p>
+    <p>Without the cross-reference, the comment is text. With it, it is a relationship that spans years, surfacing at exactly the right moment.</p>
+
+    <h2>What happens over time</h2>
+    <p>One post gives you a snapshot. Twenty posts give you a pattern. The system stores every reaction, every commenter, every ring classification. Over time, it answers questions that no single post can:</p>
+    <p><strong>Who keeps coming back?</strong> Joost Geraets left two substantive comments on this post. If he comments on the next post too, he moves from ring 4 to ring 3. The signal is no longer noise &mdash; it is a pattern.</p>
+    <p><strong>Which topics activate which networks?</strong> A post about AI and archives might attract archivists and politicians. A post about personal knowledge management might attract a completely different group. The overlaps &mdash; people who respond to both &mdash; are the bridges between your networks.</p>
+    <p><strong>What is the sentiment trajectory?</strong> Is someone consistently supportive? Consistently critical? Asking questions that evolve over time? The system tracks sentiment per reaction, making it possible to see not just who responds, but how.</p>
+
+    <h2>Looking outward</h2>
+    <p>Most personal knowledge systems are introspective. They store what you write, what you read, what you think. They are excellent mirrors. But they are deaf. They don't hear what happens around you unless you manually type it in.</p>
+    <p>This is the first implementation of something different: a system that listens. It picks up public signals &mdash; reactions on a social platform &mdash; and translates them into personal relevance by checking them against everything the system already knows.</p>
+    <p>The LinkedIn feed showed 98 likes and 19 comments. The system showed six known voices, five new ones, one connection spanning years, and a mechanism to track what happens next.</p>
+    <p>Eleven reactions on a single post. Six known. Five new. The system didn't just read a LinkedIn post &mdash; it listened to a conversation and recognised the voices.</p>
+
+    <p style="color: #888; margin-top: 40px; font-size: 13px;"><em>Written 13 April 2026. Data: 19 reactions cross-referenced against 21,330 persons, 2 tables (linkedin_posts, linkedin_reacties), SQLite database on a single VPS. Total implementation time from idea to working system: one conversation.</em></p>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="cluster-firing.html">&larr; Cluster Firing</a>
+    <span style="font-size: 14px; color: #b0b0b0;">Blog</span>
+    <span class="nav-btn" style="color: #555; border-color: #444; pointer-events: none;">Latest &rarr;</span>
+</div>
+
+<script data-goatcounter="https://life-lens-system.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
