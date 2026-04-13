@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cluster-Snelvuren — Life Lens System</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cluster-Snelvuren — Als een binnenstad een neuraal netwerk wordt",
+  "description": "Hoe myeline, saltatoire geleiding en actiepotentiaal samenwerken in het Life Lens System, gedemonstreerd met echte data van 29 winkels in Haarlem.",
+  "author": {
+    "@type": "Person",
+    "name": "Martijn Aslander",
+    "url": "https://martijnaslander.github.io/life-lens-system/"
+  },
+  "datePublished": "2026-04-13",
+  "mainEntityOfPage": "https://martijnaslander.github.io/life-lens-system/blog/cluster-firing-nl.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "The Life Lens System",
+    "url": "https://martijnaslander.github.io/life-lens-system/"
+  },
+  "keywords": ["Life Lens System", "LLS", "ThetaOS", "cluster snelvuren", "saltatoire geleiding", "myeline", "actiepotentiaal", "persoonlijke informatiearchitectuur", "Martijn Aslander"]
+}
+</script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+th { text-align: left; color: #7ab; padding: 8px 12px; border-bottom: 2px solid #5a6269; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+td { padding: 6px 12px; border-bottom: 1px solid #3e464e; color: #ddd; }
+tr:hover td { background: #3e464e; }
+.bar { display: inline-block; height: 10px; background: #7ab; border-radius: 2px; vertical-align: middle; margin-left: 8px; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+.diagram { background: #3e464e; padding: 24px; border-radius: 8px; margin: 24px 0; font-family: monospace; font-size: 13px; line-height: 2; color: #ddd; }
+.diagram .label { color: #7ab; }
+.diagram .arrow { color: #888; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a href="cluster-firing.html">EN</a>
+    <a class="active">NL</a>
+</div>
+
+<a class="back" href="../index-nl.html">&larr; Overzicht</a>
+
+<div class="content">
+    <div class="topic-label">Blog &mdash; April 2026</div>
+    <h1>Cluster-Snelvuren</h1>
+    <p class="subtitle">Als een binnenstad een neuraal netwerk wordt.</p>
+
+    <h2>Drie mechanismen, een keten</h2>
+    <p>In het brein werken drie mechanismen samen als een enkele keten. Ze worden vaak los van elkaar uitgelegd, waardoor ze op onafhankelijke concepten lijken. Dat zijn ze niet. Het zijn drie stadia van dezelfde gebeurtenis: een signaal dat reist van trigger naar reactie.</p>
+
+    <p>Dit is de keten:</p>
+
+    <div class="diagram">
+        <span class="label">1. Actiepotentiaal</span> <span class="arrow">&mdash;</span> het neuron vuurt<br>
+        <span class="arrow">&darr;</span><br>
+        <span class="label">2. Myeline</span> <span class="arrow">&mdash;</span> de isolatie die bepaalt hoe snel het signaal reist<br>
+        <span class="arrow">&darr;</span><br>
+        <span class="label">3. Saltatoire geleiding</span> <span class="arrow">&mdash;</span> het signaal springt langs dikke paden, slaat dunne over
+    </div>
+
+    <p>Haal er een weg en de hele keten breekt. Zonder actiepotentiaal vuurt er niets. Zonder myeline kruipt het signaal in plaats van te springen. Zonder saltatoire geleiding bezoekt het signaal elke knoop in plaats van naar de belangrijke te springen.</p>
+
+    <p>Samen beantwoorden ze drie vragen:</p>
+    <p><strong>Moet dit vuren?</strong> (actiepotentiaal &mdash; overschrijdt het bewijs de drempel?)<br>
+    <strong>Hoe snel moet het reizen?</strong> (myeline &mdash; hoe dik is de isolatie op dit pad?)<br>
+    <strong>Waar moet het naartoe?</strong> (saltatoire geleiding &mdash; spring naar de volgende dikke knoop, sla de dunne over)</p>
+
+    <h2>Hoe dit werkt in het brein</h2>
+    <p>Je ruikt koffie. Die geur is een signaal. Het bereikt je reukzenuwen, en als het sterk genoeg is, vuren ze &mdash; dat is het actiepotentiaal. Het signaal moet nu de delen van je brein bereiken die weten wat koffie betekent: de keuken, het ochtendritueel, het caf&eacute; op de hoek.</p>
+    <p>Het pad van je neus naar die herinneringen is gewikkeld in myeline &mdash; omdat je duizenden keren koffie hebt geroken. Dikke myeline. Het signaal kruipt niet langs de zenuwvezel. Het springt van opening naar opening, slaat de ge&iuml;soleerde stukken helemaal over, en regenereert alleen bij de knopen. Dat is saltatoire geleiding. In milliseconden heeft de geur van koffie je hele ochtendroutine geactiveerd.</p>
+    <p>Stel je nu voor dat je iets ruikt dat je maar een keer bent tegengekomen &mdash; een zeldzaam kruid op een markt in Marrakech. Het signaal vuurt (actiepotentiaal), maar het pad heeft nauwelijks myeline. Het signaal reist langzaam, continu, zonder te springen. Het duurt langer om de herinnering te vinden. Misschien vind je hem helemaal niet.</p>
+    <p>Het verschil zit niet in het signaal. Het zit in het pad.</p>
+
+    <h2>Hoe dit werkt in ThetaOS</h2>
+    <p>Het Life Lens System bevat een database van een heel leven. Transacties, locaties, personen, foto's, tekst, check-ins. Elke verbinding tussen twee entiteiten is een synaps. Elke synaps heeft een dikte &mdash; bepaald door hoeveel bewijslagen hem bevestigen en hoe vaak hij is geactiveerd. Die dikte is de myeline.</p>
+    <p>Wanneer een trigger binnenkomt, moet het systeem beslissen: wat vuurt, hoe snel, en waar gaat het signaal naartoe? Dat zijn dezelfde drie vragen.</p>
+
+    <h2>Een binnenstad als neuraal netwerk</h2>
+    <p>Op 13 april 2026 stapte ik uit de bus in Haarlem en liep de binnenstad in. Wat volgt is echte data.</p>
+    <p>Het systeem kent 29 winkels en restaurants in de Haarlemse binnenstad. Elk heeft een myelinedikte &mdash; gemeten aan het aantal banktransacties door de jaren heen. Hier zijn de top tien:</p>
+
+    <table>
+        <tr><th>Locatie</th><th>Transacties</th><th>Myeline</th></tr>
+        <tr><td>Apple Store</td><td>950</td><td><span class="bar" style="width: 190px;"></span></td></tr>
+        <tr><td>Etos</td><td>935</td><td><span class="bar" style="width: 187px;"></span></td></tr>
+        <tr><td>Bakker van Vessem</td><td>728</td><td><span class="bar" style="width: 146px;"></span></td></tr>
+        <tr><td>HEMA</td><td>~500</td><td><span class="bar" style="width: 100px;"></span></td></tr>
+        <tr><td>Jamin</td><td>342</td><td><span class="bar" style="width: 68px;"></span></td></tr>
+        <tr><td>Darras</td><td>216</td><td><span class="bar" style="width: 43px;"></span></td></tr>
+        <tr><td>IJssalon Garrone</td><td>187</td><td><span class="bar" style="width: 37px;"></span></td></tr>
+        <tr><td>Athenaeum Boekhandel</td><td>150</td><td><span class="bar" style="width: 30px;"></span></td></tr>
+        <tr><td>Gall &amp; Gall</td><td>146</td><td><span class="bar" style="width: 29px;"></span></td></tr>
+        <tr><td>Solo's Hairstudio</td><td>112</td><td><span class="bar" style="width: 22px;"></span></td></tr>
+    </table>
+
+    <p>En de onderste vijf:</p>
+
+    <table>
+        <tr><th>Locatie</th><th>Transacties</th><th>Myeline</th></tr>
+        <tr><td>Van Vuure (sigaren)</td><td>20</td><td><span class="bar" style="width: 4px;"></span></td></tr>
+        <tr><td>Restaurant Parck</td><td>15</td><td><span class="bar" style="width: 3px;"></span></td></tr>
+        <tr><td>Holland &amp; Barrett</td><td>7</td><td><span class="bar" style="width: 2px;"></span></td></tr>
+        <tr><td>So Low</td><td>2</td><td><span class="bar" style="width: 1px;"></span></td></tr>
+        <tr><td>Barista Caf&eacute;</td><td>~10</td><td><span class="bar" style="width: 2px;"></span></td></tr>
+    </table>
+
+    <p>Kijk naar het verschil. Apple Store heeft 950 transacties. So Low heeft er 2. Dat is geen klein verschil &mdash; het is een factor 475 in myelinedikte. In neurale termen: het ene pad is een snelweg. Het andere is een zandpad.</p>
+
+    <h2>De vuursequentie</h2>
+    <p>Die dag bezocht ik zes winkels. De bank registreerde de transacties. Dit is wat er gebeurde in het systeem, beschreven als een neurale vuursequentie:</p>
+
+    <p><strong>Stap 1 &mdash; Actiepotentiaal.</strong> De eerste transactie komt binnen: &euro;13,96 bij Simon Levelt, Haarlem. Het systeem herkent de locatie als onderdeel van het cluster "binnenstad Haarlem." De trigger overschrijdt de drempel. Het cluster vuurt.</p>
+
+    <p><strong>Stap 2 &mdash; Saltatoire geleiding.</strong> Het signaal activeert niet alle 29 locaties gelijk. Het springt eerst naar de dikste paden: Apple Store (950), Etos (935), Van Vessem (728). Dit zijn de knopen van Ranvier &mdash; de punten waar het signaal regenereert. Het systeem checkt: is er vandaag een transactie bij een van deze? Apple Store: ja, &euro;299,95. Het signaal versterkt.</p>
+
+    <p><strong>Stap 3 &mdash; Inhibitie.</strong> De 23 locaties zonder transactie vandaag worden gedempt. Niet vergeten &mdash; gedempt. Ze blijven in het cluster maar vuren niet. Net als in het brein: inhibitie voorkomt dat een signaal alles activeert. Zonder inhibitie zou elke vraag alle 29 locaties retourneren. Dat is epilepsie, geen intelligentie.</p>
+
+    <p><strong>Stap 4 &mdash; Payload.</strong> Elke gevuurde locatie levert zijn lading af op basis van type:</p>
+
+    <div class="highlight">
+        <p><strong>Apple Store</strong> (&euro;299,95) &mdash; levert altijd een aankoop op. Het systeem vraagt: "Wat heb je gekocht?"<br>
+        <strong>Gall &amp; Gall</strong> (&euro;64,03) &mdash; levert nooit een blijvende aankoop (je drinkt het op). Stil loggen.<br>
+        <strong>Tibetan Massage</strong> (&euro;80,00) &mdash; een dienst. Loggen als activiteit.<br>
+        <strong>Simon Levelt</strong> (&euro;13,96) &mdash; verbruiksartikel. Stil loggen.<br>
+        <strong>Jamin</strong> (&euro;39,32) &mdash; verbruiksartikel. Stil loggen.<br>
+        <strong>Van Vuure</strong> (&euro;20,00) &mdash; verbruiksartikel. Stil loggen.</p>
+    </div>
+
+    <p>Zes transacties. Een trigger. Het systeem wist welke winkels te verwachten, welke het eerst te checken, en wat te doen met elk antwoord. Het doorzocht niet 29 locaties een voor een. Het sprong langs dikke paden en negeerde dunne. Dat is saltatoire geleiding op een winkelstraat.</p>
+
+    <h2>Drie typen clusters</h2>
+    <p>De binnenstad is een type cluster. We hebben er tot nu toe drie ge&iuml;dentificeerd:</p>
+
+    <p><strong>Locatiecluster</strong> &mdash; dezelfde plek, verschillende winkels. Binnenstad Haarlem: 29 locaties, ~4.700 transacties. Getriggerd door "de stad in" of door een transactie bij een van de locaties.</p>
+
+    <p><strong>Belevingscluster</strong> &mdash; dezelfde plek, verschillende mensen en herinneringen. Vlieland: 385 dagen op het eiland, tientallen personen (Peter Ros, familie, vrienden), locaties (De Zafant, Stortemelk, de veerboot), activiteiten (fietsen, diners, schrijven). Getriggerd door "Vlieland" of door een veerboeking.</p>
+
+    <p><strong>Transitcluster</strong> &mdash; een hub die andere clusters verbindt. Harlingen: de veerterminal, de parkeerplaats, de supermarkt voor last-minute boodschappen. Dunne myeline op zichzelf, maar het is de poort naar het dikke Vlieland-cluster. Het signaal passeert op weg naar ergens anders.</p>
+
+    <p>Elk type vuurt anders. Een locatiecluster vuurt breed &mdash; veel locaties, ondiepe diepte. Een belevingscluster vuurt diep &mdash; minder locaties, maar rijk aan mensen, emoties, verhalen. Een transitcluster vuurt snel &mdash; het is een doorgeefluik, geen bestemming.</p>
+
+    <h2>Waarom dit ertoe doet</h2>
+    <p>Elk persoonlijk kennissysteem slaat verbindingen op. Links in Obsidian. Relaties in Notion. Contacten in een CRM. Maar ze behandelen elke verbinding hetzelfde. Een link is een link. Een contact is een contact.</p>
+
+    <p>Het brein werkt niet zo. Het heeft dikke paden en dunne paden. Snelle signalen en langzame signalen. Clusters die samen vuren en verbindingen die stil blijven tenzij je ze expliciet oproept. Het brein is geen database &mdash; het is een gewogen, gemyelineerd, selectief vurend netwerk.</p>
+
+    <p>Dat is wat het Life Lens System bouwt. Niet alleen de verbindingen, maar de <em>snelheid</em> van de verbindingen. Niet alleen de data, maar de <em>paraatheid</em> van de data. Wanneer ik een binnenstad inloop, wacht het systeem niet tot ik vertel wat er gebeurde. Het ziet de eerste transactie en vuurt het hele cluster &mdash; dikke paden eerst, dunne paden gedempt, payloads klaar.</p>
+
+    <p>De drie mechanismen zijn niet drie features. Ze zijn een keten:</p>
+
+    <div class="diagram">
+        <span class="label">Myeline</span> (de structuur) <span class="arrow">&rarr;</span> bepaalt <span class="arrow">&rarr;</span> <span class="label">Saltatoire geleiding</span> (het gedrag) <span class="arrow">&rarr;</span> getriggerd door <span class="arrow">&rarr;</span> <span class="label">Actiepotentiaal</span> (het vuurmoment)
+    </div>
+
+    <p>Structuur maakt gedrag mogelijk. Gedrag wacht op een trigger. De trigger activeert de keten. Een mechanisme, drie stadia, echte data.</p>
+
+    <p>De 29 winkels in Haarlem zijn geen lijst. Ze zijn een neuraal netwerk, gewogen door acht jaar banktransacties, klaar om te vuren op het moment dat ik uit de bus stap.</p>
+
+    <p style="color: #888; margin-top: 40px; font-size: 13px;"><em>Geschreven 13 april 2026. Data: 29 locaties, ~4.700 transacties (2018&ndash;2026), SQLite database op een enkele VPS. Opslagkosten: &euro;6,92/maand.</em></p>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="fifty-brains-nl.html">&larr; Vijftig Breinen</a>
+    <span style="font-size: 14px; color: #b0b0b0;">Blog</span>
+    <span class="nav-btn" style="color: #555; border-color: #444; pointer-events: none;">Nieuwste &rarr;</span>
+</div>
+
+<script data-goatcounter="https://life-lens-system.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

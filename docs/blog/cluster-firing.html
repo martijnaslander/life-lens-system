@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cluster Firing — Life Lens System</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cluster Firing — When a City Center Becomes a Neural Network",
+  "description": "How myelin, saltatory conduction and action potentials work together in the Life Lens System, demonstrated with real data from 29 shops in Haarlem.",
+  "author": {
+    "@type": "Person",
+    "name": "Martijn Aslander",
+    "url": "https://martijnaslander.github.io/life-lens-system/"
+  },
+  "datePublished": "2026-04-13",
+  "mainEntityOfPage": "https://martijnaslander.github.io/life-lens-system/blog/cluster-firing.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "The Life Lens System",
+    "url": "https://martijnaslander.github.io/life-lens-system/"
+  },
+  "keywords": ["Life Lens System", "LLS", "ThetaOS", "cluster firing", "saltatory conduction", "myelin", "action potential", "personal information architecture", "Martijn Aslander"]
+}
+</script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+th { text-align: left; color: #7ab; padding: 8px 12px; border-bottom: 2px solid #5a6269; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+td { padding: 6px 12px; border-bottom: 1px solid #3e464e; color: #ddd; }
+tr:hover td { background: #3e464e; }
+.bar { display: inline-block; height: 10px; background: #7ab; border-radius: 2px; vertical-align: middle; margin-left: 8px; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+.diagram { background: #3e464e; padding: 24px; border-radius: 8px; margin: 24px 0; font-family: monospace; font-size: 13px; line-height: 2; color: #ddd; }
+.diagram .label { color: #7ab; }
+.diagram .arrow { color: #888; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a class="active">EN</a>
+    <a href="cluster-firing-nl.html">NL</a>
+</div>
+
+<a class="back" href="../#emulation-table">&larr; Overview</a>
+
+<div class="content">
+    <div class="topic-label">Blog &mdash; April 2026</div>
+    <h1>Cluster Firing</h1>
+    <p class="subtitle">When a city center becomes a neural network.</p>
+
+    <h2>Three mechanisms, one chain</h2>
+    <p>In the brain, three mechanisms work together as a single chain. They are often explained separately, which makes them seem like independent concepts. They are not. They are three stages of the same event: a signal traveling from trigger to response.</p>
+
+    <p>Here is the chain:</p>
+
+    <div class="diagram">
+        <span class="label">1. Action Potential</span> <span class="arrow">&mdash;</span> the neuron fires<br>
+        <span class="arrow">&darr;</span><br>
+        <span class="label">2. Myelin</span> <span class="arrow">&mdash;</span> the insulation that determines how fast the signal travels<br>
+        <span class="arrow">&darr;</span><br>
+        <span class="label">3. Saltatory Conduction</span> <span class="arrow">&mdash;</span> the signal skips along thick paths, jumps over thin ones
+    </div>
+
+    <p>Remove any one of these and the whole chain breaks. Without the action potential, nothing fires. Without myelin, the signal crawls instead of jumping. Without saltatory conduction, the signal visits every node instead of skipping to the important ones.</p>
+
+    <p>Together, they answer three questions:</p>
+    <p><strong>Should this fire?</strong> (action potential &mdash; does the evidence cross the threshold?)<br>
+    <strong>How fast should it travel?</strong> (myelin &mdash; how thick is the insulation on this path?)<br>
+    <strong>Where should it go?</strong> (saltatory conduction &mdash; skip to the next thick node, ignore the thin ones)</p>
+
+    <h2>How this works in the brain</h2>
+    <p>You smell coffee. That smell is a signal. It reaches your olfactory neurons, and if it's strong enough, they fire &mdash; that's the action potential. The signal now needs to reach the parts of your brain that know what coffee means: the kitchen, the morning routine, the caf&eacute; on the corner.</p>
+    <p>The path from your nose to those memories is wrapped in myelin &mdash; because you've smelled coffee thousands of times. Thick myelin. The signal doesn't crawl along the nerve fiber. It leaps from gap to gap, skipping the insulated sections entirely, regenerating only at the nodes. That's saltatory conduction. In milliseconds, the smell of coffee has activated your entire morning routine.</p>
+    <p>Now imagine smelling something you've only encountered once &mdash; a rare spice in a market in Marrakech. The signal fires (action potential), but the path has almost no myelin. The signal travels slowly, continuously, without jumping. It takes longer to find the memory. You might not find it at all.</p>
+    <p>The difference is not in the signal. It's in the path.</p>
+
+    <h2>How this works in ThetaOS</h2>
+    <p>The Life Lens System contains a database of an entire life. Transactions, locations, people, photos, text, check-ins. Every connection between two entities is a synapse. Every synapse has a thickness &mdash; determined by how many evidence layers confirm it and how often it has been activated. That thickness is the myelin.</p>
+    <p>When a trigger arrives, the system must decide: what fires, how fast, and where does the signal go? Those are the same three questions.</p>
+
+    <h2>A city center as neural network</h2>
+    <p>On 13 April 2026, I stepped off a bus in Haarlem and walked into the city center. What follows is real data.</p>
+    <p>The system knows 29 shops and restaurants in the Haarlem city center. Each one has a myelin thickness &mdash; measured by the number of bank transactions over the years. Here are the top ten:</p>
+
+    <table>
+        <tr><th>Location</th><th>Transactions</th><th>Myelin</th></tr>
+        <tr><td>Apple Store</td><td>950</td><td><span class="bar" style="width: 190px;"></span></td></tr>
+        <tr><td>Etos</td><td>935</td><td><span class="bar" style="width: 187px;"></span></td></tr>
+        <tr><td>Bakker van Vessem</td><td>728</td><td><span class="bar" style="width: 146px;"></span></td></tr>
+        <tr><td>HEMA</td><td>~500</td><td><span class="bar" style="width: 100px;"></span></td></tr>
+        <tr><td>Jamin</td><td>342</td><td><span class="bar" style="width: 68px;"></span></td></tr>
+        <tr><td>Darras</td><td>216</td><td><span class="bar" style="width: 43px;"></span></td></tr>
+        <tr><td>IJssalon Garrone</td><td>187</td><td><span class="bar" style="width: 37px;"></span></td></tr>
+        <tr><td>Athenaeum Books</td><td>150</td><td><span class="bar" style="width: 30px;"></span></td></tr>
+        <tr><td>Gall &amp; Gall</td><td>146</td><td><span class="bar" style="width: 29px;"></span></td></tr>
+        <tr><td>Solo's Hairstudio</td><td>112</td><td><span class="bar" style="width: 22px;"></span></td></tr>
+    </table>
+
+    <p>And the bottom five:</p>
+
+    <table>
+        <tr><th>Location</th><th>Transactions</th><th>Myelin</th></tr>
+        <tr><td>Van Vuure (cigars)</td><td>20</td><td><span class="bar" style="width: 4px;"></span></td></tr>
+        <tr><td>Restaurant Parck</td><td>15</td><td><span class="bar" style="width: 3px;"></span></td></tr>
+        <tr><td>Holland &amp; Barrett</td><td>7</td><td><span class="bar" style="width: 2px;"></span></td></tr>
+        <tr><td>So Low</td><td>2</td><td><span class="bar" style="width: 1px;"></span></td></tr>
+        <tr><td>Barista Caf&eacute;</td><td>~10</td><td><span class="bar" style="width: 2px;"></span></td></tr>
+    </table>
+
+    <p>Look at the difference. Apple Store has 950 transactions. So Low has 2. That's not a small difference &mdash; it's a 475x difference in myelin thickness. In neural terms: one path is a superhighway. The other is a dirt track.</p>
+
+    <h2>The firing sequence</h2>
+    <p>That day, I visited six shops. The bank recorded the transactions. Here's what happened in the system, described as a neural firing sequence:</p>
+
+    <p><strong>Step 1 &mdash; Action potential.</strong> The first transaction arrives: &euro;13.96 at Simon Levelt, Haarlem. The system recognizes the location as part of the "Haarlem city center" cluster. The trigger crosses the threshold. The cluster fires.</p>
+
+    <p><strong>Step 2 &mdash; Saltatory conduction.</strong> The signal doesn't activate all 29 locations equally. It jumps to the thickest paths first: Apple Store (950), Etos (935), Van Vessem (728). These are the nodes of Ranvier &mdash; the points where the signal regenerates. The system checks: is there a transaction at any of these today? Apple Store: yes, &euro;299.95. The signal strengthens.</p>
+
+    <p><strong>Step 3 &mdash; Inhibition.</strong> The 23 locations without a transaction today are dampened. Not forgotten &mdash; dampened. They stay in the cluster but don't fire. Just like in the brain: inhibition prevents one signal from activating everything. Without it, every query would return all 29 locations every time. That's epilepsy, not intelligence.</p>
+
+    <p><strong>Step 4 &mdash; Payload.</strong> Each fired location delivers its payload based on type:</p>
+
+    <div class="highlight">
+        <p><strong>Apple Store</strong> (&euro;299.95) &mdash; always produces a purchase. The system asks: "What did you buy?"<br>
+        <strong>Gall &amp; Gall</strong> (&euro;64.03) &mdash; never produces a lasting purchase (you drink it). Log silently.<br>
+        <strong>Tibetan Massage</strong> (&euro;80.00) &mdash; a service. Log as activity.<br>
+        <strong>Simon Levelt</strong> (&euro;13.96) &mdash; consumable. Log silently.<br>
+        <strong>Jamin</strong> (&euro;39.32) &mdash; consumable. Log silently.<br>
+        <strong>Van Vuure</strong> (&euro;20.00) &mdash; consumable. Log silently.</p>
+    </div>
+
+    <p>Six transactions. One trigger. The system knew which shops to expect, which ones to check first, and what to do with each answer. It didn't search 29 locations one by one. It jumped along thick paths and ignored thin ones. That's saltatory conduction on a shopping street.</p>
+
+    <h2>Three types of clusters</h2>
+    <p>The city center is one type of cluster. We've identified three so far:</p>
+
+    <p><strong>Location cluster</strong> &mdash; same place, different shops. Haarlem city center: 29 locations, ~4,700 transactions. Triggered by "went into town" or by a transaction at any member location.</p>
+
+    <p><strong>Experience cluster</strong> &mdash; same place, different people and memories. Vlieland: 385 days on the island, dozens of people (Peter Ros, family, friends), locations (De Zafant, Stortemelk, the ferry), activities (cycling, dinners, writing). Triggered by "Vlieland" or by a ferry booking.</p>
+
+    <p><strong>Transit cluster</strong> &mdash; a hub that connects other clusters. Harlingen: the ferry terminal, the parking lot, the supermarket for last-minute supplies. Thin myelin on its own, but it's the gateway to the thick Vlieland cluster. The signal passes through on its way somewhere else.</p>
+
+    <p>Each type fires differently. A location cluster fires wide &mdash; many locations, shallow depth. An experience cluster fires deep &mdash; fewer locations, but rich with people, emotions, stories. A transit cluster fires fast &mdash; it's a relay station, not a destination.</p>
+
+    <h2>Why this matters</h2>
+    <p>Every personal knowledge system stores connections. Links in Obsidian. Relations in Notion. Contacts in a CRM. But they all treat every connection the same. A link is a link. A contact is a contact.</p>
+
+    <p>The brain doesn't work that way. It has thick paths and thin paths. Fast signals and slow signals. Clusters that fire together and connections that stay silent unless specifically summoned. The brain is not a database &mdash; it's a weighted, myelinated, selectively firing network.</p>
+
+    <p>That's what the Life Lens System builds. Not just the connections, but the <em>speed</em> of the connections. Not just the data, but the <em>readiness</em> of the data. When I walk into a city center, the system doesn't wait for me to tell it what happened. It sees the first transaction and fires the whole cluster &mdash; thick paths first, thin paths inhibited, payloads ready.</p>
+
+    <p>The three mechanisms are not three features. They are one chain:</p>
+
+    <div class="diagram">
+        <span class="label">Myelin</span> (the structure) <span class="arrow">&rarr;</span> determines <span class="arrow">&rarr;</span> <span class="label">Saltatory Conduction</span> (the behavior) <span class="arrow">&rarr;</span> triggered by <span class="arrow">&rarr;</span> <span class="label">Action Potential</span> (the firing moment)
+    </div>
+
+    <p>Structure enables behavior. Behavior waits for a trigger. The trigger activates the chain. One mechanism, three stages, real data.</p>
+
+    <p>The 29 shops in Haarlem are not a list. They are a neural network, weighted by eight years of bank transactions, ready to fire the moment I step off the bus.</p>
+
+    <p style="color: #888; margin-top: 40px; font-size: 13px;"><em>Written 13 April 2026. Data: 29 locations, ~4,700 transactions (2018&ndash;2026), SQLite database on a single VPS. Total storage cost: &euro;6.92/month.</em></p>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="fifty-brains.html">&larr; Fifty Brains</a>
+    <span style="font-size: 14px; color: #b0b0b0;">Blog</span>
+    <span class="nav-btn" style="color: #555; border-color: #444; pointer-events: none;">Latest &rarr;</span>
+</div>
+
+<script data-goatcounter="https://life-lens-system.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
