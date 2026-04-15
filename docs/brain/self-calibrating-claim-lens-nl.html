@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zelf-Kalibrerende Claim-Lens — Life Lens System</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Zelf-Kalibrerende Claim-Lens — Breinmechanisme in het Life Lens System",
+  "description": "Hoe het breinmechanisme 'Zelf-Kalibrerende Claim-Lens' vertaalt naar corpus-gekalibreerde bewering-extractie in het Life Lens System (LLS), gebouwd door Martijn Aslander.",
+  "author": {
+    "@type": "Person",
+    "name": "Martijn Aslander",
+    "url": "https://martijnaslander.github.io/life-lens-system/"
+  },
+  "datePublished": "2026-04-15",
+  "dateModified": "2026-04-15",
+  "mainEntityOfPage": "https://martijnaslander.github.io/life-lens-system/brain/self-calibrating-claim-lens-nl.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "The Life Lens System",
+    "url": "https://martijnaslander.github.io/life-lens-system/"
+  },
+  "keywords": ["Life Lens System", "LLS", "ThetaOS", "Zelf-Kalibrerende Claim-Lens", "bewering-extractie", "ontkenningsdetectie", "dependency parsing", "bronkritiek", "Martijn Aslander"]
+}
+</script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, Helvetica, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #eee; text-decoration: none; border-bottom: 1px solid #777; padding-bottom: 1px; }
+a:hover { color: #fff; background-color: #606870; border-color: #606870; }
+.back { display: inline-block; padding: 12px 20px; font-size: 14px; color: #c0c0c0; border: 1px solid #5a6269; border-radius: 6px; margin: 24px; }
+.back:hover { color: #fff; border-color: #7ab; background: none; }
+.content { max-width: 680px; margin: 0 auto; padding: 60px 24px 40px; }
+.topic-label { font-size: 12px; color: #7ab; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+h1 { font-size: 36px; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+.subtitle { font-size: 16px; color: #b0b0b0; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 18px; color: #7ab; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; margin-bottom: 12px; }
+p { margin-bottom: 16px; color: #ddd; }
+.highlight { background: #3e464e; border-left: 3px solid #7ab; padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.highlight p { margin-bottom: 0; color: #eee; }
+table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+th { text-align: left; padding: 8px 12px; border-bottom: 2px solid #7ab; color: #7ab; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+td { padding: 8px 12px; border-bottom: 1px solid #5a6269; color: #ddd; font-size: 14px; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+.status-designed { background: rgba(170,136,85,0.2); color: #a86; border: 1px solid #a86; }
+.nav-footer { max-width: 680px; margin: 0 auto; padding: 40px 24px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #5a6269; }
+.nav-btn { display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 700; color: #fff; border: 2px solid #7ab; border-radius: 8px; background: rgba(85,170,153,0.1); }
+.nav-btn:hover { background: rgba(85,170,153,0.25); border-color: #fff; border-bottom: 2px solid #fff; }
+.nav-btn.disabled { color: #555; border-color: #444; background: none; pointer-events: none; }
+.nav-count { font-size: 14px; color: #b0b0b0; }
+.lang-toggle { position: fixed; top: 20px; right: 20px; }
+.lang-toggle a { display: inline-block; padding: 6px 14px; font-size: 12px; color: #b0b0b0; border: 1px solid #5a6269; border-radius: 4px; margin-left: 4px; border-bottom: 1px solid #5a6269; }
+.lang-toggle a:hover { color: #fff; border-color: #7ab; background: none; }
+.lang-toggle a.active { color: #fff; border-color: #7ab; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <a href="self-calibrating-claim-lens.html">EN</a>
+    <a class="active">NL</a>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 24px;">
+    <a class="nav-btn" href="convergence-nl.html">&larr; Convergentie</a>
+    <a class="back" href="../index-nl.html#emulation-table" style="border: none;">&larr; Overzicht</a>
+    <a class="nav-btn disabled">Laatste &rarr;</a>
+</div>
+
+<div class="content">
+    <div class="topic-label">Breinmechanisme 28 van 28</div>
+    <h1>Zelf-Kalibrerende Claim-Lens</h1>
+    <p class="subtitle">Een bron lezen zoals het brein een spreker leest &mdash; eerst de patronen leren, dan pas de inhoud beoordelen.</p>
+
+    <h2>Wat het is</h2>
+    <p>Wanneer je iemand voor het eerst ontmoet, beoordeel je niet meteen wat ze zeggen. Je luistert een tijdje. Je kalibreert. Je leert hun spraakpatronen, hun aarzeling, hun gewoontes van overdrijving of understatement. Na tien minuten weet je hoe je ze moet lezen. "Het gaat goed" van de ene persoon betekent dat het goed gaat. Van een ander betekent het dat ze in crisis zijn.</p>
+    <p>Hetzelfde doe je als je een boek leest. Na twintig pagina's van het werk van een historicus weet je hoe hij ontkenningen schrijft, wanneer hij voorbehouden maakt, wanneer hij anderen citeert en wanneer hij zijn eigen standpunt inneemt. Je hebt je lezing gekalibreerd op deze specifieke auteur. Je leest niet elk woord gelijk &mdash; je leest door de lens van wat je geleerd hebt over hoe deze persoon taal gebruikt.</p>
+    <p>Dit is een zelf-kalibrerende claim-lens. Niet een vaste set regels die op elke tekst wordt losgelaten, maar een leesstrategie die zichzelf aanpast aan het specifieke corpus dat ze tegenkomt.</p>
+
+    <h2>Wat het doet in het brein</h2>
+    <p><strong>Predictieve codering als kalibratie.</strong> Het brein ontvangt taal niet passief. Het voorspelt het volgende woord, de volgende zin, de volgende retorische wending. Wanneer een voorspelling faalt &mdash; wanneer de auteur iets onverwachts zegt &mdash; werkt het brein zijn model van deze specifieke auteur bij. Na genoeg bijwerkingen is het model gekalibreerd. Je leest sneller, je begrijpt meer, en je vangt afwijkingen op die onzichtbaar zouden zijn voor iemand die zijn eerste pagina leest.</p>
+    <p><strong>Ontkenningsverwerking.</strong> Neurolinguistisch onderzoek toont dat het brein ontkenning niet verwerkt als een simpele omschakeling van betekenis, maar als een tweestaps-operatie: eerst de bevestiging activeren ("hij werd gearresteerd"), dan onderdrukken ("hij werd NIET gearresteerd"). Dat betekent dat ontkenning cognitief duur en foutgevoelig is &mdash; lezers onthouden soms de bevestiging terwijl ze de ontkenning zouden moeten onthouden. Een gekalibreerde lezer weet waar hij ontkenning kan verwachten van deze specifieke auteur en verwerkt die betrouwbaarder.</p>
+    <p><strong>Bronbewaking.</strong> De prefrontale cortex houdt continu bij wat er gezegd werd, maar ook wie het zei en hoe zeker het klonk. "Volgens Somer werd X gearresteerd" activeert een ander neuraal circuit dan "X werd gearresteerd." Het eerste labelt de bewering met een bron; het tweede presenteert het als de eigen bewering van de auteur. Een gekalibreerde lezer maakt dit onderscheid automatisch.</p>
+
+    <h2>Het probleem dat het oplost</h2>
+    <div class="highlight">
+        <p>Je wilt een standaardwerk van 8,3 miljoen woorden systematisch factchecken tegen primaire bronnen. Je hebt een machine nodig die die 8,3 miljoen woorden kan lezen en elke falsifieerbare bewering eruit haalt: wie deed wat, wanneer, waar. Maar de machine moet ook begrijpen wat de auteur NIET beweert &mdash; ontkenning, voorbehoud, citaat, hypothese. Zonder dat begrip toetst de factchecker beweringen die de auteur nooit heeft gedaan.</p>
+    </div>
+
+    <h2>Hoe het werkt</h2>
+    <p>De zelf-kalibrerende claim-lens is een methode, geen tool. Voor elk corpus is het proces hetzelfde:</p>
+    <p><strong>Stap 1: Meet.</strong> Ga er niet vanuit welke patronen de auteur gebruikt. Scan de volledige tekst. Tel elk ontkenningswoord, elk datumformaat, elk actiewerkwoord. In het Nederlandse standaardwerk over de Tweede Wereldoorlog vonden we 38.000 datum-instanties in 12 verschillende formaten, en 14.700 actiewerkwoorden in 10 categorieen. Die getallen zijn niet geraden &mdash; ze zijn gemeten.</p>
+    <p><strong>Stap 2: Test de simpele aanpak.</strong> Begin met afstandsgebaseerde ontkenningsdetectie: als een ontkenningswoord binnen N woorden van een actiewerkwoord staat, markeer het. Meet precision en recall op het werkelijke corpus. We ontdekten dat 3 woorden 71% ving, 5 woorden 88% &mdash; maar ook dat 12% van de echte ontkenningen gemist werd en sommige false positives werden geintroduceerd.</p>
+    <p><strong>Stap 3: Vind waar het faalt.</strong> Onderzoek elk foutgeval. In het Nederlands staat het werkwoord vaak aan het einde van de bijzin terwijl de ontkenning aan het begin staat, met een hele bijzin ertussen. Afstandsgebaseerde methoden falen structureel op dit taalpatroon. "Niet alleen de mannen werden weggevoerd" &mdash; afstand zegt ontkenning, syntaxis zegt bevestiging. Ze WERDEN weggevoerd.</p>
+    <p><strong>Stap 4: Bouw de paden.</strong> Gebruik dependency parsing om de syntactische boom te volgen in plaats van woorden te tellen. Voeg dan corpus-specifieke paden toe voor constructies die de parser mist. Voor het Nederlandse standaardwerk bouwden we vijf paden:</p>
+
+    <table>
+        <tr><th>Pad</th><th>Wat het vangt</th><th>Voorbeeld</th></tr>
+        <tr><td>Directe dependency</td><td>Ontkenningswoord verbonden aan actiewerkwoord</td><td>"werd niet gearresteerd"</td></tr>
+        <tr><td>Via hulpwerkwoord</td><td>Ontkenning op hulpwerkwoord</td><td>"zou niet worden vrijgelaten"</td></tr>
+        <tr><td>Onderwerpontkenning</td><td>"geen" op het onderwerp</td><td>"geen gevangene werd vrijgelaten"</td></tr>
+        <tr><td>Zonder-clausule</td><td>"zonder dat"</td><td>"zonder dat hij werd verhoord"</td></tr>
+        <tr><td>Voornaamwoord-ontkenning</td><td>"niemand" als onderwerp</td><td>"niemand werd vrijgelaten"</td></tr>
+    </table>
+
+    <p><strong>Stap 5: Valideer.</strong> Test op het corpus zelf, niet op voorbeeldzinnen. De vijf paden samen bereiken 96% nauwkeurigheid op de werkelijke tekst. De resterende 4% zijn constructies die ook voor menselijke lezers ambigu zijn.</p>
+
+    <div class="highlight">
+        <p>Het kerninzicht: de vijf paden zijn niet de ontdekking. De ontdekking is de methode om ze te vinden. Een juridisch corpus zou andere paden opleveren. Een medisch corpus weer andere. Maar de methode &mdash; meten, testen, falen, parsen, valideren &mdash; is dezelfde voor elke taal en elk corpus. De lens kalibreert zichzelf op wat ze leest.</p>
+    </div>
+
+    <h2>Wat het doet in ThetaOS</h2>
+    <p>In WOZ (het WO-II Operating System) zet de zelf-kalibrerende claim-lens het standaardwerk van 8,3 miljoen woorden van Loe de Jong om in een gestructureerde set falsifieerbare beweringen. Elke bewering heeft: wie (entiteit), wat (actie), wanneer (datum), waar (locatie), en een ontkenningsvlag. Die beweringen worden dan getoetst tegen 172 vrijgegeven Britse inlichtingendossiers en 62 Nederlandse verzetsverslagen.</p>
+    <p>De machine is herbruikbaar. Wanneer een nieuw archief binnenkomt &mdash; Arolsen (557.000 records), de BVD-dossiers, of het CABR-archief (openbaar januari 2027) &mdash; wordt de factcheck-tabel automatisch herberekend. De dekking groeit met elke nieuwe bron. Stilte wordt luider: wat De Jong niet noemt maar de primaire bronnen wel, wordt zichtbaar en meetbaar.</p>
+    <p>Buiten WOZ is de claim-lens toepasbaar op elk naslagwerk. Elke standaardtekst kan worden gedecomponeerd in falsifieerbare beweringen en getoetst tegen primaire bronnen. De lens is domein-agnostisch &mdash; ze kalibreert zichzelf op wat ze leest.</p>
+
+    <h2>De fenomenologische verbinding</h2>
+    <p>Husserls intentionaliteit: bewustzijn is altijd bewustzijn-van-iets. De claim-lens is altijd claim-lens-van-een-specifiek-corpus. Er bestaat geen generieke claim-lens, zoals er geen generiek bewustzijn bestaat. De lens vormt zich naar haar object &mdash; en onthult daarbij structuren die onzichtbaar waren voor zowel de ongekalibreerde lezer als de ongekalibreerde machine.</p>
+
+    <span class="status-badge status-designed">Ontworpen &mdash; 15 april 2026</span>
+</div>
+
+<div class="nav-footer">
+    <a class="nav-btn" href="convergence-nl.html">&larr; Convergentie</a>
+    <span class="nav-count">28 / 28</span>
+    <a class="nav-btn disabled">Laatste &rarr;</a>
+</div>
+
+<script data-goatcounter="https://life-lens-system.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
