@@ -283,6 +283,57 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
     .featured-grid { grid-template-columns: 1fr; }
     .architecture { padding: 20px; }
 }
+
+/* Sticky nav */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    background: #3a4248;
+    border-bottom: 2px solid #5a6269;
+    padding: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.sticky-nav::-webkit-scrollbar { display: none; }
+.sticky-nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+    padding: 0 12px;
+    white-space: nowrap;
+}
+.sticky-nav a {
+    display: inline-block;
+    padding: 12px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #999;
+    border: none;
+    border-bottom: 3px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+    flex-shrink: 0;
+}
+.sticky-nav a:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+    border-bottom: 3px solid #7ab;
+}
+.sticky-nav a.active-section {
+    color: #fff;
+    border-bottom: 3px solid #7ab;
+}
+.nav-divider {
+    width: 1px;
+    background: #5a6269;
+    margin: 8px 0;
+    flex-shrink: 0;
+}
+@media (max-width: 600px) {
+    .sticky-nav a { padding: 10px 10px; font-size: 12px; }
+}
 </style>
 </head>
 <body>
@@ -312,9 +363,34 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
     </div>
 </header>
 
+<nav class="sticky-nav" id="section-nav">
+    <div class="sticky-nav-inner">
+        <a href="#key-reading">Lezen</a>
+        <a href="#story">Verhaal</a>
+        <a href="#acceleration">Systeem</a>
+        <div class="nav-divider"></div>
+        <a href="#why-brain">Brein</a>
+        <a href="#six-layers">6 Lagen</a>
+        <a href="#multiplication">98/2</a>
+        <a href="#dashboard">Dashboard</a>
+        <div class="nav-divider"></div>
+        <a href="#timeline">Tijdlijn</a>
+        <a href="#journal">Journal</a>
+        <a href="#others-say">Citaten</a>
+        <a href="#others-building">Bouwers</a>
+        <div class="nav-divider"></div>
+        <a href="#exploring">Verkenning</a>
+        <a href="#thesis">These</a>
+        <a href="#learned">Lessen</a>
+        <a href="#pkm-summit">Summit</a>
+        <a href="#papers">Papers</a>
+        <a href="#changelog">Log</a>
+    </div>
+</nav>
+
 <!-- BELANGRIJKSTE ARTIKELEN -->
 
-<section>
+<section id="key-reading">
     <div class="container">
         <h2>Belangrijkste artikelen</h2>
         <div class="featured-grid">
@@ -359,7 +435,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 
 <!-- DEEL 1: HOE IK HIER KWAM -->
 
-<section>
+<section id="story">
     <div class="container">
         <h2>Deel een: veertig jaar informatie</h2>
 
@@ -384,7 +460,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 
 <!-- HET KANTELPUNT -->
 
-<section>
+<section id="turning-point">
     <div class="container">
         <h2>Het kantelpunt</h2>
 
@@ -407,7 +483,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 
 <!-- DEEL 2: DE VERSNELLING -->
 
-<section>
+<section id="acceleration">
     <div class="container">
         <h2>Deel twee: de versnelling</h2>
 
@@ -525,7 +601,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 
 <!-- WAAROM HET BREIN -->
 
-<section>
+<section id="why-brain">
     <div class="container">
         <h2>Waarom het brein</h2>
 
@@ -775,7 +851,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 
 <!-- HET MODEL -->
 
-<section>
+<section id="six-layers">
     <div class="container">
         <h2>Het zeslagenmodel</h2>
 
@@ -808,7 +884,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 
 <!-- HET VERMENIGVULDIGINGSEFFECT -->
 
-<section>
+<section id="multiplication">
     <div class="container">
         <h2>Het vermenigvuldigingseffect</h2>
         <p style="color: #b0b0b0; margin-bottom: 18px; font-size: 13px;">2 april 2026</p>
@@ -865,7 +941,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 
 <!-- HET INSTANT DASHBOARD -->
 
-<section>
+<section id="dashboard">
     <div class="container">
         <h2>Het Instant Dashboard: Drie Lagen Bewezen in de Praktijk</h2>
         <p style="color: #b0b0b0; margin-bottom: 18px; font-size: 13px;">31 maart 2026</p>
@@ -938,7 +1014,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 
 <!-- ONTDEKKINGSTIJDLIJN -->
 
-<section>
+<section id="timeline">
     <div class="container">
         <h2>Ontdekkingstijdlijn</h2>
         <p style="color: #b0b0b0; margin-bottom: 8px; font-size: 13px;">Elk inzicht zoals het ontstond. Volg via <a href="timeline-feed.xml" style="color: #7ab; border-bottom: none;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256" style="vertical-align: -2px; margin-right: 3px;"><rect width="256" height="256" rx="55" ry="55" fill="#f26522"/><circle cx="68" cy="189" r="28" fill="#fff"/><path d="M160 213h-34a82 82 0 0 0-82-82V97a116 116 0 0 1 116 116z" fill="#fff"/><path d="M224 213h-34a150 150 0 0 0-150-150V29a184 184 0 0 1 184 184z" fill="#fff"/></svg>RSS</a> om het in real-time te volgen.</p>
@@ -984,7 +1060,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 
 <!-- JOURNAL -->
 
-<section>
+<section id="journal">
     <div class="container">
         <h2>Journal</h2>
         <p style="color: #b0b0b0; margin-bottom: 8px; font-size: 13px;">Het bouwjournaal. Context, implicaties, het verhaal achter elke ontdekking. Volg via <a href="blog/feed.xml" style="color: #7ab; border-bottom: none;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256" style="vertical-align: -2px; margin-right: 3px;"><rect width="256" height="256" rx="55" ry="55" fill="#f26522"/><circle cx="68" cy="189" r="28" fill="#fff"/><path d="M160 213h-34a82 82 0 0 0-82-82V97a116 116 0 0 1 116 116z" fill="#fff"/><path d="M224 213h-34a150 150 0 0 0-150-150V29a184 184 0 0 1 184 184z" fill="#fff"/></svg>RSS</a>.</p>
@@ -995,7 +1071,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 
 <!-- WAT ANDEREN ZEGGEN -->
 
-<section>
+<section id="others-say">
     <div class="container">
         <h2>Wat anderen zeggen</h2>
 
@@ -1009,7 +1085,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 
 <!-- ANDEREN DIE BOUWEN -->
 
-<section>
+<section id="others-building">
     <div class="container">
         <h2>Anderen die een Life Lens System bouwen</h2>
         <p>Steeds meer mensen raken geinspireerd om hun eigen LLS te bouwen. Als ik ze tegenkom, publiceer ik ze hier.</p>
@@ -1022,7 +1098,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 
 <!-- WAT IK VERKEN -->
 
-<section>
+<section id="exploring">
     <div class="container">
         <h2>In verkenning</h2>
         <p>Het brein blijft nieuwe patronen onthullen. Ik doe actief onderzoek naar deze gebieden en bouw kenniskaarten voor elk. Zodra ze volwassen zijn, deel ik ze hier.</p>
@@ -1043,7 +1119,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 
 <!-- DE THESE -->
 
-<section>
+<section id="thesis">
     <div class="container">
         <h2>De these</h2>
 
@@ -1063,7 +1139,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 
 <!-- WAT IK GELEERD HEB -->
 
-<section>
+<section id="learned">
     <div class="container">
         <h2>Wat ik geleerd heb</h2>
 
@@ -1085,7 +1161,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 
 <!-- PAPERS -->
 
-<section>
+<section id="pkm-summit">
     <div class="container">
         <h2>De PKM Summit</h2>
 
@@ -1101,7 +1177,7 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
     </div>
 </section>
 
-<section>
+<section id="papers">
     <div class="container">
         <h2>Papers</h2>
         <p style="color: #b0b0b0; margin-bottom: 20px;">Gepubliceerd op Zenodo (CERN). Niet peer-reviewed. Preprints, open voor kritiek. Dit werk wordt ontwikkeld richting een dissertatie.</p>
@@ -1149,6 +1225,39 @@ if (!sessionStorage.getItem('lang-chosen') && navigator.language.startsWith('en'
     // Uncomment the next line to auto-redirect:
     // window.location.href = 'index.html';
 }
+</script>
+<script>
+// Smooth scroll for nav links
+document.querySelectorAll('.sticky-nav a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+            const navHeight = document.querySelector('.sticky-nav').offsetHeight;
+            const y = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 8;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    });
+});
+
+// Scroll spy — highlight active section
+const navLinks = document.querySelectorAll('.sticky-nav a[href^="#"]');
+const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+function updateActiveNav() {
+    const navHeight = document.querySelector('.sticky-nav').offsetHeight;
+    let current = '';
+    sections.forEach(section => {
+        if (window.pageYOffset >= section.offsetTop - navHeight - 60) {
+            current = section.id;
+        }
+    });
+    navLinks.forEach(a => {
+        a.classList.toggle('active-section', a.getAttribute('href') === '#' + current);
+    });
+}
+window.addEventListener('scroll', updateActiveNav, { passive: true });
+updateActiveNav();
 </script>
 <script data-goatcounter="https://life-lens-system.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
