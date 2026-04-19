@@ -64,11 +64,11 @@ a:hover { color: #fff; background-color: #606870; border-color: #606870; }
 .container { max-width: 740px; margin: 0 auto; padding: 0 24px; }
 
 header {
-    padding: 80px 0 50px;
+    padding: 120px 0 50px;
     border-bottom: 1px solid #5a6269;
     text-align: center;
 }
-.lang-toggle { position: fixed; top: 20px; right: 20px; z-index: 100; }
+.lang-toggle { position: fixed; top: 48px; right: 20px; z-index: 100; }
 .lang-toggle a { display: inline-block; padding: 6px 12px; font-size: 18px; border: 2px solid transparent; border-radius: 6px; margin-left: 4px; cursor: pointer; background: rgba(74,82,90,0.9); line-height: 1; }
 .lang-toggle a:hover { border-color: #7ab; background: rgba(74,82,90,0.9); border-bottom: 2px solid #7ab; }
 .lang-toggle a.active { border-color: #fff; background: rgba(74,82,90,0.9); }
@@ -286,8 +286,10 @@ footer a { color: #c0c0c0; border-bottom: 1px dotted #666; }
 
 /* Sticky nav */
 .sticky-nav {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 90;
     background: #3a4248;
     border-bottom: 2px solid #5a6269;
