@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Epistemological Extraction — Life Lens System</title>
+<meta name="description" content="A method that doesn't just extract information from historical texts, but classifies the reliability of its own findings. Every name, date, and action gets a certainty layer.">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #7ab; text-decoration: none; border-bottom: 1px solid #556; }
+a:hover { color: #fff; }
+.container { max-width: 700px; margin: 0 auto; padding: 60px 24px; }
+h1 { font-size: 32px; color: #fff; margin-bottom: 8px; letter-spacing: -1px; }
+h2 { font-size: 22px; color: #fff; margin-top: 40px; margin-bottom: 12px; }
+h3 { font-size: 17px; color: #ddd; margin-top: 28px; margin-bottom: 8px; }
+p { margin-bottom: 16px; color: #ccc; }
+.date { color: #999; font-size: 13px; margin-bottom: 24px; }
+.back { font-size: 13px; color: #999; margin-bottom: 40px; display: block; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+th, td { padding: 6px 10px; text-align: left; border-bottom: 1px solid #5a6269; }
+th { color: #fff; }
+td { color: #bbb; }
+code { background: #3a4249; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+blockquote { border-left: 3px solid #5a9; padding-left: 16px; margin: 16px 0; color: #aaa; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a href="../index.html" class="back">&larr; Back to Life Lens System</a>
+
+<h1>Epistemological Extraction</h1>
+<p class="date">April 20, 2026 &mdash; <a href="epistemological-extraction-nl.html">Lees in het Nederlands</a></p>
+
+<p>Existing extraction systems find information in text and give it a confidence score: 0.87. That number means nothing. Is it 87% because the OCR is bad? Because the name is ambiguous? Because the pattern matched weakly?</p>
+
+<p>This system does something different. It extracts information and simultaneously explains <em>how certain it is and why</em>.</p>
+
+<h2>The problem</h2>
+
+<p>Historical archives are scanned with imperfect OCR. They're written in three languages. They contain 11 million words across 28,461 text chunks. No one has time to read them all. So you build a system to find names, dates, locations, and actions automatically.</p>
+
+<p>But if you can't say how reliable each finding is, the system is unusable for scholarship. A historian needs to know: is this date certain? Is this name possibly an OCR error? Is this attribution based on the text itself or on an inference?</p>
+
+<h2>The method</h2>
+
+<p>Every extraction is classified on a certainty layer from the 12-layer Synaptic Architecture model:</p>
+
+<table>
+<tr><th>Layer</th><th>Meaning</th><th>Example</th><th>Certainty</th></tr>
+<tr><td>L2</td><td>It says so literally</td><td>"6 March 1942"</td><td>100%</td></tr>
+<tr><td>L3</td><td>Source convention</td><td>"7.11.44" from MI5 (always day.month)</td><td>99%</td></tr>
+<tr><td>L6</td><td>Pattern recognition</td><td>"Nov 41", "in March 1942"</td><td>95-98%</td></tr>
+<tr><td>L7</td><td>Vague indication</td><td>"early March", "Spring 1942"</td><td>85-90%</td></tr>
+</table>
+
+<p>The layer doesn't just say how certain &mdash; it says <em>why</em>. And it says how to improve: an L7 date can become L2 when another source confirms it with an exact date. Cross-source confirmation promotes the certainty layer.</p>
+
+<h2>Six risks, six mitigations</h2>
+
+<h3>1. The table is a snapshot</h3>
+<p>Every pattern improvement invalidates the table. Solution: 43-second full recomputation. No versioning needed at this scale.</p>
+
+<h3>2. Patterns miss what they don't know</h3>
+<p>56 pattern types cover six dimensions. A seventh dimension (irony, causal connections) is invisible. Solution: add patterns when a question requires something new.</p>
+
+<h3>3. Dates sit in different sentences than actions</h3>
+<p>86% of dates are not in the same sentence as the action they date. Solution: chunk-wide date coupling with distance measurement. Brought date coverage from 5% to 60%.</p>
+
+<h3>4. Sources share blind spots</h3>
+<p>If all sources omit the same person, we can't see them either. Solution: add sources from different perspectives. Russian archives fill Western blind spots.</p>
+
+<h3>5. Common words as person names</h3>
+<p>0.8% of canonical names are ambiguous ("Burgers" = person or citizens?). Solution: context check. Title or rank before the word = person. Article before it = common word.</p>
+
+<h3>6. Implicit relationships within a chunk</h3>
+<p>"Lauwers, arrested, March '42, The Hague" in one chunk doesn't prove they belong together. Solution layered: distance measurement (90% &rarr; 95%), verb direction (95% &rarr; 97%), enumeration detection (97% &rarr; 99%), LLM batch for 0.08% remainder (99.92%).</p>
+
+<h2>The proof: the arrest of Lauwers</h2>
+
+<p>53 chunks across 4 sources (De Jong, MI5, Parliamentary Inquiry, Mitrokhin Archive) describe the arrest of radio operator Lauwers in 1942. The system reconstructs:</p>
+
+<p><strong>Persons involved (all sources combined):</strong> Giskes, Schreieder, Ridderhof, Taconis, Kup, Bodens</p>
+<p><strong>Locations:</strong> The Hague, Scheveningen, Driebergen</p>
+<p><strong>Date: 6 March 1942</strong> &mdash; 7 independent mentions, 2 sources, certainty layer L2</p>
+
+<p>MI5 adds two persons that De Jong never mentions: Kup and Bodens. That is not an anecdote &mdash; scaled across the entire corpus, it reveals 1,174 persons in MI5 files that the 30-volume standard work omits.</p>
+
+<h2>Five contradictions found</h2>
+
+<p>The system automatically found five cases where De Jong's dates conflict with primary sources:</p>
+
+<table>
+<tr><th>Person</th><th>Action</th><th>De Jong</th><th>Other source</th><th>Difference</th></tr>
+<tr><td>Christiansen</td><td>appointment</td><td>19 July 1940 (L2)</td><td>Inquiry: 25 June 1940 (L2)</td><td>24 days, both hard dates</td></tr>
+<tr><td>Ferwerda</td><td>appointment</td><td>Sept '44 (L6)</td><td>Inquiry: 30 Aug 1944 (L2)</td><td>~1 day</td></tr>
+<tr><td>Sevenster</td><td>appointment</td><td>Summer '40 (L7)</td><td>Inquiry: Autumn '40 (L7)</td><td>1-3 months, both vague</td></tr>
+<tr><td>Sikorski</td><td>death</td><td>Nov '44 (L3)</td><td>Inquiry: March '45 (L6)</td><td>4 months</td></tr>
+<tr><td>Wehner</td><td>death</td><td>March '45 (L3)</td><td>MI5: Oct '44 (L6)</td><td>5 months</td></tr>
+</table>
+
+<p>The Christiansen case is the strongest: two L2 dates (hard evidence) that clash by 24 days about the same appointment. That is a testable historical discrepancy.</p>
+
+<h2>The numbers</h2>
+
+<table>
+<tr><th>Metric</th><th>Value</th></tr>
+<tr><td>Pattern types</td><td>56 (6 domain plugins)</td></tr>
+<tr><td>Total extractions</td><td>132,122</td></tr>
+<tr><td>Dates found</td><td>51,446 (with certainty layers)</td></tr>
+<tr><td>Persons recognised</td><td>96% (33,783 canonical)</td></tr>
+<tr><td>Scan time</td><td>43 seconds on 11.4M words</td></tr>
+<tr><td>Resolvable without LLM</td><td>99.92%</td></tr>
+<tr><td>Contradictions found</td><td>5 (after filtering 26 false positives)</td></tr>
+<tr><td>Blind spots measured</td><td>1,174 persons MI5 knows that De Jong omits</td></tr>
+</table>
+
+<h2>What makes this different</h2>
+
+<p>Every finding is:</p>
+<ul style="margin: 16px 0; padding-left: 24px; color: #ccc;">
+<li><strong>Traceable</strong> &mdash; source, chunk, sentence, original text</li>
+<li><strong>Replicable</strong> &mdash; same code + same sources = same result</li>
+<li><strong>Classifiable</strong> &mdash; certainty layer with explanation</li>
+<li><strong>Improvable</strong> &mdash; cross-source confirmation promotes the certainty layer</li>
+</ul>
+
+<p>The system doesn't say "Lauwers was probably arrested in March." It says: "7 independent mentions from 2 sources confirm 6 March 1942, certainty layer 2, here are the 7 sentences."</p>
+
+<p style="margin-top: 40px; padding-top: 16px; border-top: 1px solid #5a6269; font-size: 13px; color: #999;">Part of the <a href="../index.html">Life Lens System</a>. Built with Claude Code on 20 April 2026.</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Epistemologische Extractie — Life Lens System</title>
+<meta name="description" content="Een methode die niet alleen informatie uit historische teksten haalt, maar ook de betrouwbaarheid van eigen bevindingen classificeert. Elke naam, datum en actie krijgt een zekerheidslaag.">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Verdana, system-ui, sans-serif; background: #4a525a; color: #eee; line-height: 1.8; font-size: 15px; }
+a { color: #7ab; text-decoration: none; border-bottom: 1px solid #556; }
+a:hover { color: #fff; }
+.container { max-width: 700px; margin: 0 auto; padding: 60px 24px; }
+h1 { font-size: 32px; color: #fff; margin-bottom: 8px; letter-spacing: -1px; }
+h2 { font-size: 22px; color: #fff; margin-top: 40px; margin-bottom: 12px; }
+h3 { font-size: 17px; color: #ddd; margin-top: 28px; margin-bottom: 8px; }
+p { margin-bottom: 16px; color: #ccc; }
+.date { color: #999; font-size: 13px; margin-bottom: 24px; }
+.back { font-size: 13px; color: #999; margin-bottom: 40px; display: block; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+th, td { padding: 6px 10px; text-align: left; border-bottom: 1px solid #5a6269; }
+th { color: #fff; }
+td { color: #bbb; }
+code { background: #3a4249; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+blockquote { border-left: 3px solid #5a9; padding-left: 16px; margin: 16px 0; color: #aaa; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a href="../index-nl.html" class="back">&larr; Terug naar Life Lens System</a>
+
+<h1>Epistemologische Extractie</h1>
+<p class="date">20 april 2026 &mdash; <a href="epistemological-extraction.html">Read in English</a></p>
+
+<p>Bestaande extractiesystemen vinden informatie in tekst en geven het een confidence score: 0,87. Dat getal zegt niets. Is het 87% omdat de OCR slecht is? Omdat de naam ambigu is? Omdat het patroon zwak matcht?</p>
+
+<p>Dit systeem doet iets anders. Het extraheert informatie en legt tegelijkertijd uit <em>hoe zeker het is en waarom</em>.</p>
+
+<h2>Het probleem</h2>
+
+<p>Historische archieven zijn gescand met onvolmaakte OCR. Ze zijn geschreven in drie talen. Ze bevatten 11 miljoen woorden verdeeld over 28.461 tekstblokken. Niemand heeft tijd om dat allemaal te lezen. Dus bouw je een systeem dat automatisch namen, datums, locaties en acties vindt.</p>
+
+<p>Maar als je niet kunt zeggen hoe betrouwbaar elke vondst is, is het systeem onbruikbaar voor wetenschap. Een historicus moet weten: is deze datum zeker? Is deze naam mogelijk een OCR-fout? Is deze toeschrijving gebaseerd op de tekst zelf of op een afleiding?</p>
+
+<h2>De methode</h2>
+
+<p>Elke extractie wordt geclassificeerd op een zekerheidslaag uit het 12-lagen model (Synaptische Architectuur):</p>
+
+<table>
+<tr><th>Laag</th><th>Betekenis</th><th>Voorbeeld</th><th>Zekerheid</th></tr>
+<tr><td>L2</td><td>Het staat er letterlijk</td><td>"6 maart 1942"</td><td>100%</td></tr>
+<tr><td>L3</td><td>Registratieconventie</td><td>"7.11.44" uit MI5 (altijd dag.maand)</td><td>99%</td></tr>
+<tr><td>L6</td><td>Patroonherkenning</td><td>"Nov 41", "in maart 1942"</td><td>95-98%</td></tr>
+<tr><td>L7</td><td>Vage aanduiding</td><td>"begin maart", "voorjaar 1942"</td><td>85-90%</td></tr>
+</table>
+
+<p>De laag zegt niet alleen hoe zeker, maar ook <em>waarom</em>. En hoe te verbeteren: een L7-datum kan L2 worden als een andere bron dezelfde gebeurtenis met een exacte datum bevestigt. Cross-bron bevestiging promoveert de zekerheidslaag.</p>
+
+<h2>Zes risico's, zes oplossingen</h2>
+
+<h3>1. De tabel is een momentopname</h3>
+<p>Elke patroonverbetering maakt de eerdere extractie onvolledig. Oplossing: 43 seconden herberekening op het volledige corpus. Geen versie-administratie nodig op deze schaal.</p>
+
+<h3>2. Patronen missen wat ze niet kennen</h3>
+<p>56 patroontypen dekken zes dimensies. Een zevende dimensie (ironie, causale verbanden) is onzichtbaar. Oplossing: patronen toevoegen wanneer een vraag iets nieuws vereist.</p>
+
+<h3>3. Datums staan in andere zinnen dan acties</h3>
+<p>86% van de datums staat niet in dezelfde zin als de actie die ze dateren. Oplossing: chunk-brede datumkoppeling met afstandsmeting. Bracht datumdekking van 5% naar 60%.</p>
+
+<h3>4. Bronnen delen blinde vlekken</h3>
+<p>Als alle bronnen dezelfde persoon weglaten, is die onzichtbaar. Oplossing: bronnen toevoegen uit verschillende perspectieven. Russische archieven vullen Westerse blinde vlekken.</p>
+
+<h3>5. Gewone woorden als persoonsnaam</h3>
+<p>0,8% van de canonical namen is ambigu ("Burgers" = persoon of inwoners?). Oplossing: context-check. Titel of rang ervoor = persoon. Lidwoord ervoor = gewoon woord.</p>
+
+<h3>6. Impliciete relaties binnen een chunk</h3>
+<p>"Lauwers, gearresteerd, maart '42, Den Haag" in een chunk bewijst niet dat die vier bij elkaar horen. Oplossing gelaagd: afstandsmeting (90% &rarr; 95%), werkwoord-richting (95% &rarr; 97%), opsomming-detectie (97% &rarr; 99%), LLM-batch voor 0,08% restant (99,92%).</p>
+
+<h2>Het bewijs: de arrestatie van Lauwers</h2>
+
+<p>53 chunks uit 4 bronnen (De Jong, MI5, Parlementaire Enquete, Mitrokhin-archief) beschrijven de arrestatie van marconist Lauwers in 1942. Het systeem reconstrueert:</p>
+
+<p><strong>Betrokken personen (alle bronnen samen):</strong> Giskes, Schreieder, Ridderhof, Taconis, Kup, Bodens</p>
+<p><strong>Locaties:</strong> Den Haag, Scheveningen, Driebergen</p>
+<p><strong>Datum: 6 maart 1942</strong> &mdash; 7 onafhankelijke vermeldingen, 2 bronnen, zekerheidslaag L2</p>
+
+<p>MI5 voegt twee personen toe die De Jong nergens noemt: Kup en Bodens. Dat is geen anekdote &mdash; opgeschaald naar het volledige corpus blijken er 1.174 personen in MI5-dossiers te staan die het 30-delige standaardwerk weglaat.</p>
+
+<h2>Vijf contradictie's gevonden</h2>
+
+<p>Het systeem vond automatisch vijf gevallen waar De Jongs datums conflicteren met primaire bronnen:</p>
+
+<table>
+<tr><th>Persoon</th><th>Actie</th><th>De Jong</th><th>Andere bron</th><th>Verschil</th></tr>
+<tr><td>Christiansen</td><td>benoeming</td><td>19 juli 1940 (L2)</td><td>Enquete: 25 juni 1940 (L2)</td><td>24 dagen, twee harde datums</td></tr>
+<tr><td>Ferwerda</td><td>benoeming</td><td>sept '44 (L6)</td><td>Enquete: 30 aug 1944 (L2)</td><td>~1 dag</td></tr>
+<tr><td>Sevenster</td><td>benoeming</td><td>zomer '40 (L7)</td><td>Enquete: herfst '40 (L7)</td><td>1-3 maanden, twee vage datums</td></tr>
+<tr><td>Sikorski</td><td>dood</td><td>nov '44 (L3)</td><td>Enquete: maart '45 (L6)</td><td>4 maanden</td></tr>
+<tr><td>Wehner</td><td>dood</td><td>maart '45 (L3)</td><td>MI5: okt '44 (L6)</td><td>5 maanden</td></tr>
+</table>
+
+<p>De Christiansen-casus is het sterkst: twee L2-datums (hard bewijs) die 24 dagen botsen over dezelfde benoeming. Dat is een toetsbare historische discrepantie.</p>
+
+<h2>De cijfers</h2>
+
+<table>
+<tr><th>Meting</th><th>Waarde</th></tr>
+<tr><td>Patroontypen</td><td>56 (6 domein-plugins)</td></tr>
+<tr><td>Totaal extracties</td><td>132.122</td></tr>
+<tr><td>Datums gevonden</td><td>51.446 (met zekerheidslagen)</td></tr>
+<tr><td>Personen herkend</td><td>96% (33.783 canonical)</td></tr>
+<tr><td>Scantijd</td><td>43 seconden op 11,4M woorden</td></tr>
+<tr><td>Oplosbaar zonder LLM</td><td>99,92%</td></tr>
+<tr><td>Contradictie's gevonden</td><td>5 (na filtering 26 vals-positieven)</td></tr>
+<tr><td>Blinde vlekken gemeten</td><td>1.174 personen die MI5 kent maar De Jong weglaat</td></tr>
+</table>
+
+<h2>Wat dit anders maakt</h2>
+
+<p>Elke bevinding is:</p>
+<ul style="margin: 16px 0; padding-left: 24px; color: #ccc;">
+<li><strong>Traceerbaar</strong> &mdash; bron, chunk, zin, originele tekst</li>
+<li><strong>Repliceerbaar</strong> &mdash; zelfde code + zelfde bronnen = zelfde resultaat</li>
+<li><strong>Classificeerbaar</strong> &mdash; zekerheidslaag met verklaring</li>
+<li><strong>Verbeterbaar</strong> &mdash; cross-bron bevestiging promoveert de zekerheidslaag</li>
+</ul>
+
+<p>Het systeem zegt niet "Lauwers werd waarschijnlijk in maart gearresteerd." Het zegt: "7 onafhankelijke vermeldingen uit 2 bronnen bevestigen 6 maart 1942, zekerheidslaag 2, hier zijn de 7 zinnen."</p>
+
+<p style="margin-top: 40px; padding-top: 16px; border-top: 1px solid #5a6269; font-size: 13px; color: #999;">Onderdeel van het <a href="../index-nl.html">Life Lens System</a>. Gebouwd met Claude Code op 20 april 2026.</p>
+
+</div>
+</body>
+</html>
