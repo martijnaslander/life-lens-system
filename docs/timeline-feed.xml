@@ -6,7 +6,13 @@
     <link>https://martijnaslander.github.io/life-lens-system/</link>
     <atom:link href="https://martijnaslander.github.io/life-lens-system/timeline-feed.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
-    <lastBuildDate>Sun, 13 Apr 2026 20:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 06 May 2026 05:00:00 +0200</lastBuildDate>
+    <item>
+        <title>Epistemic Dimension: three implicit mechanisms made explicit</title>
+        <description>The 12-layer model had three epistemic mechanisms it never named. Replacement chains: when a standpoint replaces an older one, the evolution itself is navigable knowledge — recursive queries walk the chain in both directions. Epistemic transformation labeling: a direct quote is not an interpretation is not a synthesis — each step away from the source changes the certainty. Belief time: when you started believing something and when you stopped, independent of when it happened in the world or when it was logged. Built and tested on live data. Triggered by reading an external knowledge architecture proposal and discovering what it was missing.</description>
+        <pubDate>Wed, 06 May 2026 05:00:00 +0200</pubDate>
+        <guid>https://martijnaslander.github.io/life-lens-system/#epistemic-dimension</guid>
+    </item>
     <item>
         <title>Predictive Coding: the system fires before you arrive</title>
         <description>Meetings and optredens in the next seven days now activate networks in advance — before departure, while there is still time to prepare. Two Den Haag meetings triggered Politie Den Haag and Den Haag cluster the evening before. Retrospective signals tell where you were. Predictive signals tell where you are going. Brain mechanism 22.</description>
