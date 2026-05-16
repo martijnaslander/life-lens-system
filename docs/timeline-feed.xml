@@ -6,7 +6,13 @@
     <link>https://martijnaslander.github.io/life-lens-system/</link>
     <atom:link href="https://martijnaslander.github.io/life-lens-system/timeline-feed.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
-    <lastBuildDate>Wed, 06 May 2026 05:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 16 May 2026 06:00:00 +0200</lastBuildDate>
+    <item>
+        <title>Theta-Myelin: The Myelination Engine</title>
+        <description>Highways are artificially myelinated paths. The brain does not search — it fires along the thickest connections. ThetaOS now emulates this: every knowledge card retrieval is logged, building a dataset of co-occurring circuits. Three signal types determine which paths earn myelin: timing errors (cerebellum equivalent), cognitive errors (anterior cingulate cortex equivalent), and reinforcement signals (dopamine equivalent). Priority follows consequence of absence, not frequency of use. The myelination engine is now measuring itself.</description>
+        <pubDate>Fri, 16 May 2026 06:00:00 +0200</pubDate>
+        <guid>https://martijnaslander.github.io/life-lens-system/#theta-myelin</guid>
+    </item>
     <item>
         <title>Epistemic Dimension: three implicit mechanisms made explicit</title>
         <description>The 12-layer model had three epistemic mechanisms it never named. Replacement chains: when a standpoint replaces an older one, the evolution itself is navigable knowledge — recursive queries walk the chain in both directions. Epistemic transformation labeling: a direct quote is not an interpretation is not a synthesis — each step away from the source changes the certainty. Belief time: when you started believing something and when you stopped, independent of when it happened in the world or when it was logged. Built and tested on live data. Triggered by reading an external knowledge architecture proposal and discovering what it was missing.</description>
